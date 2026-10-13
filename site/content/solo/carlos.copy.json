@@ -1,0 +1,112 @@
+{
+  "_fonte": "referencias da cliente: C:/Users/User/Documents/Black Friday da Personal Trainer Academy ao Vivo.pdf (páginas 14–18, 'Copy da página do Carlos'). Só texto final; tudo que estava entre colchetes e as orientações ficam em pagina-solo.pendencias.md.",
+  "produto": {
+    "id": "treinamento-feminino",
+    "nome_pos": "Treinamento Feminino",
+    "professor": "Carlos Garon",
+    "nome_curto": "Carlos",
+    "noite": "Qua 11/11",
+    "data": "11/11",
+    "hora": "20h30"
+  },
+  "barra": {"texto": "Black PTA ao Vivo com Carlos Garon · Qua 11/11 · 20h30", "botao": "Quero assistir à aula do Carlos"},
+  "hero": {
+    "eyebrow": "Black Friday da Personal Trainer Academy ao Vivo · Noite do Carlos Garon",
+    "h1": "Uma noite especial de Treinamento Feminino ao vivo com Carlos Garon.",
+    "destaque": "No final, a condição Black: pague 1 pós e leve 2.",
+    "sub": "Dia 11/11, às 20h30, o Carlos dá uma aula ao vivo de Treinamento Feminino e apresenta a condição Black: a Pós em Treinamento Feminino e uma segunda pós à sua escolha, com bônus. Os valores serão divulgados ao vivo.",
+    "cta": "Quero assistir à aula do Carlos",
+    "selos": ["Aula ao vivo", "Certificado reconhecido pelo MEC"]
+  },
+  "formulario": {
+    "campos": ["Nome", "WhatsApp", "E-mail (opcional)"],
+    "selecao_noite": "Noite do Carlos (Qua 11/11, 20h30)",
+    "opcional_outras_noites": "Quero assistir também às noites do André Albuquerque e do Walter Krause.",
+    "botao": "Quero assistir à aula do Carlos"
+  },
+  "como_funciona": {
+    "titulo": "Como funciona a noite do Carlos",
+    "passos": [
+      {"t": "Entre no grupo.", "d": "Cadastre-se e receba o link e os avisos no WhatsApp."},
+      {"t": "Assista à aula ao vivo.", "d": "Qua 11/11, das 20h30 às 22h30, com o Carlos Garon."},
+      {"t": "Conheça a condição Black.", "d": "No fim da noite, o Carlos apresenta a condição, os bônus, os valores e as formas de pagamento."}
+    ]
+  },
+  "na_noite": {
+    "titulo": "O que você vai ver ao vivo",
+    "itens": [
+      "Aula ao vivo",
+      "Treinamento Feminino na prática",
+      "A condição Black: pague 1 pós-graduação e leve 2, com bônus, valores e formas de pagamento.",
+      "Perguntas ao vivo com o Carlos."
+    ]
+  },
+  "professor": {
+    "nome": "Carlos Garon",
+    "bio": "Graduado em Educação Física (licenciatura e bacharelado) pela Universidade Positivo, com pós-graduação em Fisiologia do Exercício pela PUC-PR. Especialista em Bodybuilding e Treinamento de Resistência e em Nutrição Esportiva pela IFBB Academy."
+  },
+  "pos": {
+    "titulo": "Pós-graduação em Treinamento Feminino",
+    "itens": [
+      "18 meses, 360 horas, 100% online, ao vivo e gravado, Sem TCC",
+      "Um fim de semana por mês ao vivo (sábado das 13h30 às 18h e domingo das 8h às 12h30), com aulas gravadas",
+      "Visão 360º da mulher: aspectos físicos, hormonais, nutricionais e psicológicos",
+      "Conteúdos: fisiologia hormonal, emagrecimento e hipertrofia, incluindo treinamento para gestantes no pré e pós-parto e diástase abdominal",
+      "Certificado reconhecido pelo MEC",
+      "Garantia de 30 dias"
+    ]
+  },
+  "pague1leve2": {
+    "titulo": "Na Black PTA, você paga a Pós em Treinamento Feminino e leva 2.",
+    "intro": "Escolha uma segunda pós-graduação:",
+    "opcoes": ["Treinamento Funcional", "Musculação e Periodização Avançada", "Fisiologia do Exercício"],
+    "nota": "As pós de escolha são gravadas em 2026.",
+    "pagamento": "Parcelamento facilitado, que não consome o limite do cartão. Valores e condições serão divulgados ao vivo e na página de matrícula logo em seguida."
+  },
+  "bonus": {
+    "titulo": "E os bônus da noite do Carlos",
+    "itens": [
+      "Workshop intensivo prático em Treinamento Feminino (exclusivo desta noite)",
+      "Workshop 10k com consultoria online",
+      "Mapa da consultoria online",
+      "4 ebooks de Biomecânica"
+    ]
+  },
+  "prova": {
+    "itens": ["+10.000 alunos formados · Professores-referência com foco em aplicação prática"]
+  },
+  "faq": [
+    {"q": "A aula é gratuita?", "a": "Sim."},
+    {"q": "Preciso ter participado de algum evento anterior da PTA?", "a": "Não."},
+    {"q": "Para quem é a Pós em Treinamento Feminino?", "a": "Para profissionais que querem uma visão completa da mulher, nos aspectos físicos, hormonais, nutricionais e psicológicos."},
+    {"q": "Quando saberei o valor?", "a": "Ao vivo, na noite do Carlos, e na página de matrícula logo depois."},
+    {"q": "Posso assistir às outras noites?", "a": "Sim. Marque as noites do André Albuquerque e do Walter Krause no cadastro."},
+    {"q": "A segunda pós é completa?", "a": "Ela é gravada em 2026."},
+    {"q": "As pós têm reconhecimento do MEC?", "a": "Sim, pela instituição certificadora."}
+  ],
+  "cta_final": {"titulo": "Entre no grupo e receba o link da aula do Carlos.", "botao": "Quero assistir à aula do Carlos"},
+  "rodape": [
+    "Valores, condições e formas de pagamento serão apresentados ao vivo e na página de matrícula.",
+    "Pós-graduações lato sensu.",
+    "Os resultados variam conforme a dedicação de cada aluno. Não garantimos ganhos financeiros."
+  ],
+  "modal": {
+    "titulo": "Entre no grupo e receba o link da aula do Carlos.",
+    "campos": [{"id": "nome", "rotulo": "Nome", "tipo": "text"}, {"id": "whats", "rotulo": "WhatsApp", "tipo": "tel", "mascara": "(00) 00000-0000"}, {"id": "email", "rotulo": "E-mail (opcional)", "tipo": "email", "opcional": true}],
+    "botao": "Quero assistir à aula do Carlos",
+    "consentimento": "Usaremos seus dados só para enviar o link e os avisos das lives.",
+    "sucesso_titulo": "Você está dentro.",
+    "sucesso_texto": "Agora entre no grupo do WhatsApp para receber o link da aula do Carlos.",
+    "sucesso_botao": "Entrar no grupo do WhatsApp"
+  },
+  "_evitar": [
+    "\"Desconto\", \"garanta sua vaga\" e \"últimas vagas\", porque o valor ainda não foi divulgado.",
+    "\"Fature 10 mil\" ou qualquer frase de renda. Mantenha \"10k\" só como nome do workshop.",
+    "\"Maior\", \"nº 1 em aulas práticas\" e \"segunda pós grátis\". Use \"leve 2\".",
+    "Promessas de emagrecimento ou de resultado estético para as alunas: a pós é para o profissional, não para a aluna final.",
+    "Frases como \"treinador Olympia\" ou títulos de atletas sem documentação.",
+    "Atribuir ao Carlos credenciais de outros professores da PTA.",
+    "Depoimentos com resultado numérico sem comprovação.",
+    "\"Aprovada\" ou \"recomendada\" pelo MEC. Use \"certificado reconhecido pelo MEC\", com o ato."
+  ]
+}

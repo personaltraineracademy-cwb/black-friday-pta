@@ -1,0 +1,282 @@
+/* ===== 1ª DOBRA PADRÃO das páginas individuais (3 professores × 3 versões) =====
+ * Um contrato só: palco (arte do kit + retrato) → H1 → destaque → dia/hora → botão, no mesmo eixo central, do
+ * celular ao desktop; a dobra é a tela inteira (`.pta-dobra`). Só a arte do palco muda entre versões/professores.
+ * Cor do professor = única cor de destaque (botão, sublinhado, arte). Dourado não entra nas individuais.
+ * Espaços: 12 · 24 · 40 (--g1/--g2/--g3). Tema: tokens (--color-ink / --color-tinta); a arte tem variante clara.
+ */
+.sf {
+  --sf-cor: var(--color-azul);
+  --sf-on: #0c0b09; /* texto SOBRE a cor do professor: tinta, nos 2 temas */
+  --sf-h: clamp(220px, 34svh, 400px); /* altura do palco */
+  position: relative;
+  text-align: center;
+  padding-block: var(--g2);
+  padding-inline: var(--m, 24px);
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .sf {
+    --sf-h: clamp(160px, calc(100svh - 500px), 440px); /* o resto da dobra (cabeçalho, título, destaque, botão) ~ 500 px */
+    padding-block: var(--g3);
+  }
+}
+.sf[data-prof='walter'] {
+  --sf-cor: var(--color-vermelho);
+}
+.sf[data-prof='carlos'] {
+  --sf-cor: var(--color-roxo);
+}
+.sf__in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--g2);
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* variante por tema da arte (a oculta some do layout) */
+html:not([data-tema='claro']) .sf .t-claro,
+html[data-tema='claro'] .sf .t-escuro {
+  display: none !important;
+}
+
+/* ---------- palco ---------- */
+.sf__palco {
+  position: relative;
+  flex: none;
+  height: var(--sf-h);
+  width: min(100%, calc(var(--sf-h) / 0.86));
+  max-width: 100%;
+}
+.sf__foto {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  -webkit-mask-image: linear-gradient(180deg, #000 86%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 86%, transparent 100%);
+}
+.sf-arte {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: var(--y, 50%);
+  width: var(--d, calc(var(--sf-h) * 0.9));
+  height: auto;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+/* André · goniômetro circular concêntrico ao busto (anel de 280 unidades dentro de um quadro de 356) */
+.sf-arte--gonioc {
+  --d: calc(var(--sf-h) * 1.1);
+  --y: 50%;
+}
+/* Walter · barra atrás dos ombros */
+.sf-arte--barra {
+  --d: 100%;
+  --y: 60%;
+}
+/* Walter · anilha (contorno) atrás do busto */
+.sf-arte--anilha {
+  --d: calc(var(--sf-h) * 0.86);
+  --y: 50%;
+}
+/* Carlos · anel de 4 setores (+ grade polar na v2) */
+.sf-arte--anel {
+  --d: calc(var(--sf-h) * 0.9);
+  --y: 52%;
+}
+.sf-arte--polar {
+  --d: calc(var(--sf-h) * 1.14);
+  --y: 50%;
+}
+/* v3 · disco da cor do professor + régua polar fina, tudo contido no palco */
+.sf-disco {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 52%;
+  width: calc(var(--sf-h) * 0.62);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sf-cor);
+  transform: translate(-50%, -50%);
+}
+.sf-arte--polar3 {
+  --d: calc(var(--sf-h) * 0.96);
+  --y: 52%;
+}
+
+/* ---------- texto ---------- */
+.sf .sf__h1 {
+  margin: 0;
+  max-width: 19em;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.sf__destaque {
+  margin: 0;
+  max-width: 30em;
+  font-size: clamp(1.0625rem, 0.98rem + 0.45vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.sf__destaque span {
+  /* sublinhado grosso na cor do professor: texto na tinta (contraste máximo), cor só no traço */
+  text-decoration: underline;
+  text-decoration-color: var(--sf-cor);
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: none;
+}
+.sf__quando {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+.sf__cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--g1);
+}
+html .sf .pta-btn.pta-btn.pta-btn.pta-btn.pta-btn,
+html[data-tema='claro'] .sf .pta-btn.pta-btn.pta-btn.pta-btn.pta-btn {
+  --bg: var(--sf-cor);
+  --fg: var(--sf-on);
+  --sh: color-mix(in srgb, var(--sf-cor) 52%, #000);
+}
+@media (max-width: 767px) {
+  .sf__cta .pta-btn {
+    width: 100%;
+  }
+}
+
+/* movimento: entrada em cascata (forwards; o estado natural é o final) */
+@keyframes sf-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes sf-arte-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+.sf__h1,
+.sf__destaque,
+.sf__quando,
+.sf__cta {
+  animation: sf-in 0.6s var(--ease-saida, ease-out) forwards;
+}
+.sf__destaque {
+  animation-delay: 0.08s;
+}
+.sf__quando {
+  animation-delay: 0.14s;
+}
+.sf__cta {
+  animation-delay: 0.2s;
+}
+.sf-arte,
+.sf-disco {
+  animation: sf-arte-in 0.8s var(--ease-saida, ease-out) forwards;
+}
+:root[data-movimento='suave'] .sf__h1,
+:root[data-movimento='suave'] .sf__destaque,
+:root[data-movimento='suave'] .sf__quando,
+:root[data-movimento='suave'] .sf__cta {
+  animation-duration: 0.35s;
+}
+
+/* ---------- logo abaixo da dobra: o que saiu dela ---------- */
+.sf-intro {
+  padding-block: var(--g3);
+  padding-inline: var(--m, 24px);
+  color: var(--color-tinta);
+}
+.sf-intro__in {
+  display: grid;
+  justify-items: center;
+  gap: var(--g2);
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.sf-intro__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+.sf-intro__sub {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.sf-intro__selos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--g1) var(--g2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* link "Pular para o conteúdo" (aparece no foco): cor do professor, não ouro */
+body:has(.sf[data-prof='andre']) .pta-skip {
+  background: var(--color-azul);
+  color: #0c0b09;
+}
+body:has(.sf[data-prof='walter']) .pta-skip {
+  background: var(--color-vermelho);
+  color: #0c0b09;
+}
+body:has(.sf[data-prof='carlos']) .pta-skip {
+  background: var(--color-roxo);
+  color: #0c0b09;
+}
+
+/* v3 claro: a regra de botão do tema (fg = cor) não pode apagar o rótulo do botão da dobra */
+html[data-tema='claro'] .sf .pta-btn.pta-btn.pta-btn.pta-btn.pta-btn.pta-btn.pta-btn {
+  --bg: var(--sf-cor);
+  --fg: var(--sf-on);
+}
+
+/* v1: o cabeçalho é fixo (fora do fluxo): a dobra começa em 0 e ocupa a tela inteira, com folga do cabeçalho */
+.v1 .sf {
+  min-height: 100svh;
+  padding-top: calc(var(--header-h, 64px) + var(--g1));
+  padding-bottom: var(--g2);
+}
+
+/* v1: cabeçalho fixo (fora do fluxo) + folga de topo: o resto da dobra ocupa ~ 530 px */
+@media (min-width: 768px) {
+  .v1 .sf {
+    --sf-h: clamp(160px, calc(100svh - 530px), 440px);
+  }
+}

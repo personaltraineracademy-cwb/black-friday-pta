@@ -1,0 +1,282 @@
+/* ===== Páginas individuais da v3 · peças COMUNS (André · Walter · Carlos) =====
+ * Herdam o CSS da v3 (.v3, importado de app/v3/v3.css: botões, numerais, "1 × 2.", faixa, FAQ, títulos) e só
+ * acrescentam o que é específico das páginas individuais. Prefixo .so- (nada vaza para /v1/, /v2/ e /v3/).
+ * Tokens: 12 · 24 · 40 (--g1/--g2/--g3) · --m · --sec · --gut (app/globals.css). Nenhum valor de espaço novo.
+ */
+.v3.so {
+  --btn-radius: 0;
+  --color-ouro: var(--cor); /* dourado é só da página-mãe: nas individuais o acento é a cor do professor */
+  /* texto/numeral/desenho SOBRE a cor do produto: tinta escura nos 2 temas (4,5–4,9:1 em azul e vermelho;
+     o roxo só leva texto >= 24 px). No tema escuro é o próprio token; no claro o token vira papel, então fixa. */
+  --sobre-cor: var(--color-ink);
+  --mq-bg: var(--cor);
+  --mq-fg: var(--sobre-cor);
+}
+html[data-tema='claro'] .v3.so {
+  --sobre-cor: #0c0b09;
+}
+/* elementos do kit com cor assada: uma versão por tema (ElTema) */
+html:not([data-tema='claro']) .t-claro,
+html[data-tema='claro'] .t-escuro {
+  display: none !important;
+}
+.so-andre {
+  --cor: var(--color-azul);
+}
+.so-walter {
+  --cor: var(--color-vermelho);
+}
+.so-carlos {
+  --cor: var(--color-roxo);
+}
+
+/* barra de leitura: uma cor só (a do produto) */
+.v3.so .progresso {
+  background: var(--cor);
+}
+
+/* ---------- cabeçalho: a ÚNICA logo da dobra + dia/hora; botão a partir de 768 px ---------- */
+.so-bar {
+  position: relative;
+  z-index: 30;
+  background: var(--color-ink);
+  border-bottom: 1px solid var(--line);
+}
+.so-bar__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--g2);
+  min-height: var(--header-h);
+  padding-block: 12px;
+}
+.so-bar__logo {
+  display: flex;
+  align-items: center;
+  flex: none;
+  min-height: 48px;
+  line-height: 0;
+}
+.so-bar__logo .pta-logo {
+  --logo-h: 36px;
+}
+.so-bar__txt {
+  display: none;
+  margin: 0;
+  color: var(--color-papel);
+  white-space: nowrap;
+}
+.so-bar__btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .so-bar {
+    position: sticky;
+    top: 0;
+  }
+  .so-bar__logo .pta-logo {
+    --logo-h: 48px;
+  }
+  .so-bar__btn {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1280px) {
+  .so-bar__txt {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+/* botão do tema (ferramenta de teste): sai da frente do conteúdo do cabeçalho.
+   Celular: à direita (o cabeçalho só tem a logo). Desktop: o centro fica livre (logo à esquerda, botão à direita). */
+@media (max-width: 767px) {
+  html .pta-tema {
+    top: 14px;
+    left: auto;
+    right: var(--m);
+    transform: none;
+  }
+}
+@media (min-width: 768px) {
+  html .pta-tema {
+    top: 18px;
+  }
+}
+
+/* ---------- 1ª dobra: padrão (tela inteira, conteúdo centrado na altura) ---------- */
+.so-dobra {
+  position: relative;
+  padding-block: var(--g1);
+  overflow-x: clip;
+}
+.so-dobra h1 {
+  font-size: var(--h1);
+  letter-spacing: -0.004em;
+}
+.so-dobra .destaque {
+  margin-top: var(--g2);
+}
+.so-dobra .hero-cta {
+  margin-top: var(--g2);
+}
+@media (min-width: 768px) {
+  .so-dobra .hero-cta {
+    margin-top: var(--g3);
+  }
+}
+
+/* ---------- faixa de selos (costura abaixo da dobra) ---------- */
+.so-faixa {
+  position: relative;
+}
+
+/* ---------- enunciado (hero.sub) ---------- */
+.so-enun p,
+.so-a-enun p,
+.so-w-enun p,
+.so-c-enun p {
+  font-size: var(--text-lead);
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+}
+
+/* ---------- FAQ (as regras de .faq-lista vêm da v3) ---------- */
+.so-faq .titulo {
+  margin-bottom: var(--g3);
+}
+
+/* ---------- rodapé legal ---------- */
+.so-rodape {
+  padding-block: var(--sec) calc(var(--sec) + 80px);
+  background: var(--color-ink-2);
+  border-top: 1px solid var(--line);
+}
+.so-rodape__in {
+  display: grid;
+  gap: var(--g2);
+  align-items: start;
+}
+.so-rodape__txt {
+  display: grid;
+  gap: 8px;
+}
+.so-rodape__txt p {
+  max-width: 56ch;
+  color: var(--color-mute);
+}
+@media (min-width: 768px) {
+  .so-rodape {
+    padding-bottom: var(--sec);
+  }
+}
+@media (min-width: 1024px) {
+  .so-rodape__in {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--g3);
+  }
+}
+
+/* ---------- pop-up: seleção de noites (checkbox nativo, caixa desenhada) ---------- */
+.so-noites {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.so-check {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: 12px;
+  min-height: 48px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  cursor: pointer;
+}
+.so-check input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.so-check__box {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-papel);
+  border-radius: var(--radius-rotulo, 6px);
+}
+.so-check input:checked + .so-check__box {
+  background: var(--color-ouro);
+  border-color: var(--color-ouro);
+}
+.so-check input:checked + .so-check__box::after {
+  content: '';
+  width: 6px;
+  height: 11px;
+  margin-top: -2px;
+  border: solid var(--color-ink);
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.so-check input:focus-visible + .so-check__box {
+  outline: 3px solid var(--color-ouro);
+  outline-offset: 2px;
+}
+
+/* ---------- logo oficial da pós: o arquivo é branco; no papel vai para o preto (mono preto é permitido no manual) ---------- */
+html[data-tema='claro'] .so-logo-pos {
+  filter: brightness(0);
+}
+
+/* rodapé: o arquivo do logo é ouro; no papel vai para o preto (tom escuro do logo) */
+html[data-tema='claro'] .so-rodape .pta-logo {
+  filter: brightness(0);
+}
+/* rótulo mono dentro de seção .pta-paper: o token mute é claro (feito para o escuro); aqui segue a cor da seção */
+.pta-paper .so-rotulo,
+.so-w-rotulo {
+  color: currentColor;
+  opacity: 0.74;
+}
+
+html[data-tema='claro'] .v3.so {
+  --color-ouro: var(--cor);
+}
+/* botão do cabeçalho: cor do professor, texto em tinta (nos 2 temas) */
+.so-bar .pta-btn.pta-btn.pta-btn.pta-btn {
+  --bg: var(--cor);
+  --fg: #0c0b09;
+  --sh: color-mix(in srgb, var(--cor) 52%, #000);
+}
+
+/* ---- claro: o v3.css tem ouro literal em tarja/faixa/botão; nas individuais tudo vira a cor do professor ---- */
+html[data-tema='claro'] .v3.so {
+  --mq-bg: var(--cor);
+  --mq-fg: #0c0b09;
+}
+html[data-tema='claro'] .v3.so .destaque span,
+html[data-tema='claro'] .v3.so .placar .tarja::before {
+  background: var(--cor);
+}
+html[data-tema='claro'] .v3.so .pta-paper .pta-logo--ouro {
+  color: var(--cor);
+}
+html[data-tema='claro'] .v3.so .pta-btn.pta-btn.pta-btn.pta-btn:not(.pta-btn--ghost) {
+  --fg: var(--cor);
+  --sh: color-mix(in srgb, var(--cor) 55%, #000);
+}
+html[data-tema='claro'] .v3.so .so-bar .pta-btn.pta-btn.pta-btn.pta-btn {
+  --bg: var(--cor);
+  --fg: #0c0b09;
+}

@@ -1,0 +1,1358 @@
+/*
+ * SOLO · v2 (Dossiê) — páginas individuais André · Walter · Carlos. Escopo: .solo (+ .solo-<prof>) e classes .s2-*.
+ * Herda TUDO de app/v2/v2.css (tokens, tipografia, botão, acordeão, pop-up, movimento "imprimir/carimbar"); aqui só
+ * entram as 3 composições, as seções e o TEMA CLARO redesenhado.
+ *
+ * Tons nativos de seção: .v2-preto (escuro) e .v2-papel (claro). TEMA ESCURO = o Dossiê como foi desenhado
+ * (papel × preto). TEMA CLARO = outra paleta desenhada, não inversão: o preto vira "papel profundo" (#DED7C6) e o papel
+ * vira "papel claro" (#F3EFE6), com hairlines, botões e sombras redefinidos; só o rodapé e o cartão de ouro seguem
+ * escuros/ouro. Elementos do kit: 2 arquivos (-d superfície escura, -l clara) e o CSS mostra um por seção × tema.
+ * Cor do produto (--c): só em área grande (bloco, anel, fita, numeral >= 72 px), nunca em texto pequeno.
+ * Ouro (#CDA85E): só no cartão "Pague 1, leve 2" (fundo; texto sempre tinta).
+ * Sem 100vw em layout. Espaçamento 12·24·40, --m, --sec dos tokens da base.
+ */
+
+/* ============================== tokens por tom e por tema ============================== */
+.solo .v2 {
+  --s-bg: var(--ink);
+  --s-fg: var(--paper);
+  --s-fg2: var(--paper-2);
+  --s-rule: rgba(236, 231, 220, 0.3);
+}
+.solo .v2-preto {
+  --s-bg: var(--ink);
+  --s-fg: var(--paper);
+  --s-fg2: var(--paper-2);
+  --s-rule: rgba(236, 231, 220, 0.3);
+  --s-surf: #15130f; /* superfície 2 (cartões) */
+}
+.solo .v2-papel {
+  --s-bg: var(--paper);
+  --s-fg: var(--ink);
+  --s-fg2: var(--ink-2);
+  --s-rule: rgba(12, 11, 9, 0.34);
+  --s-surf: #e1dacb;
+}
+
+/* CLARO: o preto vira papel profundo, o papel vira papel claro. Os tokens do v2 são redefinidos dentro de cada tom,
+   então toda regra herdada da v2 (selos, acordeão, fios, botões) já cai na cor certa. */
+html[data-tema='claro'] .solo .v2 {
+  --s-bg: #f3efe6;
+  --s-fg: #0c0b09;
+  --s-fg2: #3a372f;
+  --s-rule: rgba(12, 11, 9, 0.34);
+}
+html[data-tema='claro'] .solo .v2-preto {
+  --ink: #ded7c6;
+  --paper: #0c0b09;
+  --paper-2: #3a372f;
+  --ink-2: #cfcabf;
+  --line-d: rgba(12, 11, 9, 0.3);
+  --line: rgba(236, 231, 220, 0.3);
+  --s-bg: #ded7c6;
+  --s-fg: #0c0b09;
+  --s-fg2: #3a372f;
+  --s-rule: rgba(12, 11, 9, 0.34);
+  --s-surf: #e9e3d4;
+}
+html[data-tema='claro'] .solo .v2-papel {
+  --paper: #f3efe6;
+  --s-bg: #f3efe6;
+  --s-rule: rgba(12, 11, 9, 0.34);
+  --s-surf: #e6dfd0;
+}
+/* o rodapé é a âncora escura nos dois temas */
+.solo .v2 .v2-rodape {
+  --s-bg: #0c0b09;
+  --s-fg: #ece7dc;
+}
+
+/* grão: o claro pede menos (papel sujo demais perde o premium) */
+html[data-tema='claro'] body:has(.solo)::after {
+  opacity: 0.22;
+}
+html[data-tema='claro'] .solo .v2-papel::after {
+  opacity: 0.1;
+}
+
+/* tipografia por tema: texto escuro em fundo claro parece mais pesado; maiúsculas condensadas pedem respiro */
+html[data-tema='claro'] .solo .v2-h2,
+html[data-tema='claro'] .solo .s2-h1,
+html[data-tema='claro'] .solo .v2-h1x {
+  letter-spacing: 0.012em;
+}
+html[data-tema='claro'] .solo .v2-mono {
+  letter-spacing: 0.1em;
+}
+html[data-tema='claro'] .solo .v2-declara,
+html[data-tema='claro'] .solo .s2-bio,
+html[data-tema='claro'] .solo .s2-passo p,
+html[data-tema='claro'] .solo .s2-nota {
+  letter-spacing: -0.004em;
+}
+
+/* ============================== base compartilhada ============================== */
+.solo :focus-visible {
+  outline: 3px solid var(--s-fg);
+  outline-offset: 3px;
+}
+.solo .s2-ouro :focus-visible {
+  outline-color: #0c0b09;
+}
+.s2-h2 {
+  max-width: 16ch;
+}
+.s2-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--s-fg2);
+}
+.solo .v2-declara {
+  max-width: 26em;
+}
+/* o quadradinho do selo (carimbo) leva a cor do produto: é área pequena e decorativa, o texto ao lado é tinta */
+.solo .v2-selos li::before {
+  background: var(--c);
+}
+.s2-intro {
+  padding-block: var(--sec);
+  border-top: 1px solid var(--s-rule);
+}
+
+/* ---------- elementos do kit: um arquivo por superfície ---------- */
+.s2-el {
+  display: block;
+  line-height: 0;
+}
+.s2-el img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.s2-el .el-d,
+.s2-el .el-l {
+  display: none;
+}
+.solo .v2-preto .s2-el .el-d,
+.solo .v2-papel .s2-el .el-l {
+  display: block;
+}
+html[data-tema='claro'] .solo .v2-preto .s2-el .el-d {
+  display: none;
+}
+html[data-tema='claro'] .solo .v2-preto .s2-el .el-l {
+  display: block;
+}
+
+/* elementos do kit como fundo CSS (não são <img>): --ud superfície escura, --ul clara */
+.s2-fx {
+  display: block;
+  background-repeat: no-repeat;
+  background-image: var(--ud);
+  pointer-events: none;
+}
+.solo .v2-papel .s2-fx {
+  background-image: var(--ul);
+}
+html[data-tema='claro'] .solo .v2-preto .s2-fx {
+  background-image: var(--ul);
+}
+html[data-tema='claro'] .solo .v2-papel .s2-fx {
+  background-image: var(--ul);
+}
+
+/* ---------- botões: sempre o inverso da superfície; sombra dura na cor do produto ---------- */
+.solo .v2 .pta-btn {
+  background: var(--s-fg);
+  color: var(--s-bg);
+  border-color: var(--s-fg);
+  box-shadow: 4px 4px 0 var(--c);
+}
+.solo .v2 .pta-btn:hover {
+  box-shadow: 6px 6px 0 var(--c);
+}
+.solo .v2 .pta-btn:active {
+  box-shadow: 0 0 0 var(--c);
+}
+.solo .v2 .pta-btn--bar {
+  box-shadow: 3px 3px 0 var(--c);
+}
+/* o botão da oferta fica logo abaixo do cartão de ouro (largura da coluna, como o da dobra) */
+.s2-ouro-cta {
+  margin-top: 40px;
+}
+.solo .v2 .s2-ouro-cta .pta-btn {
+  min-height: 60px;
+  white-space: nowrap;
+}
+/* rótulo do botão grande: 1 linha; largura total no celular */
+.s2-cta {
+  margin-top: 24px;
+  align-self: stretch;
+}
+@media (min-width: 600px) {
+  .s2-cta {
+    align-self: auto;
+  }
+}
+@media (max-width: 599px) {
+  .s2-cta .pta-btn,
+  .s2-ouro-cta .pta-btn,
+  .s2-final .v2-acao .pta-btn {
+    width: calc(100% - 4px);
+    justify-content: space-between;
+  }
+}
+
+/* ============================== cabeçalho (cor da dobra) ============================== */
+.solo .v2 .s2-barra {
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 1px solid var(--s-rule);
+}
+.solo .v2 .s2-barra .pta-logo {
+  color: var(--paper);
+}
+.s2-barra-d,
+.s2-barra-t {
+  color: var(--paper-2);
+  white-space: nowrap;
+}
+.s2-barra-t {
+  display: none;
+}
+.s2-barra-btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .s2-barra {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 24px;
+  }
+  .s2-barra-d {
+    text-align: right;
+  }
+  .s2-barra-btn {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1280px) {
+  .s2-barra-d {
+    display: none;
+  }
+  .s2-barra-t {
+    display: block;
+    text-align: right;
+  }
+}
+
+/* ============================== 1ª DOBRA (três composições) ============================== */
+.s2-hero {
+  --t1h: clamp(2.25rem, 0.8rem + 3.2vw, 3.5rem);
+  --k: 560px; /* altura que o texto + cabeçalho tomam (celular); a imagem usa o resto da tela */
+  padding-top: 24px;
+  padding-bottom: 40px;
+  overflow: clip;
+}
+@media (min-width: 768px) {
+  .s2-hero {
+    --k: 470px;
+  }
+}
+.s2-htxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.s2-h1 {
+  font: 900 var(--t1h) / 0.96 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.003em;
+  text-wrap: balance;
+  max-width: 21em;
+  text-box: trim-both cap alphabetic;
+}
+.s2-quando {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.s2-destaque {
+  font: 700 var(--t6) / 1.4 var(--f-t);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  max-width: 30em;
+  text-box: trim-both cap alphabetic;
+}
+.s2-data {
+  display: block;
+  margin-top: 12px;
+  color: var(--s-fg2);
+}
+.solo .v2 .s2-cta .pta-btn {
+  min-height: 60px;
+  white-space: nowrap;
+}
+
+/* ---------- André · O ÂNGULO: goniômetro atrás do busto, o fulcro nos ombros; tudo no eixo central ---------- */
+.s2a-hero {
+  --ov: 0.2; /* fração da altura do retrato que o título cobre (a camisa preta é fundo para o texto claro) */
+  --hv: calc(88svh - 380px); /* celular: o botão termina antes de 88% da tela (zona do polegar) */
+  --sw: min(100%, 560px, calc(max(200px, var(--hv)) / (1.1 * (1 - var(--ov)))));
+}
+@media (min-width: 768px) {
+  .s2a-hero {
+    --hv: calc(100svh - 470px);
+  }
+}
+.s2a-hero .v2-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.s2a-stage {
+  position: relative;
+  width: var(--sw);
+  aspect-ratio: 1 / 1.1;
+  container-type: inline-size;
+  margin-inline: auto;
+}
+.s2a-gonio {
+  position: absolute;
+  z-index: 0;
+  inset: -24px -34cqw 0 -34cqw;
+  --gk: 1.5; /* largura do goniômetro / largura do retrato */
+  background-size: calc(var(--gk) * 100cqw) auto;
+  /* o fulcro (fx, fy: fração do arquivo) cai no centro do retrato, a 0,52 da largura de cima para baixo (ombros) */
+  background-position:
+    calc(34cqw + 50cqw - var(--fx) * var(--gk) * 100cqw)
+    calc(24px + 0.52 * 100cqw - var(--fy) * var(--gk) * var(--gh) / var(--gw) * 100cqw);
+}
+.s2a-foto {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 66%, transparent 99%);
+  mask-image: linear-gradient(180deg, #000 0, #000 66%, transparent 99%);
+}
+.s2a-hero .s2-htxt {
+  margin-top: calc(var(--sw) * 1.1 * (0 - var(--ov)));
+}
+/* claro: o título não pode ficar sobre a camisa preta (texto escuro sobre preto): sem sobreposição */
+html[data-tema='claro'] .s2a-hero {
+  --ov: 0;
+}
+html[data-tema='claro'] .s2a-hero .s2-htxt {
+  margin-top: 24px;
+}
+html[data-tema='claro'] .s2a-foto {
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 92%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0, #000 92%, transparent 100%);
+}
+
+/* ---------- Walter · A MEDIDA: fita em pé ao lado do retrato, sobre um bloco da cor do produto ---------- */
+.s2w-hero {
+  --hv: calc(88svh - 400px);
+  --pw: min(100%, calc(max(200px, var(--hv)) / 0.95)); /* largura do retrato (a altura da janela manda) */
+}
+@media (min-width: 768px) {
+  .s2w-hero {
+    --hv: calc(100svh - 510px);
+  }
+}
+.s2w-col {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+.s2w-fig {
+  position: relative;
+  margin-left: 56px;
+}
+.s2w-stage {
+  position: relative;
+  z-index: 1;
+  width: var(--pw);
+  aspect-ratio: 1 / 0.95;
+  margin-left: auto;
+}
+.s2w-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.s2w-fita {
+  position: absolute;
+  left: -56px;
+  top: 0;
+  bottom: 0;
+  width: auto;
+}
+.s2w-fita img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+.s2w-bloco {
+  position: absolute;
+  inset: 30% 0 0 0;
+  background: var(--c);
+  border-radius: 10px 10px 0 0;
+}
+/* o carimbo da noite (tinta preta) só aparece onde o bloco vermelho é largo; no celular o retrato ocupa tudo */
+.s2w-carimbo {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  left: 3%;
+  top: 36%;
+  width: min(34%, 280px);
+}
+@media (min-width: 700px) {
+  .s2w-carimbo {
+    display: block;
+  }
+}
+.s2w-hero .s2-htxt {
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 32px;
+}
+.s2w-hero .s2-quando {
+  align-items: flex-start;
+}
+.s2w-hero .s2-cta {
+  align-self: stretch;
+}
+@media (min-width: 600px) {
+  .s2w-hero .s2-cta {
+    align-self: flex-start;
+  }
+}
+.s2w-hero .s2-h1 {
+  max-width: 20em;
+}
+
+/* ---------- Carlos · A VISÃO 360°: anel de 4 setores + grade polar; faixa escura (imagem) e clara (texto) ---------- */
+.s2c-hero {
+  padding: 0;
+  --hv: calc(88svh - 430px);
+  --sw: min(100%, 560px, calc(max(200px, var(--hv)) / 0.95));
+  overflow-x: clip;
+}
+@media (min-width: 768px) {
+  .s2c-hero {
+    --hv: calc(100svh - 540px);
+  }
+}
+.s2c-hero {
+  justify-content: flex-start;
+}
+.s2c-topo {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 24px;
+  overflow: clip;
+}
+.s2c-stage {
+  position: relative;
+  width: var(--sw);
+  aspect-ratio: 1 / 0.95;
+  margin-inline: auto;
+  container-type: inline-size;
+}
+.s2c-polar {
+  position: absolute;
+  z-index: 0;
+  inset: -24px -60cqw 0 -60cqw;
+  opacity: 0.5;
+  background-size: 170cqw auto;
+  background-position: 50% calc(24px + 46cqw - 85cqw);
+}
+.s2c-anel {
+  position: absolute;
+  z-index: 0;
+  inset: -24px 0 0 0;
+  background-size: 100cqw auto;
+  background-position: 50% calc(24px + 46cqw - 50cqw);
+}
+.s2c-foto {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.s2c-base {
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+/* ============================== COMO FUNCIONA ============================== */
+.s2-passos {
+  margin-top: clamp(48px, 6vw, 80px);
+  display: grid;
+  gap: 0;
+}
+.s2-passo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+  padding-block: 32px 36px;
+  border-top: 1px solid var(--s-rule);
+  align-content: start;
+}
+.s2-n {
+  font: 900 var(--t2) / 0.8 var(--f-d);
+  font-variant-numeric: tabular-nums;
+  min-width: 0.55em;
+  margin-left: -0.035em;
+  color: var(--s-fg);
+}
+.s2-passo h3 {
+  font: 900 var(--t5) / 1.05 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding-top: 0.15em;
+  text-wrap: wrap;
+}
+.s2-passo p {
+  margin-top: 12px;
+  max-width: 40ch;
+}
+@media (min-width: 1024px) {
+  .s2-como .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .s2-como .s2-h2 {
+    grid-column: 1 / span 5;
+  }
+  .s2-como .s2-passos {
+    grid-column: 1 / -1;
+  }
+}
+
+/* André: 3 colunas com o numeral na cor do produto (cota: fio grosso + travessão) */
+@media (min-width: 768px) {
+  .solo-andre .s2-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-andre .s2-passo {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+    border-top: 2px solid var(--s-fg);
+    padding-top: 24px;
+  }
+}
+.solo-andre .s2-n {
+  color: var(--c);
+}
+
+/* Walter: placar — cada passo é uma linha com o numeral num bloco da cor do produto */
+.solo-walter .s2-passos {
+  row-gap: 12px;
+}
+.solo-walter .s2-passo {
+  grid-template-columns: 88px minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: center;
+  padding: 20px 24px 20px 20px;
+  border: 2px solid var(--s-fg);
+  border-radius: 10px;
+}
+.solo-walter .s2-n {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  margin: 0;
+  background: var(--c);
+  color: #0c0b09;
+  border-radius: 6px;
+  font-size: 4.5rem;
+  line-height: 1;
+  padding-top: 0.06em;
+}
+@media (min-width: 1024px) {
+  .solo-walter .s2-como .v2-wrap {
+    display: block;
+  }
+  .solo-walter .s2-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-walter .s2-passo {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+    align-items: start;
+    padding: 24px;
+  }
+}
+
+/* Carlos: linha do tempo — anel com o numeral e um fio que liga os passos */
+.solo-carlos .s2-passos {
+  position: relative;
+}
+.solo-carlos .s2-passo {
+  grid-template-columns: 72px minmax(0, 1fr);
+  column-gap: 24px;
+  border-top: 0;
+  padding-block: 0 40px;
+  position: relative;
+}
+.solo-carlos .s2-passo::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 72px;
+  bottom: 0;
+  width: 2px;
+  background: var(--c);
+}
+.solo-carlos .s2-passo:last-child::before {
+  display: none;
+}
+.solo-carlos .s2-n {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  border: 3px solid var(--c);
+  border-radius: 50%;
+  font-size: 2.75rem;
+  line-height: 1;
+  padding-top: 0.06em;
+  color: var(--s-fg);
+}
+@media (min-width: 1024px) {
+  .solo-carlos .s2-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-carlos .s2-passo {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+    padding-bottom: 0;
+  }
+  .solo-carlos .s2-passo::before {
+    left: 72px;
+    right: calc(-1 * var(--gut));
+    top: 35px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+}
+
+/* ============================== O QUE VOCÊ VAI VER AO VIVO ============================== */
+.s2-itens {
+  margin-top: clamp(48px, 6vw, 72px);
+  display: grid;
+  gap: 0;
+}
+.s2-itens li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: baseline;
+  padding-block: 24px 26px;
+  border-top: 1px solid var(--s-rule);
+}
+.s2-ix {
+  color: var(--s-fg2);
+}
+.s2-itens b,
+.s2-lista b {
+  font: 700 var(--t5) / 1.2 var(--f-t);
+  letter-spacing: -0.005em;
+  max-width: 30ch;
+}
+@media (min-width: 768px) {
+  .solo-andre .s2-itens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-andre .s2-itens li {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+    padding-block: 24px 40px;
+    border-top: 2px solid var(--s-fg);
+  }
+}
+/* Walter: ficha — quadrado de cor do produto como "feito" */
+.solo-walter .s2-itens li {
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+}
+.solo-walter .s2-itens .s2-ix {
+  display: none;
+}
+.solo-walter .s2-itens li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-top: 0.3em;
+  background: var(--c);
+  border-radius: 4px;
+}
+@media (min-width: 1024px) {
+  .solo-walter .s2-noite .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-walter .s2-noite .s2-h2 {
+    grid-column: 1 / span 4;
+  }
+  .solo-walter .s2-itens {
+    grid-column: 6 / -1;
+    margin-top: 0;
+  }
+}
+/* Carlos: cartões com raio (conteúdo ganha a curva) */
+@media (min-width: 768px) {
+  .solo-carlos .s2-itens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gut);
+  }
+}
+.solo-carlos .s2-itens li {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 16px;
+  padding: 28px 28px 32px;
+  border: 2px solid var(--s-fg);
+  border-radius: 16px;
+  background: var(--s-surf);
+}
+.solo-carlos .s2-itens .s2-ix {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--c);
+  color: #0c0b09;
+}
+
+/* ============================== PROFESSOR + PÓS ============================== */
+.s2-prof {
+  display: grid;
+  gap: 40px;
+}
+.s2-prof-fig {
+  position: relative;
+  margin: 0;
+}
+.s2-prof-foto {
+  position: relative;
+  aspect-ratio: 4 / 4.4;
+  background: var(--c);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.s2-prof-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%;
+}
+.s2-bio {
+  font: 500 var(--t6) / 1.55 var(--f-t);
+  max-width: 52ch;
+  margin-top: 28px;
+  letter-spacing: -0.009em;
+}
+.s2-pos {
+  position: relative;
+}
+.s2-pos-itens {
+  margin-top: clamp(40px, 5vw, 64px);
+  border-top: 1px solid var(--s-rule);
+}
+.s2-pos-itens li {
+  padding-block: 22px 24px;
+  border-bottom: 1px solid var(--s-rule);
+  font: 700 var(--t6) / 1.4 var(--f-t);
+  letter-spacing: -0.005em;
+}
+.s2-pos-deco {
+  width: min(100%, 420px);
+  margin-top: 48px;
+}
+
+/* André: retrato à esquerda (fio de prumo ao lado), pós com os planos anatômicos */
+.s2-profpos .s2-pos {
+  margin-top: clamp(80px, 10vw, 144px);
+}
+.solo-andre .s2-prof-deco {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+}
+.solo-andre .s2-prof-deco img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+@media (min-width: 768px) {
+  .solo-andre .s2-prof-fig {
+    padding-right: 56px;
+  }
+  .solo-andre .s2-prof-deco {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .solo-andre .s2-prof {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: end;
+  }
+  .solo-andre .s2-prof-fig {
+    grid-column: 1 / span 5;
+  }
+  .solo-andre .s2-prof-txt {
+    grid-column: 7 / -1;
+    padding-bottom: 8px;
+  }
+  .solo-andre .s2-pos {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .solo-andre .s2-pos .s2-h2 {
+    grid-column: 1 / span 5;
+    grid-row: 1;
+  }
+  .solo-andre .s2-pos-itens {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+  }
+  .solo-andre .s2-pos-deco {
+    grid-column: 8 / -1;
+    grid-row: 1 / span 2;
+    width: 100%;
+    margin-top: 0;
+    align-self: center;
+  }
+}
+
+/* Walter: nome gigante e retrato à direita; pós em preto com a anilha */
+.solo-walter .s2-prof-txt .s2-h2 {
+  font-size: var(--t1);
+  max-width: 8ch;
+}
+.solo-walter .s2-prof-fig {
+  order: 2;
+}
+@media (min-width: 1024px) {
+  .solo-walter .s2-prof {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: center;
+  }
+  .solo-walter .s2-prof-txt {
+    grid-column: 1 / span 6;
+    order: 1;
+  }
+  .solo-walter .s2-prof-fig {
+    grid-column: 8 / -1;
+  }
+  .solo-walter .s2-pos {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: center;
+  }
+  .solo-walter .s2-pos .s2-h2 {
+    grid-column: 1 / span 6;
+    grid-row: 1;
+  }
+  .solo-walter .s2-pos-itens {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+  }
+  .solo-walter .s2-pos-deco {
+    grid-column: 8 / -1;
+    grid-row: 1 / span 2;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* Carlos: retrato em círculo; pós em duas colunas */
+.solo-carlos .s2-prof-foto {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  max-width: 420px;
+}
+@media (min-width: 1024px) {
+  .solo-carlos .s2-prof {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: center;
+  }
+  .solo-carlos .s2-prof-fig {
+    grid-column: 1 / span 4;
+  }
+  .solo-carlos .s2-prof-txt {
+    grid-column: 6 / -1;
+  }
+  .solo-carlos .s2-pos {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-carlos .s2-pos .s2-h2 {
+    grid-column: 1 / span 6;
+    max-width: none;
+  }
+  .solo-carlos .s2-pos-itens {
+    grid-column: 1 / span 7;
+  }
+}
+
+/* ============================== PAGUE 1, LEVE 2 (cartão chapado na cor do professor; dourado só na mãe) ====== */
+.solo-andre .s2-ouro {
+  --prod: var(--color-azul);
+}
+.solo-walter .s2-ouro {
+  --prod: var(--color-vermelho);
+}
+.solo-carlos .s2-ouro {
+  --prod: var(--color-roxo);
+}
+.s2-ouro {
+  background: var(--prod);
+  color: #0c0b09;
+  border-radius: 16px;
+  padding: clamp(28px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  position: relative;
+}
+.s2-ouro .v2-h2,
+.s2-ouro p,
+.s2-ouro b {
+  color: #0c0b09;
+}
+.s2-ouro-intro {
+  margin-top: 28px;
+  font: 700 var(--t6) / 1.4 var(--f-t);
+}
+.s2-opcoes {
+  margin-top: 16px;
+  border-top: 1px solid rgba(12, 11, 9, 0.5);
+}
+.s2-opcoes li {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding-block: 18px 20px;
+  border-bottom: 1px solid rgba(12, 11, 9, 0.5);
+}
+.s2-opcoes .s2-l {
+  width: 2ch;
+  flex: none;
+  color: #0c0b09;
+}
+.s2-opcoes b {
+  font: 700 var(--t5) / 1.15 var(--f-t);
+  letter-spacing: -0.005em;
+}
+.s2-nota {
+  margin-top: 20px;
+  font: 500 var(--t6) / 1.5 var(--f-t);
+  max-width: 48ch;
+  color: #0c0b09;
+}
+.s2-ouro-fig {
+  display: flex;
+  align-items: flex-end;
+}
+.s2-ouro-el {
+  width: min(100%, 420px);
+}
+.s2-ouro .s2-h2 {
+  max-width: 14ch;
+}
+@media (min-width: 1024px) {
+  .solo-andre .s2-ouro,
+  .solo-walter .s2-ouro {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: stretch;
+  }
+  .solo-andre .s2-ouro-txt {
+    grid-column: 1 / span 6;
+  }
+  .solo-andre .s2-ouro-fig {
+    grid-column: 8 / -1;
+    justify-content: center;
+  }
+  .solo-walter .s2-ouro-fig {
+    grid-column: 1 / span 6;
+    order: 1;
+    justify-content: center;
+  }
+  .solo-walter .s2-ouro-txt {
+    grid-column: 8 / -1;
+    order: 2;
+  }
+}
+.solo-carlos .s2-ouro {
+  border-radius: 28px;
+}
+@media (min-width: 1024px) {
+  .solo-carlos .s2-ouro {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-carlos .s2-ouro-txt {
+    grid-column: 1 / span 7;
+  }
+  .solo-carlos .s2-ouro-fig {
+    grid-column: 9 / -1;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .solo-carlos .s2-ouro-el {
+    width: 100%;
+  }
+}
+.solo-walter .s2-ouro-el {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .solo-walter .s2-ouro-fig {
+    align-items: center;
+  }
+}
+
+/* ============================== BÔNUS + PROVA ============================== */
+.s2-lista {
+  margin-top: clamp(48px, 6vw, 72px);
+  display: grid;
+}
+.s2-lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: baseline;
+  padding-block: 26px 28px;
+  border-top: 1px solid var(--s-rule);
+}
+.s2-prova {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: 24px;
+  border-top: 2px solid var(--s-fg);
+}
+.s2-prova p {
+  font: 700 var(--t6) / 1.45 var(--f-t);
+  max-width: 44ch;
+  letter-spacing: -0.005em;
+}
+@media (min-width: 1024px) {
+  .solo-andre .s2-bonus .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .solo-andre .s2-bonus .s2-h2 {
+    grid-column: 1 / span 5;
+  }
+  .solo-andre .s2-lista {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+  .solo-andre .s2-prova {
+    grid-column: 7 / -1;
+  }
+  .solo-walter .s2-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gut);
+  }
+}
+/* Walter: ladrilhos com borda (placar) */
+@media (min-width: 768px) {
+  .solo-walter .s2-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gut);
+  }
+}
+.solo-walter .s2-lista li {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 16px;
+  border: 2px solid var(--s-fg);
+  border-radius: 10px;
+  padding: 24px 24px 28px;
+}
+/* Carlos: marcador redondo na cor do produto */
+.solo-carlos .s2-lista li {
+  grid-template-columns: 44px minmax(0, 1fr);
+}
+.solo-carlos .s2-lista .s2-ix {
+  display: none;
+}
+.solo-carlos .s2-lista li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--c);
+  margin-top: 0.3em;
+}
+
+/* ============================== PERGUNTAS ============================== */
+.solo .s2-faq .v2-perguntas {
+  --acc-line: var(--s-fg);
+  --acc-line-soft: var(--s-rule);
+  --acc-text: var(--s-fg);
+  margin-top: clamp(48px, 6vw, 72px);
+}
+.solo .s2-faq .pta-acc__item > summary:hover {
+  background: color-mix(in srgb, var(--s-fg) 8%, transparent);
+}
+.solo .s2-faq .pta-acc__icon::before,
+.solo .s2-faq .pta-acc__icon::after {
+  background: var(--s-fg);
+}
+.solo .s2-faq .pta-acc__item {
+  border-color: var(--s-rule);
+}
+.solo .s2-faq .pta-acc {
+  border-top-color: var(--s-fg);
+}
+.solo .s2-faq .pta-acc__body {
+  color: var(--s-fg);
+}
+@media (min-width: 1024px) {
+  .s2-faq-in {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .s2-faq-in .s2-h2 {
+    grid-column: 1 / span 4;
+  }
+  .s2-faq-in .v2-perguntas {
+    grid-column: 5 / -1;
+    margin-top: 0;
+  }
+}
+
+/* ============================== FECHO + RODAPÉ ============================== */
+.s2-final {
+  position: relative;
+  overflow: clip;
+  padding-bottom: calc(var(--sec) + 24px);
+}
+.s2-final .v2-wrap {
+  position: relative;
+}
+.s2-final-deco {
+  position: absolute;
+  right: 0;
+  bottom: calc(-1 * var(--sec) - 24px);
+  width: min(46%, calc((var(--sec) + 24px) * 2));
+  opacity: 0.9;
+  pointer-events: none;
+}
+.s2-final .s2-h1x {
+  position: relative;
+  z-index: 1;
+}
+.s2-final .v2-acao {
+  position: relative;
+  z-index: 1;
+}
+.solo .s2-rodape .s2-rod-txt p + p {
+  margin-top: 12px;
+}
+.solo .s2-rodape .pta-logo {
+  color: #ece7dc;
+}
+
+/* ============================== barra de baixo (celular) ============================== */
+.solo .v2 .pta-sticky {
+  background: var(--s-bg);
+  border-top: 1px solid var(--s-rule);
+}
+
+/* ============================== pop-up: formulário curto ============================== */
+.s2-noites {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+.s2-chk {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font: 500 var(--t7) / 1.4 var(--f-t);
+  letter-spacing: 0;
+  cursor: pointer;
+  min-height: 44px;
+}
+.s2-chk input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: #0c0b09;
+}
+.s2-chk-box {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  background: #0c0b09;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+}
+.s2-chk-box svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: #ece7dc;
+  stroke-width: 2;
+}
+.s2-chk--on {
+  font-weight: 700;
+  cursor: default;
+}
+
+/* botão de tema (ferramenta de teste): no topo, logo abaixo da barra, no canto direito (a barra não tem vão livre) */
+@media (min-width: 768px) {
+  body:has(.solo) .pta-tema {
+    top: 78px;
+    left: auto;
+    right: 16px;
+    transform: none;
+  }
+}
+@media (min-width: 1024px) {
+  .solo-andre .s2-bonus .s2-h2 {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+}
+
+/* ============================== MOVIMENTO DA DOBRA (linguagem do Dossiê: imprimir / carimbar) ==============================
+   Só transform / opacity / clip-path, uma vez, <= 1 s, `backwards` (nunca `both`); nada no H1 nem no botão.
+   Estado natural do CSS = estado final; 'suave' encurta (--rise, --t-print) e 'parado' desliga (regra do v2.css). */
+@keyframes s2-carimbo {
+  from {
+    opacity: 0;
+    transform: scale(1.3) rotate(-5deg);
+  }
+}
+@keyframes s2-fade {
+  from {
+    opacity: 0;
+  }
+}
+.s2a-gonio {
+  animation: v2-draw 1s var(--ease) 0.1s backwards;
+}
+.s2a-foto {
+  animation: v2-emerge 0.8s var(--ease) 0.2s backwards;
+}
+.s2w-bloco {
+  animation: v2-draw 0.9s var(--ease) backwards;
+}
+.s2w-foto {
+  animation: v2-emerge 0.8s var(--ease) 0.25s backwards;
+}
+.s2w-fita {
+  animation: v2-print 0.9s var(--ease) 0.1s backwards;
+}
+.s2w-carimbo {
+  animation: s2-carimbo 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) 0.7s backwards;
+}
+.s2c-anel {
+  animation: v2-draw 1s var(--ease) 0.1s backwards;
+}
+.s2c-polar {
+  animation: s2-fade 1.1s var(--ease) backwards;
+}
+.s2c-foto {
+  animation: v2-emerge 0.8s var(--ease) 0.2s backwards;
+}
+.s2-quando {
+  animation: v2-emerge 0.7s var(--ease) 0.35s backwards;
+}
+:root[data-movimento='parado'] .solo *,
+:root[data-movimento='parado'] .solo *::before,
+:root[data-movimento='parado'] .solo *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ============================== MOVIMENTO LIGADO À ROLAGEM (CSS `view()`, zero JS) ==============================
+   Mesma linguagem do Dossiê: os numerais "imprimem" de cima para baixo ao entrar; o retrato da dobra afunda de leve
+   ao rolar; o cartão de ouro, os retratos e os elementos do kit sobem 28 px. `forwards`: antes da faixa, a peça já
+   está no estado final e visível. Onde `view()` não existe (Firefox, iOS < 26) tudo fica parado no estado final. */
+@keyframes s2-rise {
+  from {
+    opacity: 0.4;
+    transform: translateY(var(--rise));
+  }
+}
+@keyframes s2-sink {
+  to {
+    transform: translateY(5%);
+  }
+}
+@supports (animation-timeline: view()) {
+  .s2-n {
+    animation: v2-print linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 90%;
+  }
+  .s2-ouro,
+  .s2-prof-foto,
+  .s2-pos-deco,
+  .s2-final-deco {
+    animation: s2-rise linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  :root[data-movimento='total'] .s2a-stage,
+  :root[data-movimento='total'] .s2w-stage,
+  :root[data-movimento='total'] .s2c-stage {
+    animation: s2-sink linear forwards;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 70vh;
+  }
+}

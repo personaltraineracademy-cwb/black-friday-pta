@@ -1,0 +1,397 @@
+/* ===== Walter · Bodybuilding e Estética Corporal · vermelho · "A ANILHA" =====
+ * Assimétrico: texto à esquerda, palco à direita (a anilha sangra pela borda). Seções alternam papel e preto.
+ * Só tokens (12 · 24 · 40 · --m · --sec · --gut). Tema claro: tokens trocam; exceções em html[data-tema='claro'].
+ */
+
+/* trilha única do celular: minmax(0, 1fr) (sem isso o conteúdo largo alarga a coluna e corta o texto em 320 px) */
+.so-w-oferta__in,
+.so-w-pos__in,
+.so-w-prof__in,
+.so-w-passos,
+.so-w-bonus__grade,
+.so-w-ficha {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* ---------- DOBRA ---------- */
+.so-w-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--g3);
+  align-items: center;
+}
+.so-w-hero h1 {
+  --h1: clamp(2.25rem, 1.2rem + 3.6vw, 4.5rem);
+  max-width: 14em;
+}
+.so-w-txt {
+  display: grid;
+  justify-items: start;
+}
+.so-w-stage {
+  position: relative;
+  width: min(100%, 460px, calc((100svh - var(--header-h) - 560px) * 1.3));
+  min-width: 260px;
+  aspect-ratio: 1 / 0.78;
+  margin-inline: auto 0;
+}
+.so-w-anilha {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 84%;
+  height: auto;
+}
+.so-w-barra {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: 9%;
+  width: 120%;
+  max-width: none;
+  height: auto;
+}
+.so-w-foto {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: 52%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 78%, transparent 100%);
+}
+.v3 .so-w-hero .destaque span {
+  display: inline;
+  white-space: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-wrap: balance;
+}
+@media (max-width: 767px) {
+  .so-w-stage {
+    width: min(100%, 460px, calc((100svh - var(--header-h) - 470px) * 1.3));
+  }
+}
+@media (min-width: 1024px) {
+  .so-w-hero {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .so-w-txt {
+    grid-column: 1 / 8;
+    grid-row: 1;
+  }
+  .so-w-stage {
+    grid-column: 7 / 13;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1 / 0.84;
+    margin-right: calc(-1 * var(--m)); /* a anilha encosta na borda da tela */
+  }
+  .so-w-anilha {
+    right: -3%;
+    width: 80%;
+  }
+  .so-w-foto {
+    width: 46%;
+    right: 8%;
+  }
+}
+
+/* ---------- ENUNCIADO ---------- */
+.so-w-enun p {
+  max-width: 28ch;
+}
+@media (min-width: 1024px) {
+  .so-w-enun .wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .so-w-enun p {
+    grid-column: 5 / 12;
+    max-width: 32ch;
+  }
+}
+
+/* ---------- COMO FUNCIONA: barra + 3 anéis ---------- */
+.so-w-como .titulo {
+  margin-bottom: var(--g2);
+}
+.so-w-linha {
+  width: min(100%, 560px);
+  height: auto;
+  margin-bottom: var(--g3);
+}
+.so-w-passos {
+  display: grid;
+  gap: var(--g3);
+}
+.so-w-passo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--g2);
+  align-items: start;
+}
+.so-w-anel {
+  width: 88px;
+  height: 88px;
+  max-width: none;
+}
+.so-w-passo h3 {
+  margin-bottom: var(--g1);
+}
+.so-w-passo p {
+  max-width: 30ch;
+}
+@media (min-width: 1024px) {
+  .so-w-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--g3);
+  }
+  .so-w-passo {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--g2);
+  }
+  .so-w-anel {
+    width: 112px;
+    height: 112px;
+  }
+}
+
+/* ---------- O QUE VER AO VIVO: ficha com aba vermelha ---------- */
+.so-w-noite .titulo {
+  margin-bottom: var(--g3);
+}
+.so-w-ficha {
+  display: grid;
+  gap: 12px;
+}
+.so-w-ficha li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--g2);
+  padding: var(--g2) var(--g2) var(--g2) 0;
+  border: 1px solid var(--line);
+  border-left: 0;
+}
+.so-w-ficha__n {
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  background: var(--cor);
+  color: var(--sobre-cor);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.so-w-ficha__t {
+  max-width: 40ch;
+  font-weight: 700;
+  line-height: 1.3;
+}
+@media (min-width: 1024px) {
+  .so-w-ficha {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gut);
+  }
+}
+
+/* ---------- PROFESSOR ---------- */
+.so-w-prof__in {
+  display: grid;
+  gap: var(--g3);
+  align-items: center;
+}
+.so-w-prof__cor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: clamp(300px, 86vw, 440px);
+  background: var(--cor);
+  overflow: clip;
+}
+.so-w-prof__cor img {
+  height: 94%;
+  width: auto;
+  max-width: none;
+}
+.so-w-rotulo {
+  margin-bottom: var(--g1);
+}
+.so-w-prof h2 {
+  margin-bottom: var(--g2);
+}
+.so-w-bio {
+  max-width: 36ch;
+}
+.so-w-fita {
+  width: min(100%, 460px);
+  height: auto;
+  margin-top: var(--g3);
+}
+@media (min-width: 1024px) {
+  .so-w-prof__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .so-w-prof__cor {
+    grid-column: 1 / 6;
+    height: clamp(420px, 36vw, 520px);
+  }
+  .so-w-prof__txt {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ---------- PÓS ---------- */
+.so-w-pos__in {
+  display: grid;
+  gap: var(--g3);
+}
+.so-w-pos .titulo {
+  margin-bottom: var(--g2);
+}
+.so-logo-pos {
+  width: min(100%, 440px);
+  height: auto;
+}
+.so-w-cargas li {
+  position: relative;
+  padding: var(--g2) 0 var(--g2) calc(14px + var(--g2));
+  border-bottom: 1px solid var(--line);
+}
+.so-w-cargas li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(var(--g2) + 0.42em);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cor);
+}
+.so-w-cargas {
+  border-top: 1px solid var(--color-tinta);
+}
+@media (min-width: 1024px) {
+  .so-w-pos__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .so-w-pos__in > div {
+    grid-column: 1 / 6;
+  }
+  .so-w-cargas {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ---------- OFERTA (dourado): o diagrama pague 1 → leve 2 e a escolha ---------- */
+.so-w-oferta__in {
+  display: grid;
+  gap: var(--g3);
+  align-items: center;
+}
+.so-w-pilha {
+  width: min(70%, 320px);
+  height: auto;
+}
+.v3 .so-w-oferta h2 {
+  margin-top: 0;
+  margin-bottom: var(--g2);
+}
+@media (min-width: 1024px) {
+  .so-w-oferta__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .so-w-pilha {
+    grid-column: 1 / 5;
+    width: 100%;
+  }
+  .so-w-oferta__txt {
+    grid-column: 6 / 13;
+  }
+}
+
+/* ---------- BÔNUS: 4 cartões ---------- */
+.so-w-bonus__grade {
+  display: grid;
+  gap: var(--g2);
+}
+.so-w-bonus__grade li {
+  display: grid;
+  align-content: start;
+  gap: var(--g1);
+  padding: var(--g2);
+  border: 2px solid currentColor;
+}
+.so-w-bonus__grade .n {
+  font-weight: 700;
+}
+.so-w-bonus__grade .t {
+  font: 900 clamp(1.375rem, 1.1rem + 1.2vw, 2rem) / 1.08 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .so-w-bonus__grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gut);
+  }
+}
+
+/* ---------- PROVA: faixa de cor ---------- */
+.so-w-prova {
+  padding-block: var(--sec);
+  background: var(--cor);
+  color: var(--sobre-cor);
+}
+.so-w-prova p {
+  max-width: 18ch;
+  font: 900 var(--text-h2) / 1 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* ---------- FINAL: painel de cor, frase e botão ---------- */
+.v3.so .so-w-final {
+  background: var(--cor);
+  color: var(--sobre-cor);
+  border-top: 0;
+}
+.so-w-final__in {
+  display: grid;
+  justify-items: start;
+}
+.v3 .so-w-final h2 {
+  max-width: 14ch;
+}
+
+/* ---------- MOVIMENTO (uma vez, ao carregar; estado natural = final) ---------- */
+@keyframes so-w-roda {
+  from {
+    transform: rotate(-40deg);
+  }
+}
+@keyframes so-w-entra {
+  from {
+    transform: translateX(-9%);
+  }
+}
+.so-w-anilha {
+  animation: so-w-roda 1s var(--ease-saida) forwards;
+}
+.so-w-barra {
+  animation: so-w-entra 0.8s var(--ease-saida) forwards;
+}
+:root[data-movimento='suave'] .so-w-anilha,
+:root[data-movimento='suave'] .so-w-barra {
+  animation-duration: 0.5s;
+}

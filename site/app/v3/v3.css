@@ -1,0 +1,1299 @@
+/* ===== v3 · PLACAR · Black PTA ao Vivo =====
+ * CSS DA VERSÃO, escopado em `.v3` (nada vaza para /v1/ e /v2/). Porte de paginas/v3/index.html (aprovado) sobre os
+ * tokens da base: --color-*, --text-*, --m/--g1/--g2/--g3/--sec/--gut/--header-h (app/globals.css).
+ * Espaçamento: 12 · 24 · 40 (vãos) · --sec por lado · margem --m. Só 3 vãos na dobra.
+ *
+ * LINGUAGEM DE MOVIMENTO (rodada 8, política "movimento sempre ligado"): UMA ideia, o placar que vira.
+ *   1. o DÍGITO vira (roll: sobe de 0 até o número, dentro de uma janela)  .... .num / [data-roll]
+ *   2. a COR varre/enche (tarja do 1 × 2, painéis que acendem de baixo)  ..... v3-varre / v3-enche
+ * Mesma curva (--ease-saida; a varredura usa --ease-marca), mesmos tempos (.4 · .62 · .8 s), uma vez por entrada.
+ * Só transform/opacity/clip-path. O estado natural do CSS é o final.
+ * Modos (<html data-movimento>): total = tudo · suave = o sistema pede menos movimento (mesma coreografia,
+ * mais curta, sem parallax/magnético) · parado = só por ?movimento=parado (nada anima).
+ */
+.v3 {
+  --line: rgb(236 231 220 / 0.2);
+  --line-d: rgb(12 11 9 / 0.28);
+  --cor: var(--color-azul);
+  --btn-radius: 0;
+  --mq-bg: var(--color-ouro);
+  --mq-fg: var(--color-ink);
+  --acc-line: var(--color-tinta);
+  --acc-line-soft: var(--line);
+  --acc-text: var(--color-papel);
+  /* Big Shoulders: o desenho começa um pouco depois da caixa (~0,031 em nas letras, ~0,044 em no "0", ~0,032 em no "1").
+     Numerais gigantes recuam esse valor e AVANÇAM o que o título da seção tem (--hb): a tinta do numeral cai na
+     mesma vertical da tinta do título, não da caixa. */
+  --hb: calc(var(--text-h2) * 0.04);
+}
+/* grão da v3 (página toda escura): ainda mais fino que o da base (0,38) — ela pediu "amenizar" duas vezes */
+body:has(.v3) {
+  --grao-op: 0.3;
+}
+.v3 [data-noite='andre'] {
+  --cor: var(--color-azul);
+}
+.v3 [data-noite='walter'] {
+  --cor: var(--color-vermelho);
+}
+.v3 [data-noite='carlos'] {
+  --cor: var(--color-roxo);
+}
+
+.v3 .titulo {
+  max-width: 14ch;
+  margin-bottom: var(--g3);
+}
+.v3 .titulo .ln {
+  display: block; /* quebra no sinal do próprio texto ("3 noites," / "3 professores"), sem balance adivinhar */
+  white-space: nowrap;
+}
+.v3 h1 {
+  font-size: var(--h1); /* a base lê --h1 só no :root; aqui o .hero pode redefinir (1024-1279 px) */
+  letter-spacing: -0.004em;
+}
+.v3 .fundo-ink2 {
+  background: var(--color-ink-2);
+}
+
+/* botões: a base já é reta + sombra dura; aqui só o que é desta versão.
+   Sólidos sem a borda de 2 px da base (mesma medida do desenho aprovado); o ghost (cartão da noite) mantém o contorno. */
+.v3 .pta-btn:not(.pta-btn--ghost) {
+  border: 0;
+}
+.v3 .pta-btn {
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .v3 .pta-btn:not(.pta-btn--ghost) {
+    padding-inline: 12px;
+    gap: 0.5em;
+  }
+}
+.v3 .pta-btn__arrow {
+  transition: transform 0.18s var(--ease-saida);
+}
+.v3 .pta-btn--lg {
+  transition:
+    transform 0.18s var(--ease-saida),
+    box-shadow 0.18s var(--ease-saida),
+    translate 0.25s var(--ease-saida);
+}
+.v3 .pta-btn:focus-visible .pta-btn__arrow {
+  transform: translateX(4px);
+}
+@media (hover: hover) {
+  .v3 .pta-btn:hover .pta-btn__arrow {
+    transform: translateX(4px);
+  }
+  .v3 .pta-btn--ghost:hover {
+    --bg: var(--color-ouro);
+    --fg: var(--color-ink);
+    border-color: var(--color-ouro);
+    box-shadow: 4px 4px 0 var(--color-papel);
+  }
+}
+
+/* ===== cabeçalho: a ÚNICA logo da dobra (esq.) + botão (dir.) ===== */
+.v3 .bar {
+  position: relative;
+  z-index: 30;
+  background: var(--color-ink);
+  border-bottom: 1px solid var(--line);
+}
+.v3 .bar-in {
+  container-type: inline-size; /* cqw = largura útil sem a barra de rolagem (100vw erra 15 px no Windows) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--g2);
+  min-height: var(--header-h);
+  padding-block: 12px;
+}
+.v3 .bar-logo {
+  display: flex;
+  align-items: center;
+  flex: none;
+  min-height: 48px;
+  line-height: 0;
+}
+.v3 .bar-logo .pta-logo {
+  width: calc((100cqw - 16px) / 3); /* = largura do 1º painel (cqw do .bar-in) */
+  height: auto;
+}
+@media (min-width: 768px) {
+  .v3 .bar {
+    position: sticky;
+    top: 0;
+  }
+  .v3 .bar-logo .pta-logo {
+    width: auto;
+    height: 48px;
+  }
+  .v3 .bar .pta-btn--bar {
+    height: 48px;
+    padding: 8px 24px;
+    font-size: var(--text-body);
+  }
+}
+
+/* ===== numerais de placar (roll de dígitos) ===== */
+.v3 .num {
+  --lh: 0.8;
+  --pitch: calc(var(--lh) * 1.3); /* distância entre dígitos empilhados: maior que a linha, o vizinho nunca aparece na folga */
+  display: flex;
+  line-height: var(--lh);
+  letter-spacing: -0.01em;
+}
+.v3 .dg {
+  position: relative;
+  display: block;
+  height: calc(var(--lh) * 1em);
+  overflow: clip;
+  overflow-clip-margin: 0.14em; /* a tinta do dígito passa um pouco da linha (line-height .8): não cortar */
+}
+.v3 .dg-col {
+  position: relative;
+  display: block;
+}
+.v3 .dg-col i {
+  display: block;
+  height: calc(var(--lh) * 1em);
+  font-style: normal;
+  line-height: var(--lh);
+  white-space: nowrap;
+}
+.v3 .dg-prev {
+  position: absolute;
+  left: 0;
+  top: calc(var(--j) * var(--pitch) * 1em);
+}
+@keyframes v3-roll {
+  from {
+    transform: translateY(calc(var(--k, 0) * var(--pitch) * 1em));
+  }
+}
+@keyframes v3-enche {
+  from {
+    clip-path: inset(100% 0 0 0); /* a cor sobe de baixo, como o placar que acende */
+  }
+  to {
+    clip-path: inset(0 0 0 0); /* explícito: "none" não interpola com inset() e viraria um salto no meio */
+  }
+}
+.v3 .num--load .dg-col,
+.v3 [data-roll][data-estado='vai'] .dg-col {
+  animation: v3-roll calc(0.38s + var(--k, 0) * 0.08s) var(--ease-saida) both;
+}
+.v3 .strip:nth-child(2) .num--load .dg-col {
+  animation-delay: 0.1s;
+}
+.v3 .strip:nth-child(3) .num--load .dg-col {
+  animation-delay: 0.2s;
+}
+.v3 [data-roll][data-estado='pendente'] .dg-col {
+  transform: translateY(calc(var(--k, 0) * var(--pitch) * 1em));
+}
+
+/* ===== HERO (1ª dobra): painéis · H1 · sub · data · CTA · micro ===== */
+.v3 .hero {
+  position: relative;
+  padding-block: var(--g2) var(--sec);
+  min-height: calc(100svh - var(--header-h));
+  overflow-x: clip;
+}
+.v3 .hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (max-width: 767px) {
+  /* CELULAR (11/10): a dobra estava amontoada no alto e sobrava ~1/3 da tela preta vazia embaixo ("muito estranha").
+     Painéis mais altos, título maior, respiros maiores e o conjunto CENTRADO na altura da tela. */
+  .v3 .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: var(--g3);
+    --h1: clamp(2.5rem, 11.4vw, 3.25rem);
+  }
+  .v3 .strips {
+    margin-bottom: 40px;
+  }
+  .v3 .strip {
+    --ph: 168;
+  }
+  .v3 .acao {
+    margin-top: 28px;
+  }
+  .v3 .hero-cta {
+    margin-top: 40px;
+  }
+}
+.v3 .hero-txt {
+  display: grid;
+  justify-items: start;
+}
+.v3 .hero h1 {
+  max-width: none;
+}
+@supports not (text-box: trim-both cap alphabetic) {
+  .v3 .hero h1 {
+    margin-top: calc(var(--h1) * 0.0655);
+  }
+}
+.v3 .acao {
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: var(--g2);
+}
+.v3 .destaque {
+  display: block;
+}
+.v3 .destaque span {
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--color-ouro);
+  color: var(--color-ink);
+  padding: 0.04em 0.3em;
+  font: 900 clamp(1.25rem, 5.6vw, 1.75rem) / 1.3 var(--font-display);
+  text-transform: uppercase;
+}
+.v3 .quando {
+  margin-top: var(--g1);
+  color: var(--color-tinta);
+}
+.v3 .hero-cta {
+  margin-top: var(--g3);
+  width: 100%;
+  padding-inline: 16px;
+  white-space: nowrap;
+}
+.v3 .micro {
+  margin-top: var(--g1);
+  max-width: 34ch;
+  color: var(--color-mute);
+  font-size: 1rem;
+  line-height: 1.4;
+  text-wrap: balance;
+  text-box: trim-end cap alphabetic;
+}
+@media (max-width: 599px) {
+  .v3 .acao {
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  /* 360 px: a tarja (nowrap) e o botão mediam 316 px e empurravam a coluna toda 4 px (margens 24 × 20) */
+  .v3 .destaque span {
+    font-size: 5.4vw;
+  }
+  /* o botão (nowrap) tem largura mínima de 316 px e alargava a trilha da grade inteira (título e tarja junto) */
+  .v3 .pta-btn--lg {
+    font-size: 16px;
+    gap: 0.45em;
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 340px) {
+  /* 320 px (coluna de 272 px; 257 com barra de rolagem): «EDUCAÇÃO FÍSICA» a 40 px mede 283 e cortava título,
+     data e botão pela direita (margens 24 × 13) */
+  .v3 .hero {
+    --h1: 33px;
+  }
+  .v3 .destaque span {
+    font-size: 5.1vw;
+  }
+  .v3 .pta-btn--lg {
+    font-size: 14px;
+    padding-inline: 8px;
+  }
+}
+
+/* painéis 01·02·03: a imagem ocupa o painel todo (topo transparente = ar para o numeral); nome e noite ao pé.
+   Ao carregar a cor SOBE de baixo, um painel de cada vez (o placar acendendo), e o numeral vira por cima. */
+.v3 .strips {
+  order: -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: var(--g3);
+}
+.v3 .strip {
+  --ph: 126;
+  --band: 52px;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+.v3 .strip-box {
+  position: relative;
+  flex: none;
+  height: calc(var(--ph) * 1cqw + var(--band));
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-ink);
+}
+.v3 .strip-box::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 var(--band) 0;
+  z-index: 0;
+  background: var(--cor);
+  animation: v3-enche 0.62s var(--ease-saida) both;
+}
+.v3 .strip:nth-child(2) .strip-box::before {
+  animation-delay: 0.1s;
+}
+.v3 .strip:nth-child(3) .strip-box::before {
+  animation-delay: 0.2s;
+}
+.v3 .strip-box img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.v3 .strip-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent calc(100% - var(--band) - 14cqw), var(--color-ink) calc(100% - var(--band)));
+}
+.v3 .strip-num {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4cqw;
+  z-index: 1;
+  justify-content: center;
+  font: 900 40cqw / 0.8 var(--font-display);
+  color: var(--color-ink);
+}
+.v3 .strip-nm {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 8px;
+  padding-inline: 8px;
+}
+.v3 .strip-nm b {
+  font: 900 var(--text-lead) / 0.95 var(--font-display);
+  text-transform: uppercase;
+  color: var(--color-tinta);
+  text-box: trim-both cap alphabetic;
+}
+.v3 .strip-nm span {
+  color: var(--color-ouro);
+  white-space: nowrap;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-box: trim-both cap alphabetic;
+}
+@media (min-width: 600px) {
+  .v3 .destaque span {
+    display: block; /* a tarja acompanha a largura do bloco: mesma borda direita que o botão */
+  }
+  .v3 .hero-cta {
+    width: auto;
+    padding-inline: 32px;
+  }
+  .v3 .micro {
+    max-width: none;
+  }
+  .v3 .strips {
+    gap: 12px;
+  }
+  .v3 .strip-nm {
+    padding-inline: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .v3 .acao {
+    margin-top: var(--g3);
+  }
+  .v3 .hero {
+    display: grid;
+    align-content: center;
+    padding-block: var(--sec);
+  }
+  .v3 .hero-in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: stretch;
+  }
+  .v3 .hero-txt {
+    grid-column: 1 / 8;
+    align-content: start;
+  }
+  .v3 .strips {
+    grid-column: 8 / -1;
+    grid-row: 1;
+    margin-bottom: 0;
+    contain: size;
+  }
+  .v3 .strip {
+    --band: 56px;
+  }
+  .v3 .strip-box {
+    height: auto;
+    flex: 1 1 auto;
+  }
+  .v3 .strip-num {
+    font-size: 46cqw;
+    top: 6cqw;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .v3 .hero {
+    --h1: 5.1vw;
+  }
+  .v3 .hero-txt {
+    grid-column: 1 / 7;
+  }
+  .v3 .strips {
+    grid-column: 7 / -1;
+  }
+}
+
+/* ===== faixa rolante (costura; só abaixo da dobra) =====
+   Momento premium: as bordas esmaecem (palavra nunca "cortada a faca"), a velocidade acompanha a rolagem
+   (FaixaSelos.tsx: rolar para baixo acelera, rolar para cima inverte o sentido) e passar o mouse pausa para ler. */
+.v3 .faixas {
+  position: relative;
+}
+/* a regra de "texto parado" da base (modo parado) está sem o prefixo do modo e vaza para os outros: reafirma o normal */
+.v3 .pta-marquee__viewport {
+  display: flex;
+  overflow: clip;
+  white-space: nowrap;
+  --fade: clamp(24px, 7vw, 120px);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--fade), #000 calc(100% - 64px - var(--fade)), transparent calc(100% - 64px));
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--fade), #000 calc(100% - 64px - var(--fade)), transparent calc(100% - 64px));
+}
+@media (hover: hover) {
+  .v3 .pta-marquee:hover .pta-marquee__track {
+    animation-play-state: paused;
+  }
+}
+
+/* ===== enunciado (o apoio longo do hero, agora sozinho) ===== */
+.v3 .enun p {
+  max-width: calc(30ch * 1.02); /* o corpo é Archivo 500 (a aprovada era 400): ~5% mais largo, mesma quebra de linha */
+  font-size: var(--text-lead);
+  line-height: 1.4;
+  letter-spacing: -0.012em; /* Archivo 500 é ~4% mais largo que o 400 aprovado: mesma quebra de linha */
+  text-wrap: pretty;
+}
+@media (min-width: 1024px) {
+  .v3 .enun p {
+    max-width: calc(34ch * 1.02);
+  }
+}
+
+/* ===== como funciona ===== */
+.v3 .passos {
+  display: grid;
+  gap: 0;
+  border-top: 2px solid currentColor; /* seção .pta-paper: segue a cor do texto nos 2 temas */
+}
+.v3 .passo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--g2);
+  align-items: start;
+  padding-block: var(--g3);
+  border-bottom: 1px solid var(--line-d);
+}
+.v3 .passo:last-child {
+  border-bottom: 0;
+}
+.v3 .passo-n {
+  min-width: 0.5em;
+  margin-left: calc(var(--hb) - 0.03em); /* o contorno nasce na vertical da tinta do título */
+  font: 900 var(--text-numeral) / 0.74 var(--font-display);
+  color: transparent;
+  -webkit-text-stroke: 2px currentColor;
+}
+.v3 .passo h3 {
+  margin-bottom: var(--g1);
+}
+.v3 .passo p {
+  max-width: 30ch;
+}
+@media (min-width: 1024px) {
+  .v3 .passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--g3);
+  }
+  .v3 .passo {
+    display: block;
+    border-bottom: 0;
+    padding-block: var(--g3) 0;
+  }
+  .v3 .passo-n {
+    display: block;
+    margin-bottom: var(--g2);
+    font-size: clamp(11rem, 17vw, 18rem);
+  }
+}
+
+/* ===== noites: 3 painéis em tela dividida ===== */
+.v3 #noites {
+  padding-block: var(--sec);
+}
+.v3 .noites-hd {
+  padding-bottom: 0;
+}
+.v3 .noite {
+  position: relative;
+  overflow-x: clip;
+  background: var(--color-ink);
+}
+.v3 .noite-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.v3 .noite-cor {
+  position: relative;
+  container-type: inline-size;
+  height: clamp(340px, 92vw, 520px);
+  isolation: isolate;
+}
+.v3 .noite-cor::before {
+  content: '';
+  position: absolute;
+  inset: 0 -100vw;
+  z-index: -1;
+  background: var(--cor);
+}
+/* celular/tablet: a coluna tem a margem da página; o numeral nasce NELA (tinta na margem) e o busto encosta na
+   borda direita da tela (a cor sangra dos dois lados; antes o busto flutuava 24 px antes da borda e o numeral
+   começava 31 px depois da margem). */
+.v3 .noite-num {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  left: 0;
+  margin-left: calc(var(--hb) - 0.044em);
+  font: 900 min(50cqw, 22rem) / 0.8 var(--font-display);
+  color: var(--color-ink);
+}
+.v3 .noite-foto {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: calc(-1 * var(--m));
+  height: calc(var(--ph) * 100%);
+  overflow: clip;
+  transform-origin: 50% 100%;
+}
+.v3 .noite-foto img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+.v3 .noite-info {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  padding-block: var(--g3) calc(var(--sec) - var(--g3));
+}
+.v3 .noite-quando {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-bottom: var(--g1);
+  color: var(--color-ouro);
+}
+.v3 .noite h3 {
+  margin-bottom: var(--g1);
+}
+.v3 .noite-pos {
+  margin-bottom: var(--g2);
+}
+.v3 .noite-pos span {
+  display: inline;
+  padding: 0.04em 0.28em;
+  background: var(--cor);
+  color: var(--color-ink);
+  font: 900 var(--text-lead) / 1.3 var(--font-display);
+  text-transform: uppercase;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.v3 .noite-bio {
+  max-width: 36ch;
+  margin-bottom: var(--g3);
+  color: var(--color-papel);
+}
+@media (min-width: 1024px) {
+  .v3 .noite-in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    min-height: clamp(520px, 42vw, 640px);
+  }
+  .v3 .noite-cor {
+    grid-column: 1 / 8;
+    height: auto;
+    min-height: inherit;
+    margin-left: calc(-1 * var(--m));
+  }
+  .v3 .noite-cor::before {
+    inset: 0 0 0 -100vw;
+  }
+  .v3 .noite-num {
+    left: var(--m);
+  }
+  .v3 .noite-foto {
+    right: 0;
+  }
+  .v3 .noite-info {
+    grid-column: 9 / 13;
+    padding-block: var(--sec);
+  }
+  .v3 .noite--even .noite-cor {
+    grid-column: 6 / 13;
+    margin-left: 0;
+    margin-right: calc(-1 * var(--m));
+  }
+  .v3 .noite--even .noite-cor::before {
+    inset: 0 -100vw 0 0;
+  }
+  .v3 .noite--even .noite-info {
+    grid-column: 1 / 6;
+    grid-row: 1;
+  }
+  .v3 .noite--even .noite-num {
+    left: auto;
+    right: var(--m);
+    margin-left: 0;
+    margin-right: 0.018em;
+  }
+  .v3 .noite--even .noite-foto {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* ===== a condição: 1 × 2. =====
+   O "1" e o "2" são dígitos do placar: viram (0 -> 1, 0 -> 1 -> 2) enquanto a tarja ouro varre. */
+.v3 .placar {
+  --F: min(58vw, 17rem);
+  position: relative;
+  display: grid;
+  justify-items: start;
+  color: var(--color-tinta);
+}
+.v3 .placar .l {
+  display: flex;
+  align-items: baseline;
+  gap: 0.08em;
+  margin-left: calc(var(--hb) - 0.032em); /* a haste do "1" nasce na mesma vertical da tinta do título */
+  font: 900 var(--F) / 0.78 var(--font-display);
+}
+.v3 .placar .num {
+  --lh: 0.78;
+  --pitch: calc(0.78 * 1.3);
+}
+.v3 .placar .x {
+  color: var(--color-ouro);
+  font-size: 0.62em;
+  transform: translateY(-0.1em);
+}
+.v3 .placar .tarja {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  margin-left: auto;
+  margin-top: 0.1em;
+  padding: 0.08em 0.14em 0.02em 0.08em;
+  color: var(--color-ink);
+  font: 900 var(--F) / 0.78 var(--font-display);
+}
+.v3 .placar .tarja .pt {
+  display: block;
+  height: 0.78em;
+  line-height: 0.78;
+}
+.v3 .placar .tarja::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-ouro);
+  transform-origin: 0 50%;
+}
+@keyframes v3-varre {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes v3-gira {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+.v3 .placar[data-estado='pendente'] .tarja::before {
+  transform: scaleX(0);
+}
+.v3 .placar[data-estado='pendente'] .x {
+  opacity: 0;
+}
+.v3 .placar[data-estado='vai'] .tarja::before {
+  animation: v3-varre 0.8s var(--ease-marca) 0.1s both;
+}
+.v3 .placar[data-estado='vai'] .x {
+  animation: v3-gira 0.5s var(--ease-saida) 0.25s both;
+}
+.v3 .oferta h2 {
+  max-width: 24ch;
+  margin-top: var(--g3);
+}
+.v3 .oferta h2 .nb {
+  white-space: nowrap; /* "pós-graduação" não quebra no hífen */
+}
+.v3 .oferta-2 {
+  margin-top: var(--g3);
+}
+.v3 .oferta-txt {
+  max-width: calc(34ch * 1.02);
+  font-size: var(--text-lead);
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+}
+.v3 .opcoes {
+  margin-top: var(--g3);
+  border-top: 1px solid var(--line);
+}
+.v3 .opcoes li {
+  display: flex;
+  align-items: center;
+  gap: var(--g2);
+  padding: var(--g2) 0;
+  border-bottom: 1px solid var(--line);
+  font: 900 var(--text-lead) / 1.05 var(--font-display);
+  text-transform: uppercase;
+}
+.v3 .opcoes li::before {
+  content: '+';
+  flex: none;
+  color: var(--color-ouro);
+  font: 900 var(--text-lead) / 1 var(--font-display);
+}
+.v3 .oferta .nota {
+  max-width: 44ch;
+  margin-top: var(--g2);
+  color: var(--color-mute);
+}
+.v3 .oferta-cta {
+  margin-top: var(--g3);
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .v3 .placar {
+    --F: min(44vw, 30rem);
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    justify-items: stretch;
+    gap: 0.06em;
+  }
+  .v3 .placar .tarja {
+    margin: 0 0 0 0.04em;
+  }
+  .v3 .oferta-cta {
+    width: auto;
+    min-width: 360px;
+  }
+}
+@media (min-width: 1024px) {
+  .v3 .placar {
+    --F: min(40vw, 36rem);
+  }
+  .v3 .placar {
+    gap: 0;
+  }
+  .v3 .placar .l {
+    /* a tarja nasce na coluna 5 da grade: mesma borda esquerda do texto da oferta logo abaixo
+       (a largura desconta o recuo negativo da tinta do "1") */
+    width: calc((100% - 11 * var(--gut)) / 3 + 4 * var(--gut) - (var(--hb) - 0.032em));
+  }
+  .v3 .placar .tarja {
+    margin-left: 0;
+  }
+  .v3 .oferta-2 .wrap-2 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v3 .oferta-2 .col {
+    grid-column: 5 / 12;
+  }
+}
+
+/* ===== bônus: lista limpa ===== */
+.v3 .lista {
+  border-top: 1px solid var(--color-tinta);
+}
+.v3 .lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--g3);
+  padding-block: var(--g2);
+  border-bottom: 1px solid var(--line);
+}
+.v3 .lista .n {
+  color: var(--color-ouro);
+  font-variant-numeric: tabular-nums;
+}
+.v3 .lista .t {
+  max-width: 26ch;
+  font: 900 var(--text-lead) / 1.05 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* ===== por que a PTA ===== */
+.v3 .duas {
+  display: grid;
+  gap: var(--g3);
+}
+.v3 .duas > .titulo {
+  margin-bottom: 0;
+  text-box: trim-both cap alphabetic; /* topo das maiúsculas = topo do fio da lista (antes ficava 7 px abaixo) */
+}
+.v3 .porque-lista {
+  border-top: 2px solid currentColor;
+}
+.v3 .porque-lista li {
+  padding-block: var(--g3);
+  border-bottom: 1px solid var(--line-d);
+}
+.v3 .porque-lista li:last-child {
+  border-bottom: 0;
+}
+.v3 .porque-lista b {
+  display: block;
+  margin-bottom: var(--g1);
+  margin-left: calc(var(--hb) - 0.04em);
+  font: 900 clamp(5rem, 3.5rem + 7vw, 9rem) / 0.8 var(--font-display);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.v3 .porque-lista p {
+  max-width: 22ch;
+  font: 900 var(--text-lead) / 1.05 var(--font-display);
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .v3 .duas {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v3 .duas > .titulo {
+    grid-column: 1 / 5;
+  }
+  .v3 .porque-lista {
+    grid-column: 6 / 13;
+  }
+}
+
+/* ===== FAQ ===== */
+.v3 .faq-lista > .pta-acc__item:not([open]) .pta-acc__body {
+  visibility: hidden; /* resposta fechada não é conteúdo da tela (nem para o verificador) */
+}
+.v3 .faq-lista > .pta-acc__item + .pta-acc__item {
+  margin-top: 12px;
+}
+.v3 .faq-lista > .pta-acc__item > summary {
+  min-height: 88px;
+  padding-block: var(--g2);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: none;
+}
+.v3 .faq-lista .pta-acc__icon {
+  color: var(--color-ouro);
+  transition: transform 0.25s var(--ease-marca);
+}
+.v3 .faq-lista .pta-acc__icon::before,
+.v3 .faq-lista .pta-acc__icon::after {
+  top: 10px;
+  height: 3.5px;
+}
+.v3 .faq-lista .pta-acc__item[open] .pta-acc__icon {
+  transform: rotate(45deg); /* + vira × (como no desenho aprovado) */
+}
+.v3 .faq-lista .pta-acc__item[open] .pta-acc__icon::after {
+  transform: rotate(90deg);
+}
+@media (hover: hover) {
+  .v3 .faq-lista .pta-acc__item:not([open]) > summary:hover .pta-acc__icon {
+    transform: rotate(90deg); /* o "+" gira um quarto de volta ao passar o mouse (gesto do placar: vira) */
+  }
+}
+.v3 .faq-lista .pta-acc__body {
+  max-width: 46ch;
+  padding-right: 56px;
+}
+
+/* ===== CTA final: o placar FECHA como abriu =====
+   Uma ideia só: os 3 painéis 01 · 02 · 03 (cor da noite + numeral), a mensagem e o botão. Sem listras, sem
+   segunda camada de textura. Celular: placar em cima (como na dobra), depois a frase, depois o botão.
+   Desktop: frase à esquerda e placar à direita, na mesma grade da dobra; o placar tem a ALTURA da frase
+   (topo e base dos painéis = topo e base das maiúsculas) e o botão fica abaixo, na coluna da frase. */
+.v3 .final {
+  background: var(--color-ink);
+  border-top: 1px solid var(--line);
+}
+.v3 .final-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+}
+.v3 .final-placar {
+  order: -1;
+  justify-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: var(--g3);
+}
+.v3 .final-tile {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 0.74;
+}
+.v3 .final-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--cor);
+}
+.v3 .final-num {
+  --lh: 0.8;
+  justify-content: center;
+  font: 900 64cqw / 0.8 var(--font-display);
+  color: var(--color-ink);
+}
+.v3 .final-placar[data-estado='pendente'] .final-tile::before {
+  clip-path: inset(100% 0 0 0);
+}
+.v3 .final-placar[data-estado='vai'] .final-tile::before {
+  animation: v3-enche 0.62s var(--ease-saida) both;
+}
+.v3 .final-placar[data-estado='vai'] .final-tile:nth-child(2)::before {
+  animation-delay: 0.1s;
+}
+.v3 .final-placar[data-estado='vai'] .final-tile:nth-child(3)::before {
+  animation-delay: 0.2s;
+}
+.v3 .final h2 {
+  max-width: 16ch;
+}
+.v3 .final-cta {
+  margin-top: var(--g3);
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .v3 .final-placar {
+    gap: 12px;
+  }
+  .v3 .final-cta {
+    width: auto;
+    min-width: 360px;
+  }
+}
+@media (min-width: 1024px) {
+  .v3 .final-in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .v3 .final h2 {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    text-box: trim-both cap alphabetic;
+  }
+  .v3 .final-cta {
+    grid-column: 1 / 7;
+    grid-row: 2;
+  }
+  .v3 .final-placar {
+    grid-column: 7 / -1;
+    grid-row: 1;
+    order: 0;
+    align-self: stretch;
+    margin-bottom: 0;
+  }
+  .v3 .final-tile {
+    aspect-ratio: auto;
+  }
+  .v3 .final-num {
+    font-size: 78cqw;
+  }
+}
+
+/* ===== rodapé ===== */
+.v3 .rodape {
+  padding-block: var(--sec) calc(var(--sec) + 80px);
+  background: var(--color-ink-2);
+  border-top: 1px solid var(--line);
+}
+.v3 .rodape-in {
+  display: grid;
+  gap: var(--g2);
+  align-items: center;
+}
+.v3 .rodape p {
+  max-width: 56ch;
+  color: var(--color-mute);
+}
+@media (min-width: 768px) {
+  .v3 .rodape {
+    padding-bottom: var(--sec);
+  }
+}
+@media (min-width: 1024px) {
+  .v3 .rodape-in {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--g3);
+  }
+}
+
+/* ===== barra fixa (celular): a base .pta-sticky; aqui só a medida da v3 ===== */
+.v3 .pta-sticky {
+  padding: 12px var(--m) calc(12px + env(safe-area-inset-bottom, 0px));
+  /* some de verdade na hora (visibility sem atraso): leitor de tela, foco e verificador não a veem "visível" depois de rolar */
+  transition: visibility 0s;
+}
+.v3 .pta-sticky[data-visible='true'] {
+  transition:
+    transform 0.3s var(--ease-marca),
+    visibility 0s;
+}
+.v3 .pta-sticky .pta-btn {
+  min-height: 56px;
+  box-shadow: none;
+}
+
+/* ===== barra de leitura: 3 trechos, um por noite (CSS puro, scroll-timeline) ===== */
+.v3 .progresso {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .v3 .progresso {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 55;
+    height: 3px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      var(--color-azul) 0 33.34%,
+      var(--color-vermelho) 33.34% 66.67%,
+      var(--color-roxo) 66.67% 100%
+    );
+    transform-origin: 0 50%;
+    animation: v3-prog linear forwards;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes v3-prog {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ===== movimento da rolagem (CSS view(); parado no Firefox sem suporte) ===== */
+/* máscara de título por linha (GSAP SplitText): folga para acento em maiúscula (pesquisa 19 §0.1) */
+.v3 .v3-ln-mask {
+  overflow-clip-margin: 0.25em; /* a janela passa do corpo da linha: nada de padding/margem negativa (não mexe no layout) */
+}
+@keyframes v3-desliza {
+  from {
+    transform: translateY(8%);
+  }
+  to {
+    transform: translateY(-8%);
+  }
+}
+@keyframes v3-busto {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(5%);
+  }
+}
+@keyframes v3-foto {
+  from {
+    clip-path: inset(100% 0 0 0); /* o busto sobe da base do painel, como a cor dos painéis da dobra */
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@supports (animation-timeline: view()) {
+  /* numeral e busto andam em sentidos e velocidades diferentes: o numeral desliza ±8 %, o busto desce até 5 %;
+     o busto ainda é revelado de baixo para cima ao entrar (clip-path). Estado natural = final (forwards). */
+  .v3 .noite-num {
+    animation: v3-desliza linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  .v3 .noite-foto img {
+    animation: v3-busto linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  .v3 .noite-foto {
+    animation: v3-foto linear forwards;
+    animation-timeline: view();
+    animation-range: entry 8% entry 78%;
+  }
+}
+/* o painel da noite reage ao ponteiro: o busto cresce 3 % ancorado na base (leve; só mouse) */
+@media (hover: hover) {
+  .v3 .noite-foto {
+    transition: scale 0.5s var(--ease-saida);
+  }
+  .v3 .noite:hover .noite-foto {
+    scale: 1.03;
+  }
+}
+
+/* ===== modo SUAVE (o sistema pede menos movimento): a MESMA coreografia, mais curta, sem parallax ===== */
+:root[data-movimento='suave'] .v3 .num--load .dg-col,
+:root[data-movimento='suave'] .v3 [data-roll][data-estado='vai'] .dg-col {
+  animation-duration: calc(0.26s + var(--k, 0) * 0.05s);
+}
+:root[data-movimento='suave'] .v3 .strip-box::before,
+:root[data-movimento='suave'] .v3 .final-placar[data-estado='vai'] .final-tile::before {
+  animation-duration: 0.4s;
+}
+:root[data-movimento='suave'] .v3 .placar[data-estado='vai'] .tarja::before {
+  animation-duration: 0.5s;
+}
+:root[data-movimento='suave'] .v3 .placar[data-estado='vai'] .x {
+  animation-duration: 0.3s;
+}
+:root[data-movimento='suave'] .v3 .noite-num,
+:root[data-movimento='suave'] .v3 .noite-foto img {
+  animation: none;
+}
+:root[data-movimento='suave'] .v3 .noite:hover .noite-foto {
+  scale: 1;
+}
+
+/* ===== modo PARADO (?movimento=parado): nada anima; tudo no estado final ===== */
+:root[data-movimento='parado'] .v3 *,
+:root[data-movimento='parado'] .v3 *::before,
+:root[data-movimento='parado'] .v3 *::after {
+  animation: none !important;
+  transition: none !important;
+}
+:root[data-movimento='parado'] .v3 .pta-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+:root[data-movimento='parado'] .v3 .progresso {
+  display: none;
+}
+/* faixa: texto parado, centrado, em linhas (a regra da base é por modo; aqui reafirmada para a v3) */
+:root[data-movimento='parado'] .v3 .pta-marquee__viewport {
+  display: block;
+  overflow: visible;
+  white-space: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+
+/* =====================================================================================================
+ * TEMA CLARO (desenhado para o papel, não a inversão do escuro). Complementa styles/tema.css:
+ * os tokens já trocam (fundo = papel, texto = tinta, seções .pta-paper viram escuras). Aqui entram as variáveis
+ * locais da v3 e as peças que fogem do token.
+ *   · fios: --line (sobre a superfície) fica escuro; --line-d (dentro de .pta-paper, agora escura) fica claro
+ *   · ouro em ÁREA (tarja, "2.", faixa) continua #CDA85E com tinta escura; ouro de TEXTO/fio = token (#7C5F1C)
+ *   · numerais e texto SOBRE a cor do produto: tinta escura (4,5–4,9:1; os numerais têm >= 100 px)
+ *   · logo: tom escuro sobre o papel
+ * ===================================================================================================== */
+html[data-tema='claro'] .v3 {
+  --line: rgb(12 11 9 / 0.24);
+  --line-d: rgb(236 231 220 / 0.3);
+  --mq-bg: #cda85e;
+  --mq-fg: #0c0b09;
+}
+html[data-tema='claro'] .v3 .destaque span {
+  background: #cda85e;
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v3 .placar .tarja {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v3 .placar .tarja::before {
+  background: #cda85e;
+}
+html[data-tema='claro'] .v3 .strip-num,
+html[data-tema='claro'] .v3 .noite-num,
+html[data-tema='claro'] .v3 .final-num,
+html[data-tema='claro'] .v3 .noite-pos span {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v3 .pta-logo--ouro {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v3 .pta-paper .pta-logo--ouro {
+  color: #cda85e;
+}
+html[data-tema='claro'] .v3 .rodape .pta-logo {
+  filter: brightness(0); /* o arquivo do logo do rodapé é ouro; sobre o papel vai para o tom escuro */
+}
+/* tipografia no claro: texto escuro sobre fundo claro parece mais pesado, e a condensada em caixa alta pede ar */
+html[data-tema='claro'] .v3 h1,
+html[data-tema='claro'] .v3 h2,
+html[data-tema='claro'] .v3 h3 {
+  letter-spacing: 0.01em;
+}
+html[data-tema='claro'] .v3 .mono {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* pop-up no claro (o <dialog> fica fora da raiz .v3; as variáveis dele são fixas para o escuro) */
+html[data-tema='claro'] .pta-dialog {
+  --line: rgb(12 11 9 / 0.32);
+}
+html[data-tema='claro'] .pta-input {
+  border-color: rgb(12 11 9 / 0.6);
+}
+html[data-tema='claro'] .pta-input::placeholder {
+  color: rgb(74 70 60 / 0.78);
+}
+html[data-tema='claro'] .pta-dialog[open]::backdrop {
+  background: rgb(12 11 9 / 0.55);
+}

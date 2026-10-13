@@ -1,0 +1,108 @@
+{
+  "_fonte": "referencias da cliente: C:/Users/User/Documents/Black Friday da Personal Trainer Academy ao Vivo.pdf (páginas 9–13, 'Copy da página do Walter'). Só texto final; tudo que estava entre colchetes e as orientações ficam em pagina-solo.pendencias.md.",
+  "produto": {
+    "id": "bodybuilding",
+    "nome_pos": "Bodybuilding e Estética Corporal",
+    "professor": "Walter Krause",
+    "nome_curto": "Walter",
+    "noite": "Ter 10/11",
+    "data": "10/11",
+    "hora": "20h30"
+  },
+  "barra": {"texto": "Black PTA ao Vivo com Walter Krause · Ter 10/11 · 20h30", "botao": "Quero assistir à aula do Walter"},
+  "hero": {
+    "eyebrow": "Black Friday da Personal Trainer Academy ao Vivo · Noite do Walter Krause",
+    "h1": "Uma noite especial de Bodybuilding ao vivo com Walter Krause.",
+    "destaque": "No final, a condição Black: pague 1 pós e leve 2.",
+    "sub": "Dia 10/11, às 20h30, o Walter dá uma aula ao vivo de Bodybuilding e Estética Corporal e apresenta a condição Black: a Pós em Bodybuilding e Estética Corporal e uma segunda pós à sua escolha, com bônus. Os valores serão divulgados ao vivo.",
+    "cta": "Quero assistir à aula do Walter",
+    "selos": ["Aula ao vivo", "Certificado reconhecido pelo MEC"]
+  },
+  "formulario": {
+    "campos": ["Nome", "WhatsApp", "E-mail (opcional)"],
+    "selecao_noite": "Noite do Walter (Ter 10/11, 20h30)",
+    "opcional_outras_noites": "Quero assistir também às noites do André Albuquerque e do Carlos Garon.",
+    "botao": "Quero assistir à aula do Walter"
+  },
+  "como_funciona": {
+    "titulo": "Como funciona a noite do Walter",
+    "passos": [
+      {"t": "Entre no grupo.", "d": "Cadastre-se e receba o link e os avisos no WhatsApp."},
+      {"t": "Assista à aula ao vivo.", "d": "Ter 10/11, das 20h30 às 22h30, com o Walter Krause."},
+      {"t": "Conheça a condição Black.", "d": "No fim da noite, o Walter apresenta a condição, os bônus, os valores e as formas de pagamento."}
+    ]
+  },
+  "na_noite": {
+    "titulo": "O que você vai ver ao vivo",
+    "itens": [
+      "Aula ao vivo",
+      "Bodybuilding na prática",
+      "A condição Black: pague 1 pós-graduação e leve 2, com bônus, valores e formas de pagamento.",
+      "Perguntas ao vivo com o Walter."
+    ]
+  },
+  "professor": {
+    "nome": "Walter Krause",
+    "bio": "Doutor e pós-doutor em Educação Física. Líder do MORFOGEN, grupo de pesquisa em morfologia e genética no treinamento de força da UNIFESP. Treinador de atletas de elite. Professor da Pós em Bodybuilding e Estética Corporal da PTA."
+  },
+  "pos": {
+    "titulo": "Pós-graduação em Bodybuilding e Estética Corporal",
+    "itens": [
+      "18 meses, 360 horas, 100% online, Sem TCC",
+      "Um fim de semana por mês ao vivo (sábado à tarde, das 13h30 às 18h, e domingo de manhã, das 8h às 12h30), com aulas gravadas",
+      "+4.000 alunos certificados · 18 professores",
+      "Certificado reconhecido pelo MEC, portaria nº 1.058, de 27/12/2021"
+    ]
+  },
+  "pague1leve2": {
+    "titulo": "Na Black PTA, você paga a Pós em Bodybuilding e leva 2.",
+    "intro": "Escolha uma segunda pós-graduação:",
+    "opcoes": ["Treinamento Funcional", "Musculação e Periodização Avançada", "Fisiologia do Exercício"],
+    "nota": "As pós de escolha são gravadas em 2026.",
+    "pagamento": "Parcelamento facilitado, que não consome o limite do cartão. Valores e condições serão divulgados ao vivo e na página de matrícula logo em seguida."
+  },
+  "bonus": {
+    "titulo": "E os bônus da noite do Walter",
+    "itens": [
+      "Workshop de certificação em Bodybuilding e Estética Corporal (exclusivo desta noite)",
+      "Workshop 10k com consultoria online",
+      "Mapa da consultoria online",
+      "4 ebooks de Biomecânica"
+    ]
+  },
+  "prova": {
+    "itens": ["Professores-referência com foco em aplicação prática"]
+  },
+  "faq": [
+    {"q": "A aula é gratuita?", "a": "Sim."},
+    {"q": "Preciso ter feito a Certificação em Bodybuilding de 27/09?", "a": "Não."},
+    {"q": "Quando saberei o valor?", "a": "Ao vivo, na noite do Walter, e na página de matrícula logo depois."},
+    {"q": "Posso assistir às outras noites?", "a": "Sim. Marque as noites do André Albuquerque e do Carlos Garon no cadastro."},
+    {"q": "A segunda pós é completa?", "a": "Ela é gravada em 2026."},
+    {"q": "As pós têm reconhecimento do MEC?", "a": "Sim, pela instituição certificadora."}
+  ],
+  "cta_final": {"titulo": "Entre no grupo e receba o link da aula do Walter.", "botao": "Quero assistir à aula do Walter"},
+  "rodape": [
+    "Valores, condições e formas de pagamento serão apresentados ao vivo e na página de matrícula.",
+    "Pós-graduações lato sensu.",
+    "Os resultados variam conforme a dedicação de cada aluno. Não garantimos ganhos financeiros."
+  ],
+  "modal": {
+    "titulo": "Entre no grupo e receba o link da aula do Walter.",
+    "campos": [{"id": "nome", "rotulo": "Nome", "tipo": "text"}, {"id": "whats", "rotulo": "WhatsApp", "tipo": "tel", "mascara": "(00) 00000-0000"}, {"id": "email", "rotulo": "E-mail (opcional)", "tipo": "email", "opcional": true}],
+    "botao": "Quero assistir à aula do Walter",
+    "consentimento": "Usaremos seus dados só para enviar o link e os avisos das lives.",
+    "sucesso_titulo": "Você está dentro.",
+    "sucesso_texto": "Agora entre no grupo do WhatsApp para receber o link da aula do Walter.",
+    "sucesso_botao": "Entrar no grupo do WhatsApp"
+  },
+  "_evitar": [
+    "\"Desconto\", \"garanta sua vaga\" e \"últimas vagas\", porque o valor ainda não foi divulgado.",
+    "\"Fature 10 mil\" ou qualquer frase de renda. Mantenha \"10k\" só como nome do workshop.",
+    "\"Maior\", \"nº 1 em aulas práticas\" e \"segunda pós grátis\". Use \"leve 2\".",
+    "Atribuir ao Walter credenciais de outros professores do evento de setembro (como os números de atletas do Ray Milet).",
+    "Frases como \"treinador nível Olympia\" sem documentação.",
+    "Depoimentos com resultado numérico ou de preparação de atleta sem comprovação.",
+    "\"Aprovada\" ou \"recomendada\" pelo MEC. Use \"certificado reconhecido pelo MEC\", com o ato."
+  ]
+}

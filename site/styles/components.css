@@ -1,0 +1,854 @@
+/*
+ * CSS dos componentes compartilhados (prefixo .pta-). Cada bloco diz a qual componente pertence.
+ * Para mudar a aparência numa versão, SOBRESCREVA AS VARIÁVEIS (ex.: --btn-radius, --sh, --mq-bg)
+ * no wrapper da versão, em vez de editar este arquivo.
+ */
+
+/* ======================= ButtonCta ======================= */
+.pta-btn {
+  --bg: var(--color-ouro);
+  --fg: var(--color-ink);
+  --sh: var(--color-papel);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  min-height: 56px;
+  padding: 12px 24px;
+  background: var(--bg);
+  color: var(--fg);
+  border: 2px solid var(--bg);
+  border-radius: var(--btn-radius, 0);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-body);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--sh); /* sombra dura: só em quem clica */
+  transition:
+    transform 0.18s var(--ease-saida),
+    box-shadow 0.18s var(--ease-saida),
+    background-color 0.18s,
+    color 0.18s;
+}
+/* a sombra dura (4 px) conta como parte do botão: botão + sombra ocupam a coluna, nunca passam da margem direita */
+.pta-btn {
+  --sh-x: 4px;
+  margin-inline-end: var(--sh-x);
+  max-width: calc(100% - var(--sh-x));
+}
+.pta-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--sh);
+}
+@media (hover: hover) {
+  .pta-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--sh);
+  }
+  .pta-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--sh);
+  }
+}
+.pta-btn__arrow {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: square;
+}
+.pta-btn--lg {
+  min-height: 64px;
+  padding-inline: 32px;
+}
+.pta-btn--bar {
+  --sh-x: 3px;
+  min-height: 48px;
+  padding: 8px 16px;
+  font-size: var(--text-label);
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 var(--sh);
+}
+.pta-btn--block {
+  width: 100%;
+}
+.pta-btn--papel {
+  --bg: var(--color-papel);
+  --fg: var(--color-ink);
+  --sh: var(--color-ouro);
+}
+.pta-btn--tinta {
+  --bg: var(--color-tinta);
+  --fg: var(--color-ink);
+  --sh: var(--color-ouro);
+}
+.pta-btn--ink {
+  --bg: var(--color-ink);
+  --fg: var(--color-tinta);
+  --sh: var(--color-ouro);
+}
+.pta-btn--ghost {
+  --sh-x: 0px; /* sem sombra em repouso: nada a compensar */
+  --bg: transparent;
+  --fg: currentColor;
+  --sh: var(--color-ouro);
+  border-color: currentColor;
+  box-shadow: none;
+}
+.pta-btn--ghost:hover {
+  box-shadow: 4px 4px 0 var(--sh);
+}
+.pta-btn[disabled] {
+  cursor: progress;
+  opacity: 0.8;
+}
+
+/* ======================= Logo ======================= */
+.pta-logo {
+  display: block;
+  height: var(--logo-h, 40px);
+  width: auto;
+  max-width: 100%;
+  flex: none;
+}
+.pta-logo--ouro {
+  color: var(--color-ouro);
+}
+.pta-logo--claro {
+  color: var(--color-tinta);
+}
+.pta-logo--escuro {
+  color: var(--color-ink);
+}
+
+/* ======================= Photo ======================= */
+.pta-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ======================= Reveal (CSS scroll-driven + reserva IO) ======================= */
+@keyframes pta-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rv-y, 24px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media all {
+  @supports (animation-timeline: view()) {
+    .pta-reveal {
+      animation: pta-reveal-in 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: entry calc(var(--rv, 0) * 6%) entry calc(55% + var(--rv, 0) * 6%);
+    }
+  }
+  /* reserva (Firefox sem view()): RevealObserver marca pending/done */
+  .pta-reveal[data-io='pending'] {
+    opacity: 0;
+    transform: translateY(var(--rv-y, 24px));
+  }
+  .pta-reveal[data-io='done'] {
+    transition:
+      opacity 0.5s var(--ease-marca) calc(var(--rv, 0) * 80ms),
+      transform 0.5s var(--ease-marca) calc(var(--rv, 0) * 80ms);
+  }
+}
+
+/* ======================= Accordion (FAQ com <details>) ======================= */
+.pta-acc {
+  border-top: 1px solid var(--acc-line, var(--color-tinta));
+}
+.pta-acc__item {
+  border-bottom: 1px solid var(--acc-line-soft, rgb(236 231 220 / 0.2));
+}
+.pta-acc__item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--g2);
+  min-height: 64px;
+  padding-block: 20px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-lead);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.pta-acc__item > summary::-webkit-details-marker {
+  display: none;
+}
+.pta-acc__icon {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+.pta-acc__icon::before,
+.pta-acc__icon::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 11px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.25s var(--ease-marca);
+}
+.pta-acc__icon::after {
+  transform: rotate(90deg);
+}
+.pta-acc__item[open] .pta-acc__icon::after {
+  transform: rotate(0);
+}
+.pta-acc__body {
+  max-width: 60ch;
+  padding-bottom: var(--g2);
+  color: var(--acc-text, var(--color-mute));
+}
+.pta-acc__item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 0.3s var(--ease-marca),
+    content-visibility 0.3s allow-discrete;
+}
+.pta-acc__item[open]::details-content {
+  block-size: auto;
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+:root[data-movimento='parado'] .pta-acc__item::details-content,
+:root[data-movimento='parado'] .pta-acc__icon::before,
+:root[data-movimento='parado'] .pta-acc__icon::after {
+    transition: none;
+  }
+
+
+/* ======================= Marquee ======================= */
+.pta-marquee {
+  position: relative;
+  background: var(--mq-bg, var(--color-ouro));
+  color: var(--mq-fg, var(--color-ink));
+}
+.pta-marquee__viewport {
+  display: flex;
+  overflow: clip;
+  white-space: nowrap;
+}
+.pta-marquee__track {
+  display: flex;
+  flex: none;
+  width: max-content;
+  animation: pta-marquee var(--dur, 40s) linear infinite;
+}
+.pta-marquee[data-paused='true'] .pta-marquee__track {
+  animation-play-state: paused;
+}
+.pta-marquee__group {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+.pta-marquee__item {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-h2);
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 0.2em 0 0.14em;
+}
+.pta-marquee__sep {
+  flex: none;
+  width: 0.28em;
+  height: 0.28em;
+  margin: 0 0.8em;
+  background: currentColor;
+  font-size: var(--text-h2);
+}
+.pta-marquee__pause {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  min-height: 48px;
+  border: 0;
+  border-left: 2px solid var(--mq-fg, var(--color-ink));
+  background: var(--mq-fg, var(--color-ink));
+  color: var(--mq-bg, var(--color-ouro));
+  cursor: pointer;
+}
+.pta-marquee__pause::before {
+  content: '';
+  width: 12px;
+  height: 20px;
+  border-inline: 5px solid currentColor;
+}
+.pta-marquee__pause[aria-pressed='true']::before {
+  width: 0;
+  height: 0;
+  border-inline: 0;
+  border-left: 16px solid currentColor;
+  border-block: 10px solid transparent;
+}
+@keyframes pta-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+  /* sem rolagem automática: a faixa vira texto parado, CENTRADO e quebrando em linhas (nada cortado nas bordas;
+     antes ficava uma linha só com palavra pela metade, que parecia erro) */
+:root[data-movimento='parado'] .pta-marquee__viewport {
+    display: block;
+    overflow: visible;
+    white-space: normal;
+  }
+:root[data-movimento='parado'] .pta-marquee__track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+:root[data-movimento='parado'] .pta-marquee__group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-block: 0.1em;
+  }
+:root[data-movimento='parado'] .pta-marquee__item {
+    font-size: clamp(1.5rem, 4.6vw, var(--text-h2));
+  }
+:root[data-movimento='parado'] .pta-marquee__sep {
+    display: none;
+  }
+:root[data-movimento='parado'] .pta-marquee__item {
+    padding-inline: 0.5em;
+  }
+:root[data-movimento='parado'] .pta-marquee__group[aria-hidden='true'],
+:root[data-movimento='parado'] .pta-marquee__pause {
+    display: none;
+  }
+
+
+/* ======================= Grain (WebGL + reserva CSS) ======================= */
+.pta-grain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 25%, rgb(205 168 94 / 0.16), transparent 70%),
+    var(--grain-base, var(--color-ink));
+}
+.pta-grain[data-variant='overlay'] {
+  background: none;
+}
+.pta-grain > canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.pta-grain[data-gl='1'] {
+  background: none;
+}
+
+/* ======================= StickyCta (só mobile, depois do hero) ======================= */
+.pta-sticky {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 50;
+  padding: 8px var(--m) calc(8px + env(safe-area-inset-bottom, 0px));
+  background: var(--color-ink);
+  border-top: 1px solid rgb(236 231 220 / 0.2);
+  transform: translateY(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s var(--ease-marca),
+    visibility 0s linear 0.3s;
+}
+.pta-sticky[data-visible='true'] {
+  transform: none;
+  visibility: visible;
+  transition:
+    transform 0.3s var(--ease-marca),
+    visibility 0s;
+}
+.pta-sticky .pta-btn {
+  width: 100%;
+  min-height: 48px;
+}
+body:has(dialog[open]) .pta-sticky {
+  transform: translateY(100%);
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  .pta-sticky {
+    display: none;
+  }
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+:root[data-movimento='parado'] .pta-sticky {
+    transition: none;
+  }
+
+
+/* ======================= Countdown ======================= */
+.pta-cd {
+  display: grid;
+  gap: var(--g1);
+  min-height: var(--cd-min-h, 0);
+  padding: clamp(16px, 3vw, 32px);
+  border: 1px solid rgb(236 231 220 / 0.2);
+  background: var(--color-ink-2);
+  color: var(--color-tinta);
+}
+.pta-cd__state {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.pta-cd__dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* ponto = única curva da peça */
+  background: var(--color-papel);
+}
+.pta-cd[data-state='live'] .pta-cd__dot {
+  background: var(--color-vermelho);
+  animation: pta-rec 1s steps(1, end) 5; /* pisca 5 vezes e para (WCAG 2.2.2) */
+}
+@keyframes pta-rec {
+  50% {
+    opacity: 0.15;
+  }
+}
+.pta-cd__big {
+  display: flex;
+  align-items: baseline;
+  gap: 0.18em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-numeral);
+  line-height: 0.8;
+  color: var(--color-ouro);
+  font-variant-numeric: tabular-nums;
+}
+.pta-cd__unit {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-papel);
+}
+.pta-cd__tc {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.pta-cd__phrase {
+  color: var(--color-mute);
+  font-size: var(--text-body);
+}
+.pta-cd__ctrl {
+  display: flex;
+  gap: var(--g1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pta-cd .pta-btn--ghost {
+  min-height: 48px;
+  padding: 0 16px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+:root[data-movimento='parado'] .pta-cd[data-state='live'] .pta-cd__dot {
+    animation: none;
+  }
+
+
+/* ======================= LeadModal (<dialog>) ======================= */
+.pta-dialog {
+  --line: rgb(236 231 220 / 0.22);
+  box-sizing: border-box;
+  width: min(520px, calc(100% - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--color-ink-2);
+  color: var(--color-tinta);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-moldura, 16px);
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition:
+    opacity 0.28s var(--ease-marca),
+    transform 0.28s var(--ease-marca),
+    overlay 0.28s allow-discrete,
+    display 0.28s allow-discrete;
+}
+.pta-dialog[open] {
+  opacity: 1;
+  transform: none;
+}
+@starting-style {
+  .pta-dialog[open] {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+.pta-dialog::backdrop {
+  background: rgb(5 4 3 / 0);
+  transition:
+    background-color 0.28s var(--ease-marca),
+    overlay 0.28s allow-discrete,
+    display 0.28s allow-discrete;
+}
+.pta-dialog[open]::backdrop {
+  background: rgb(5 4 3 / 0.82);
+}
+@starting-style {
+  .pta-dialog[open]::backdrop {
+    background: rgb(5 4 3 / 0);
+  }
+}
+/* mobile: folha colada na base (só o topo arredondado) */
+@media (max-width: 599px) {
+  .pta-dialog {
+    width: 100%;
+    max-height: min(92dvh, 100dvh - 8px);
+    margin: auto 0 0;
+    border-radius: var(--radius-moldura, 16px) var(--radius-moldura, 16px) 0 0;
+    border-bottom: 0;
+    transform: translateY(100%);
+  }
+  @starting-style {
+    .pta-dialog[open] {
+      transform: translateY(100%);
+    }
+  }
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+:root[data-movimento='parado'] .pta-dialog,
+:root[data-movimento='parado'] .pta-dialog::backdrop {
+    transition-duration: 0.01s;
+  }
+
+
+.pta-dialog__in {
+  padding: clamp(20px, 4vw, 32px);
+  padding-bottom: calc(clamp(20px, 4vw, 32px) + env(safe-area-inset-bottom, 0px));
+}
+.pta-dialog__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.pta-dialog__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.pta-dialog__title:focus {
+  outline: none; /* foco programático no título: sem anel (o título já é o contexto) */
+}
+.pta-dialog__title:focus-visible {
+  outline: 2px solid var(--color-ouro);
+  outline-offset: 6px;
+}
+.pta-dialog__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-rotulo, 6px);
+  background: transparent;
+  color: var(--color-tinta);
+  cursor: pointer;
+}
+.pta-dialog__close svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: square;
+  fill: none;
+}
+.pta-dialog__night {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--g1);
+  padding: 6px 10px;
+  border: 1px solid var(--night, var(--color-ouro));
+  border-radius: var(--radius-rotulo, 6px);
+  color: var(--color-tinta);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pta-dialog__night::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--night, var(--color-ouro));
+}
+.pta-form {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+.pta-field {
+  display: grid;
+  gap: 8px;
+}
+.pta-field > label {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.pta-field__opt {
+  font-weight: 400;
+  color: var(--color-mute);
+}
+.pta-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--color-ink);
+  color: var(--color-tinta);
+  border: 1.5px solid rgb(236 231 220 / 0.5);
+  border-radius: var(--radius-rotulo, 6px);
+  font-family: var(--font-sans);
+  font-size: 1.125rem; /* >= 16 px: sem zoom no iOS */
+  line-height: 1;
+}
+.pta-input::placeholder {
+  color: rgb(207 201 189 / 0.6);
+}
+.pta-input:focus-visible {
+  outline: 3px solid var(--color-ouro);
+  outline-offset: 2px;
+  border-color: var(--color-ouro);
+}
+.pta-input[aria-invalid='true'] {
+  border-color: var(--err);
+  border-width: 2px;
+}
+.pta-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--err); /* o fio: o erro nunca depende só da cor */
+  color: var(--err);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.pta-error svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.3em;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: square;
+  fill: none;
+}
+.pta-error b {
+  font-weight: 700;
+}
+.pta-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.pta-consent {
+  color: var(--color-mute);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.pta-status {
+  /* só para leitor de tela: o botão já mostra "Enviando…" */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pta-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: pta-spin 0.7s linear infinite;
+}
+@keyframes pta-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.pta-ok__mark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-ouro);
+  border-radius: 50%;
+}
+.pta-ok__mark svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: var(--color-ouro);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pta-tick 0.5s var(--ease-marca) 0.1s forwards;
+}
+@keyframes pta-tick {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.pta-ok__text {
+  margin-top: var(--g1);
+  color: var(--color-mute);
+}
+.pta-ok .pta-btn {
+  margin-top: var(--g2);
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .pta-ok .pta-btn,
+  .pta-form .pta-btn {
+    width: auto;
+    min-width: 280px;
+  }
+}
+/* movimento = parado (só por escolha explícita ?movimento=parado; o padrão é rodar) */
+:root[data-movimento='parado'] .pta-ok__mark svg {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+:root[data-movimento='parado'] .pta-spinner {
+    animation-duration: 2s;
+  }
+
+/* ======================= MOVIMENTO SEMPRE LIGADO (política 11/10/2026) =======================
+   Ela pediu animação e o Windows dela tem "reduzir movimento": a página anima para todos. Quem reduz recebe a MESMA
+   coreografia em versão suave (data-movimento='suave', definido em app/layout.tsx): distâncias curtas, sem parallax,
+   sem tilt/magnético, faixa mais lenta e sempre com botão de pausa. 'parado' só por ?movimento=parado. */
+:root[data-movimento='suave'] {
+  --rv-y: 8px;
+}
+:root[data-movimento='suave'] .pta-marquee__track {
+  animation-duration: calc(var(--dur, 40s) * 1.8);
+}
+
+/* ======================= PADRÃO DE DOBRA (todas as páginas) =======================
+   A 1ª dobra ocupa a tela inteira (100svh − cabeçalho): o conteúdo fica CENTRADO na altura e a seção seguinte só
+   aparece depois da rolagem. Só mudam elementos, layout, cores e fontes; o contrato abaixo é fixo.
+   Uso: <section class="pta-dobra" data-hero>. Documento: skills/direcao-de-arte/references/padrao-de-pagina.md */
+.pta-dobra {
+  min-height: calc(100svh - var(--header-h, 64px));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ======================= LeadModal · "quero assistir também às outras noites" (só páginas individuais) ======================= */
+.pta-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+.pta-check__box {
+  flex: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  border: 2px solid rgb(236 231 220 / 0.7);
+  border-radius: var(--radius-rotulo, 6px);
+}
+.pta-check[aria-checked='true'] .pta-check__box {
+  border-color: var(--color-ouro);
+  background: var(--color-ouro);
+}
+.pta-check[aria-checked='true'] .pta-check__box::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 7px;
+  height: 12px;
+  border: solid var(--color-ink);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.pta-check:focus-visible {
+  outline: 3px solid var(--color-ouro);
+  outline-offset: 2px;
+}

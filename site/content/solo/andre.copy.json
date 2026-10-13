@@ -1,0 +1,108 @@
+{
+  "_fonte": "referencias da cliente: C:/Users/User/Documents/Black Friday da Personal Trainer Academy ao Vivo.pdf (páginas 4–8, 'Copy da página do André'). Só texto final; tudo que estava entre colchetes e as orientações ficam em pagina-solo.pendencias.md.",
+  "produto": {
+    "id": "biomecanica",
+    "nome_pos": "Biomecânica",
+    "professor": "André Albuquerque",
+    "nome_curto": "André",
+    "noite": "Seg 9/11",
+    "data": "9/11",
+    "hora": "20h30"
+  },
+  "barra": {"texto": "Black PTA ao Vivo com André Albuquerque · Seg 9/11 · 20h30", "botao": "Quero assistir à aula do André"},
+  "hero": {
+    "eyebrow": "Black Friday da Personal Trainer Academy ao Vivo · Noite do André Albuquerque",
+    "h1": "Uma noite especial de Biomecânica ao vivo com André Albuquerque.",
+    "destaque": "No final, a condição Black: pague 1 pós e leve 2.",
+    "sub": "Dia 9/11, às 20h30, o André dá uma aula ao vivo de Biomecânica aplicada e apresenta a condição Black: a Pós em Biomecânica e uma segunda pós à sua escolha, com bônus. Os valores serão divulgados ao vivo.",
+    "cta": "Quero assistir à aula do André",
+    "selos": ["Aula ao vivo", "Certificado reconhecido pelo MEC"]
+  },
+  "formulario": {
+    "campos": ["Nome", "WhatsApp", "E-mail (opcional)"],
+    "selecao_noite": "Noite do André (Seg 9/11, 20h30)",
+    "opcional_outras_noites": "Quero assistir também às noites do Walter Krause e do Carlos Garon.",
+    "botao": "Quero assistir à aula do André"
+  },
+  "como_funciona": {
+    "titulo": "Como funciona a noite do André",
+    "passos": [
+      {"t": "Entre no grupo.", "d": "Cadastre-se e receba o link e os avisos no WhatsApp."},
+      {"t": "Assista à aula ao vivo.", "d": "Seg 9/11, das 20h30 às 22h30, com o André Albuquerque."},
+      {"t": "Conheça a condição Black.", "d": "No fim da noite, o André apresenta a condição, os bônus, os valores e as formas de pagamento."}
+    ]
+  },
+  "na_noite": {
+    "titulo": "O que você vai ver ao vivo",
+    "itens": [
+      "Aula ao vivo",
+      "Biomecânica na prática",
+      "A condição Black: pague 1 pós-graduação e leve 2, com bônus, valores e formas de pagamento.",
+      "Perguntas ao vivo com o André."
+    ]
+  },
+  "professor": {
+    "nome": "André Albuquerque",
+    "bio": "Sócio-fundador da Personal Trainer Academy e mestre em Educação Física. Especialista em biomecânica aplicada ao treinamento de força e hipertrofia. Docente e coordenador de pós-graduação. Autor do livro \"Biomecânica Aplicada à Reabilitação de Lesões\" (PTA, 2023)."
+  },
+  "pos": {
+    "titulo": "Pós-graduação em Biomecânica",
+    "itens": [
+      "18 meses, 100% online, Sem TCC",
+      "Um fim de semana por mês ao vivo (sábado à tarde e domingo de manhã), com aulas gravadas",
+      "Método ADR: avaliação, decisão e resultado prático",
+      "Conteúdos: biomecânica da coluna, avaliação, reabilitação e treino do core, biomecânica da marcha e corrida",
+      "Certificado reconhecido pelo MEC"
+    ]
+  },
+  "pague1leve2": {
+    "titulo": "Na Black PTA, você paga a Pós em Biomecânica e leva 2.",
+    "intro": "Escolha uma segunda pós-graduação:",
+    "opcoes": ["Treinamento Funcional", "Musculação e Periodização Avançada", "Fisiologia do Exercício"],
+    "nota": "As pós de escolha são gravadas em 2026.",
+    "pagamento": "Parcelamento facilitado, que não consome o limite do cartão. Valores e condições serão divulgados ao vivo e na página de matrícula logo em seguida."
+  },
+  "bonus": {
+    "titulo": "E os bônus da noite do André",
+    "itens": [
+      "4 certificações de Biomecânica (exclusivo desta noite): Expertise em coluna, Expertise em Joelho, Expertise em Agachamento",
+      "Workshop 10k com consultoria online",
+      "Mapa da consultoria online",
+      "4 ebooks de Biomecânica"
+    ]
+  },
+  "prova": {
+    "itens": ["Professores-referência com foco em aplicação prática"]
+  },
+  "faq": [
+    {"q": "A aula é gratuita?", "a": "Sim."},
+    {"q": "Preciso ter feito o Especial de Biomecânica de agosto?", "a": "Não."},
+    {"q": "Quando saberei o valor?", "a": "Ao vivo, na noite do André, e na página de matrícula logo depois."},
+    {"q": "Posso assistir às outras noites?", "a": "Sim. Marque as noites do Walter Krause e do Carlos Garon no cadastro."},
+    {"q": "A segunda pós é completa?", "a": "Ela é gravada em 2026."},
+    {"q": "As pós têm reconhecimento do MEC?", "a": "Sim, pela instituição certificadora."}
+  ],
+  "cta_final": {"titulo": "Entre no grupo e receba o link da aula do André.", "botao": "Quero assistir à aula do André"},
+  "rodape": [
+    "Valores, condições e formas de pagamento serão apresentados ao vivo e na página de matrícula.",
+    "Pós-graduações lato sensu.",
+    "Os resultados variam conforme a dedicação de cada aluno. Não garantimos ganhos financeiros."
+  ],
+  "modal": {
+    "titulo": "Entre no grupo e receba o link da aula do André.",
+    "campos": [{"id": "nome", "rotulo": "Nome", "tipo": "text"}, {"id": "whats", "rotulo": "WhatsApp", "tipo": "tel", "mascara": "(00) 00000-0000"}, {"id": "email", "rotulo": "E-mail (opcional)", "tipo": "email", "opcional": true}],
+    "botao": "Quero assistir à aula do André",
+    "consentimento": "Usaremos seus dados só para enviar o link e os avisos das lives.",
+    "sucesso_titulo": "Você está dentro.",
+    "sucesso_texto": "Agora entre no grupo do WhatsApp para receber o link da aula do André.",
+    "sucesso_botao": "Entrar no grupo do WhatsApp"
+  },
+  "_evitar": [
+    "\"Desconto\", \"garanta sua vaga\" e \"últimas vagas\", porque o valor ainda não foi divulgado.",
+    "\"Fature 10 mil\" ou qualquer frase de renda. Mantenha \"10k\" só como nome do workshop.",
+    "\"Maior\", \"nº 1 em aulas práticas\" e \"segunda pós grátis\". Use \"leve 2\".",
+    "\"Nota máxima no MEC\" ou \"nota 5.0\", a menos que o conceito esteja verificável no e-MEC.",
+    "Depoimentos com resultado numérico (como \"meus resultados dobraram\") sem comprovação.",
+    "\"Aprovada\" ou \"recomendada\" pelo MEC. Use \"certificado reconhecido pelo MEC\", com o ato."
+  ]
+}

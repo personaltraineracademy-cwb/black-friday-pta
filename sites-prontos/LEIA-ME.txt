@@ -1,0 +1,17 @@
+ENTREGA — site  (11/10/2026)
+
+site-raiz.zip
+  Domínio ou subdomínio (https://dominio.com.br/). Envie o CONTEÚDO do zip (não a pasta) para public_html/
+  (Hostinger: Gerenciador de arquivos > public_html > enviar > extrair aqui). O arquivo oculto .htaccess vai junto
+  (ative "mostrar arquivos ocultos"). Vercel: suba o projeto-fonte (abaixo) e use `npm run build`; saída = out/.
+site-subpasta-site.zip
+  Subpasta (https://dominio.com.br/site/). Envie o CONTEÚDO para public_html/site/. Já vem com o 404 apontando
+  para /site/404.html.
+site/ (pasta na raiz do repositório)
+  Código-fonte (sem node_modules). `npm ci` e `npm run build` geram out/. Variáveis em .env.example.
+
+Depois de enviar: abrir / e /nada (404 da marca); testar o botão (pop-up), o formulário e o link de destino;
+ativar o SSL gratuito e descomentar o bloco "forçar HTTPS" do .htaccess.
+Endpoint do formulário, destino do botão e URL final são gravados NO BUILD: mudou, gere os zips de novo.
+Indexação nos buscadores: DESLIGADA (noindex) — use --indexar na versão final.
+Variáveis usadas: {"NEXT_PUBLIC_NOINDEX": "1"}

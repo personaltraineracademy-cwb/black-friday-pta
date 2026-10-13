@@ -1,0 +1,813 @@
+﻿familia;arquivo;nome;nota;largura;altura
+assunto;01-goniômetro-180-contorno-90.svg;goniômetro 180° · contorno · 90°;transferidor real: 5° / 10° / número a 30°, 2 braços no fulcro · moldura de número, carregamento (braço gira), selo de precisão;370;326
+assunto;02-goniômetro-180-cheio-45.svg;goniômetro 180° · cheio · 45°;transferidor real: 5° / 10° / número a 30°, 2 braços no fulcro · moldura de número, carregamento (braço gira), selo de precisão;367;176
+assunto;03-goniômetro-180-minimo-120.svg;goniômetro 180° · minimo · 120°;transferidor real: 5° / 10° / número a 30°, 2 braços no fulcro · moldura de número, carregamento (braço gira), selo de precisão;370;210
+assunto;04-goniômetro-360-contorno-30.svg;goniômetro 360° · contorno · 30°;transferidor real: 5° / 10° / número a 30°, 2 braços no fulcro · moldura de número, carregamento (braço gira), selo de precisão;370;283
+assunto;05-borg-6-20-folha.svg;Borg 6–20 · folha;15 degraus, rótulos do Borg 1998 só em 6-7-9-11-13-15-17-19-20 · progresso de série, divisor;196;328
+assunto;06-borg-6-20-folha-15.svg;Borg 6–20 · folha · 15;15 degraus, rótulos do Borg 1998 só em 6-7-9-11-13-15-17-19-20 · progresso de série, divisor;212;328
+assunto;07-borg-6-20-barra.svg;Borg 6–20 · barra;"6 → 20 na horizontal; números com rótulo oficial em tinta, os outros em apoio · barra de intensidade";426;60
+assunto;08-borg-6-20-barra-13.svg;Borg 6–20 · barra · 13;"6 → 20 na horizontal; números com rótulo oficial em tinta, os outros em apoio · barra de intensidade";426;74
+assunto;09-borg-6-20-degraus.svg;Borg 6–20 · degraus;15 degraus crescentes (nunca 0–10: a CR10 é outra escala) · progresso, carregamento;388;180
+assunto;10-borg-6-20-degraus-até-17.svg;Borg 6–20 · degraus · até 17;15 degraus crescentes (nunca 0–10: a CR10 é outra escala) · progresso, carregamento;388;180
+assunto;11-zonas-de-fc-faixa.svg;zonas de FC · faixa;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;470;94
+assunto;12-zonas-de-fc-faixa-z4.svg;zonas de FC · faixa · Z4;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;470;94
+assunto;13-zonas-de-fc-pilha.svg;zonas de FC · pilha;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;230;184
+assunto;14-zonas-de-fc-pilha-z3.svg;zonas de FC · pilha · Z3;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;230;184
+assunto;15-zonas-de-fc-arco.svg;zonas de FC · arco;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;461;220
+assunto;16-zonas-de-fc-arco-z5.svg;zonas de FC · arco · Z5;5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;461;220
+assunto;17-zonas-de-fc-degraus-altura-limite.svg;zonas de FC · degraus (altura = limite %);5 faixas iguais de 10 pontos (50–100% FCmáx), rampa da marca, nunca arco-íris · fundo em faixas, ícone de intensidade;240;190
+assunto;18-tabata-anel.svg;Tabata · anel;"protocolo Tabata (1996): 20 s + 10 s × 8 = 4 min; anel 30° + 15° · carregamento, contagem regressiva, selo";339;339
+assunto;19-tabata-anel-rodada-3.svg;Tabata · anel · rodada 3;"protocolo Tabata (1996): 20 s + 10 s × 8 = 4 min; anel 30° + 15° · carregamento, contagem regressiva, selo";339;339
+assunto;20-tabata-anel-mínimo.svg;Tabata · anel · mínimo;"protocolo Tabata (1996): 20 s + 10 s × 8 = 4 min; anel 30° + 15° · carregamento, contagem regressiva, selo";339;339
+assunto;21-tabata-régua-240-s.svg;Tabata · régua 240 s;"protocolo Tabata (1996): 20 s + 10 s × 8 = 4 min; anel 30° + 15° · carregamento, contagem regressiva, selo";480;90
+assunto;22-tabata-régua-240-s-rodada-5.svg;Tabata · régua 240 s · rodada 5;"protocolo Tabata (1996): 20 s + 10 s × 8 = 4 min; anel 30° + 15° · carregamento, contagem regressiva, selo";480;90
+assunto;23-cronômetro-contorno-20-s.svg;cronômetro · contorno · 20 s;mostrador 60 s real (1 s / 5 s), contador 0–30 min · tempo de intervalo, contagem, 'cada segundo conta';262;298
+assunto;24-cronômetro-cheio-45-s.svg;cronômetro · cheio · 45 s;mostrador 60 s real (1 s / 5 s), contador 0–30 min · tempo de intervalo, contagem, 'cada segundo conta';262;298
+assunto;25-cronômetro-contorno-0-s.svg;cronômetro · contorno · 0 s;mostrador 60 s real (1 s / 5 s), contador 0–30 min · tempo de intervalo, contagem, 'cada segundo conta';262;298
+assunto;26-dinamômetro-jamar-em-repouso.svg;dinamômetro (Jamar) · em repouso;"kg dentro / lb fora, ponteiro de pico em outra cor; nunca velocímetro · moldura de KPI de força";306;306
+assunto;27-dinamômetro-jamar-pico-38-kg.svg;dinamômetro (Jamar) · pico 38 kg;"kg dentro / lb fora, ponteiro de pico em outra cor; nunca velocímetro · moldura de KPI de força";306;306
+assunto;28-proporções-segmentares-com-régua.svg;proporções segmentares · com régua;Drillis & Contini (1966): alturas em fração da estatura H — figura de ESQUEMA, não corpo real · biomecânica, avaliação;216;339
+assunto;29-proporções-segmentares.svg;proporções segmentares;Drillis & Contini (1966): alturas em fração da estatura H — figura de ESQUEMA, não corpo real · biomecânica, avaliação;117;332
+assunto;30-7-dobras-jackson-pollock-frente-e-costas.svg;7 dobras (Jackson & Pollock) · frente e costas;"7 pontos do protocolo J&P no lado direito do sujeito; figura esquemática, sem corpo real · lista de 7 itens, avaliação";298;330
+assunto;31-7-dobras-lista-1-col.svg;7 dobras · lista (1 col.);ordem do protocolo J&P com × de marcação na pele · lista de 7 itens, checklist de avaliação;227;239
+assunto;32-7-dobras-lista-2-col.svg;7 dobras · lista (2 col.);ordem do protocolo J&P com × de marcação na pele · lista de 7 itens, checklist de avaliação;473;142
+assunto;33-prumo-lateral-kendall-rótulos.svg;prumo lateral (Kendall) · rótulos;"fio de prumo + 5 pontos na altura real; joelho e maléolo atrás do fio · régua vertical onde o título encosta, divisor";236;346
+assunto;34-prumo-lateral-kendall-mínimo.svg;prumo lateral (Kendall) · mínimo;"fio de prumo + 5 pontos na altura real; joelho e maléolo atrás do fio · régua vertical onde o título encosta, divisor";77;346
+assunto;35-barra-masculina-140-kg-treino.svg;barra masculina · 140 kg · treino;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;124
+assunto;36-barra-masculina-100-kg-iwf.svg;barra masculina · 100 kg · iwf;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;124
+assunto;37-barra-feminina-50-kg-ficha.svg;barra feminina · 50 kg · ficha;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;106
+assunto;38-barra-masculina-183-kg-contorno.svg;barra masculina · 183 kg · contorno;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;98
+assunto;39-barra-masculina-vazia.svg;barra masculina · vazia;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;17
+assunto;40-barra-feminina-vazia-cota-910.svg;barra feminina · vazia · cota 910;"barra e anilhas em escala real; carga calculada em anilhas IWF (maior por dentro) · divisor, sublinhado entre as marcas de pegada, numeral de carga";470;48
+assunto;41-anilha-20-kg-contorno.svg;anilha 20 kg · contorno;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";303;303
+assunto;42-anilha-15-kg-cheio.svg;anilha 15 kg · cheio;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";300;300
+assunto;43-anilha-20-kg-iwf.svg;anilha 20 kg · iwf;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";300;300
+assunto;44-anilha-15-kg-treino.svg;anilha 15 kg · treino;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";300;300
+assunto;45-anilha-5-kg-contorno.svg;anilha 5 kg · contorno;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";157;157
+assunto;46-anilha-10-kg-iwf.svg;anilha 10 kg · iwf;"disco de 450 mm com furo de 50 mm, inserto e aro; < 10 kg menor · numeral de carga, selo, carregamento (gira)";300;300
+assunto;47-halter-sextavado-contorno.svg;halter sextavado · contorno;proporção real de halter (pegada 33 mm, cabeças sextavadas) · ícone de força, divisor curto;423;165
+assunto;48-halter-sextavado-cheio-20-kg.svg;halter sextavado · cheio · 20 kg;proporção real de halter (pegada 33 mm, cabeças sextavadas) · ícone de força, divisor curto;423;165
+assunto;49-halter-anilhado-contorno.svg;halter anilhado · contorno;proporção real de halter (pegada 33 mm, cabeças sextavadas) · ícone de força, divisor curto;429;212
+assunto;50-kettlebell-16-kg-contorno.svg;kettlebell 16 kg · contorno;"kettlebell de competição (tamanho único 280 × 210 mm; cor = peso) · ícone, numeral de carga";228;303
+assunto;51-kettlebell-16-kg-cheio.svg;kettlebell 16 kg · cheio;"kettlebell de competição (tamanho único 280 × 210 mm; cor = peso) · ícone, numeral de carga";225;300
+assunto;52-kettlebell-24-kg-cores-de-competição.svg;kettlebell 24 kg · cores de competição;"kettlebell de competição (tamanho único 280 × 210 mm; cor = peso) · ícone, numeral de carga";225;300
+assunto;53-régua-de-periodização-completa-24-semanas.svg;régua de periodização · completa · 24 semanas;"micro/meso/macro como mm/cm/dm (Matveyev); fases em faixas · cronograma de curso, rodapé, calendário";470;108
+assunto;54-régua-de-periodização-completa-24-semanas-semana-7.svg;régua de periodização · completa · 24 semanas · semana 7;"micro/meso/macro como mm/cm/dm (Matveyev); fases em faixas · cronograma de curso, rodapé, calendário";470;108
+assunto;55-régua-de-periodização-regua-24-semanas.svg;régua de periodização · regua · 24 semanas;"micro/meso/macro como mm/cm/dm (Matveyev); fases em faixas · cronograma de curso, rodapé, calendário";470;78
+assunto;56-régua-de-periodização-completa-12-semanas.svg;régua de periodização · completa · 12 semanas;"micro/meso/macro como mm/cm/dm (Matveyev); fases em faixas · cronograma de curso, rodapé, calendário";470;108
+assunto;57-fita-métrica-reta-0-15-cm.svg;fita métrica · reta · 0–15 cm;escala real em cm/mm (mm curto, 0,5 cm médio, cm longo e numerado) · régua de progresso, perímetro, divisor;470;53
+assunto;58-fita-métrica-reta-84-96-cm.svg;fita métrica · reta · 84–96 cm;escala real em cm/mm (mm curto, 0,5 cm médio, cm longo e numerado) · régua de progresso, perímetro, divisor;462;41
+assunto;59-fita-métrica-curva-0-20-cm.svg;fita métrica · curva · 0–20 cm;escala real em cm/mm (mm curto, 0,5 cm médio, cm longo e numerado) · régua de progresso, perímetro, divisor;433;163
+assunto;60-fita-métrica-curva-60-75-cm.svg;fita métrica · curva · 60–75 cm;escala real em cm/mm (mm curto, 0,5 cm médio, cm longo e numerado) · régua de progresso, perímetro, divisor;433;163
+assunto;61-banco-de-wells-pés-a-23-cm.svg;banco de Wells · pés a 23 cm;régua em cm com a linha dos pés do protocolo declarado (nunca misturar) · régua de progresso 'alcance';470;118
+assunto;62-banco-de-wells-pés-a-26-cm-cursor-31.svg;banco de Wells · pés a 26 cm · cursor 31;régua em cm com a linha dos pés do protocolo declarado (nunca misturar) · régua de progresso 'alcance';470;118
+assunto;63-adipômetro-contorno-na-dobra-12-4-mm.svg;adipômetro · contorno · na dobra · 12,4 mm;relógio 0–20 mm/volta em 0,2 mm, braços de compasso e pastilhas paralelas pinçando a dobra · avaliação física, protocolo;280;329
+assunto;64-adipômetro-cheio-na-dobra-8-mm.svg;adipômetro · cheio · na dobra · 8 mm;relógio 0–20 mm/volta em 0,2 mm, braços de compasso e pastilhas paralelas pinçando a dobra · avaliação física, protocolo;280;329
+assunto;65-ficha-de-treino-prancheta.svg;ficha de treino · prancheta;tabela real de prescrição (séries × reps × carga × pausa), rotulada EXEMPLO, carga em branco · bastidor, conteúdo de método;280;360
+assunto;66-ficha-de-treino-folha.svg;ficha de treino · folha;"tabela de prescrição com fios finos e números alinhados; exemplo rotulado · post de conteúdo, site";470;200
+assunto;67-ficha-de-treino-esquema.svg;ficha de treino · esquema;"tabela de prescrição com fios finos e números alinhados; nomes como barras (esquema) · post de conteúdo, site";470;200
+assunto;68-cone-de-agilidade-cheio.svg;cone de agilidade · cheio;cone de treino (aba quadrada + corpo cônico) · marcador de etapa, percurso, lista;129;146
+assunto;69-cone-de-agilidade-contorno-listra.svg;cone de agilidade · contorno · listra;cone de treino (aba quadrada + corpo cônico) · marcador de etapa, percurso, lista;132;150
+assunto;70-pratinhos-7-cheio.svg;pratinhos · 7 · cheio;cone-pratinho de treino em fileira · divisor de percurso, etapas, progresso;460;16
+assunto;71-pratinhos-7-contorno-3º-ativo.svg;pratinhos · 7 · contorno · 3º ativo;cone-pratinho de treino em fileira · divisor de percurso, etapas, progresso;463;18
+assunto;72-escada-de-agilidade-8.svg;escada de agilidade · 8;escada de agilidade de cima (45 × 50 cm) · barra de progresso, linha do tempo, divisor;478;67
+assunto;73-escada-de-agilidade-8-3-feitos.svg;escada de agilidade · 8 · 3 feitos;escada de agilidade de cima (45 × 50 cm) · barra de progresso, linha do tempo, divisor;478;67
+assunto;74-t-test-de-agilidade-esquema.svg;T-test de agilidade · esquema;teste real com distâncias reais (10 e 5 jardas) · percurso, etapas, diagrama de método;359;326
+assunto;75-apito-cheio.svg;apito · cheio;apito de bolinha (bocal + câmara + janela) · voz do professor, chamada, início de prova;196;116
+assunto;76-apito-contorno.svg;apito · contorno;apito de bolinha (bocal + câmara + janela) · voz do professor, chamada, início de prova;197;120
+assunto;77-tempo-3-1-2-0-barra.svg;tempo 3-1-2-0 · barra;"cadência real (excêntrica primeiro; 1 tracinho = 1 s) · divisor rítmico, legenda de vídeo, animação no compasso";450;130
+assunto;78-tempo-3-0-x-1-barra.svg;tempo 3-0-X-1 · barra;"cadência real (excêntrica primeiro; 1 tracinho = 1 s) · divisor rítmico, legenda de vídeo, animação no compasso";450;130
+assunto;79-tempo-4-1-1-0-metronomo.svg;tempo 4-1-1-0 · metronomo;"cadência real (excêntrica primeiro; 1 tracinho = 1 s) · divisor rítmico, legenda de vídeo, animação no compasso";450;130
+assunto;80-rpe-repetições-em-reserva.svg;RPE × repetições em reserva;escala RIR real (não é a Borg 6–20) · contador regressivo, ícone de lista, 'perto da falha';266;138
+assunto;81-rpe-repetições-em-reserva-rpe-8.svg;RPE × repetições em reserva · RPE 8;escala RIR real (não é a Borg 6–20) · contador regressivo, ícone de lista, 'perto da falha';266;138
+assunto;82-ciclo-da-marcha.svg;ciclo da marcha;fases reais (60/40, pé oposto a 50%, duplos apoios de 10%) · linha do tempo em fases, barra de progresso, divisor;471;111
+assunto;83-planos-anatômicos.svg;planos anatômicos;3 planos perpendiculares com os nomes certos (não existe 'plano lateral') · ícone de biomecânica, capa;454;291
+assunto;84-planos-anatômicos-sagital.svg;planos anatômicos · sagital;3 planos perpendiculares com os nomes certos (não existe 'plano lateral') · ícone de biomecânica, capa;454;291
+codigos;01-qr-quadrado-v3-q.svg;QR · quadrado · v3-Q;"QR válido de 'https://example.com/black-pta' com margem de 4 módulos; conteúdo = parâmetro · impresso, telão, slide de live (nunca em story) · leitura conferida (zxing-cpp, zoom 3 e 1)";296;296
+codigos;02-qr-arredondado-v3-q.svg;QR · arredondado · v3-Q;"QR válido de 'https://example.com/black-pta' com margem de 4 módulos; conteúdo = parâmetro · impresso, telão, slide de live (nunca em story) · leitura conferida (zxing-cpp, zoom 3 e 1)";296;296
+codigos;03-qr-pontos-v4-h.svg;QR · pontos · v4-H;"QR válido de 'https://example.com/black-pta' com margem de 4 módulos; conteúdo = parâmetro · impresso, telão, slide de live (nunca em story) · leitura conferida (zxing-cpp, zoom 3 e 1)";328;328
+codigos;04-qr-moldura-v3-q.svg;QR · moldura · v3-Q;"QR válido de 'https://example.com/black-pta' com margem de 4 módulos; conteúdo = parâmetro · impresso, telão, slide de live (nunca em story) · leitura conferida (zxing-cpp, zoom 3 e 1)";259;319
+codigos;05-qr-quadrado-v4-q.svg;QR · quadrado · v4-Q;"QR válido de 'https://example.com/black-pta/noite-1' com margem de 4 módulos; conteúdo = parâmetro · impresso, telão, slide de live (nunca em story) · leitura conferida (zxing-cpp, zoom 3 e 1)";266;326
+codigos;06-code-128-padrao-black-friday-2026.svg;Code 128 · padrao · BLACK FRIDAY 2026;"Code 128 válido, zona livre de 10 módulos, texto legível embaixo; conteúdo = parâmetro (código real) · ingresso, etiqueta, dossiê · leitura conferida (zxing-cpp, zoom 3 e 1)";464;214
+codigos;07-code-128-alto-noite-1-20h30.svg;Code 128 · alto · NOITE 1 20H30;"Code 128 válido, zona livre de 10 módulos, texto legível embaixo; conteúdo = parâmetro (código real) · ingresso, etiqueta, dossiê · leitura conferida (zxing-cpp, zoom 3 e 1)";436;306
+codigos;08-code-128-vertical-ao-vivo.svg;Code 128 · vertical · AO VIVO;"Code 128 válido, zona livre de 10 módulos, texto legível embaixo; conteúdo = parâmetro (código real) · ingresso, etiqueta, dossiê · leitura conferida (zxing-cpp, zoom 3 e 1)";176;344
+codigos;09-code-128-etiqueta-pta-black-2026.svg;Code 128 · etiqueta · PTA-BLACK-2026;"Code 128 válido, zona livre de 10 módulos, texto legível embaixo; conteúdo = parâmetro (código real) · ingresso, etiqueta, dossiê · leitura conferida (zxing-cpp, zoom 3 e 1)";436;251
+codigos;10-code-128-padrao-27-11-2026.svg;Code 128 · padrao · 27/11/2026;"Code 128 válido, zona livre de 10 módulos, texto legível embaixo; conteúdo = parâmetro (código real) · ingresso, etiqueta, dossiê · leitura conferida (zxing-cpp, zoom 3 e 1)";432;204
+codigos;11-série-fração-noite-1-3.svg;série · fração · NOITE 1/3;numeração verdadeira (noite n de 3, turma, edição) em algarismos tabulares · nunca 'limitado' falso;174;110
+codigos;12-série-numerador-noite-2-3.svg;série · numerador · NOITE 2/3;numeração verdadeira (noite n de 3, turma, edição) em algarismos tabulares · nunca 'limitado' falso;208;130
+codigos;13-série-canhoto-noite-3-3.svg;série · canhoto · NOITE 3/3;numeração verdadeira (noite n de 3, turma, edição) em algarismos tabulares · nunca 'limitado' falso;101;264
+codigos;14-série-edição-edição-2026.svg;série · edição · EDIÇÃO 2026;numeração verdadeira (noite n de 3, turma, edição) em algarismos tabulares · nunca 'limitado' falso;355;64
+colagem;01-fita-translucida--6.svg;fita · translucida · -6°;"fita rasgada à mão (dente irregular nas pontas), no ângulo do sistema · prende foto/papel na colagem; 1–2 por peça";240;88
+colagem;02-fita-translucida-38.svg;fita · translucida · +38°;"fita rasgada à mão (dente irregular nas pontas), no ângulo do sistema · prende foto/papel na colagem; 1–2 por peça";164;142
+colagem;03-fita-crepe--6.svg;fita · crepe · -6°;"fita rasgada à mão (dente irregular nas pontas), no ângulo do sistema · prende foto/papel na colagem; 1–2 por peça";242;88
+colagem;04-fita-crepe-4.svg;fita · crepe · +4°;"fita rasgada à mão (dente irregular nas pontas), no ângulo do sistema · prende foto/papel na colagem; 1–2 por peça";170;57
+colagem;05-fita-acento--12.svg;fita · acento · -12°;"fita rasgada à mão (dente irregular nas pontas), no ângulo do sistema · prende foto/papel na colagem; 1–2 por peça";208;96
+colagem;06-adesivo-circulo-ao-vivo.svg;adesivo · circulo · AO VIVO;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;207;207
+colagem;07-adesivo-pilula-noite-1.svg;adesivo · pilula · NOITE 1;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;273;121
+colagem;08-adesivo-retangulo-20h30-canto-descolando.svg;adesivo · retangulo · 20H30 · canto descolando;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;225;153
+colagem;09-adesivo-palavra-black.svg;adesivo · palavra · BLACK;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;324;152
+colagem;10-adesivo-palavra-3.svg;adesivo · palavra · 3;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;97;158
+colagem;11-adesivo-circulo-pós.svg;adesivo · circulo · PÓS;borda branca constante (3% do lado), sombra curta 2–3 px · status, data, palavra-chave na colagem;177;177
+colagem;12-papel-rasgado-cima.svg;papel rasgado · cima;borda rasgada com franja de fibra (o branco de dentro do papel) e sombra curta · base de texto, divisor de seção, colagem;427;166
+colagem;13-papel-rasgado-ambas.svg;papel rasgado · ambas;borda rasgada com franja de fibra (o branco de dentro do papel) e sombra curta · base de texto, divisor de seção, colagem;427;133
+colagem;14-papel-rasgado-todas.svg;papel rasgado · todas;borda rasgada com franja de fibra (o branco de dentro do papel) e sombra curta · base de texto, divisor de seção, colagem;327;254
+colagem;15-papel-rasgado-baixo-escuro.svg;papel rasgado · baixo · escuro;borda rasgada com franja de fibra (o branco de dentro do papel) e sombra curta · base de texto, divisor de seção, colagem;427;155
+colagem;16-papel-rasgado-todas-acento.svg;papel rasgado · todas · acento;borda rasgada com franja de fibra (o branco de dentro do papel) e sombra curta · base de texto, divisor de seção, colagem;288;235
+colagem;17-recorte-de-jornal-1-col-manchete.svg;recorte de jornal · 1 col. · manchete;"papel-jornal cortado à tesoura; texto em BARRAS (esquema, nunca texto falso) · bastidor, 'saiu na imprensa' só com matéria real";203;178
+colagem;18-recorte-de-jornal-2-col-manchete.svg;recorte de jornal · 2 col. · manchete;"papel-jornal cortado à tesoura; texto em BARRAS (esquema, nunca texto falso) · bastidor, 'saiu na imprensa' só com matéria real";342;170
+colagem;19-recorte-de-jornal-2-col-manchete-foto.svg;recorte de jornal · 2 col. · manchete · foto;"papel-jornal cortado à tesoura; texto em BARRAS (esquema, nunca texto falso) · bastidor, 'saiu na imprensa' só com matéria real";351;291
+colagem;20-recorte-de-jornal-1-col.svg;recorte de jornal · 1 col.;"papel-jornal cortado à tesoura; texto em BARRAS (esquema, nunca texto falso) · bastidor, 'saiu na imprensa' só com matéria real";198;136
+colagem;21-polaroide.svg;polaroide;"proporção real 88 × 107 mm (foto 79 × 79; base 22) · foto vazia = máscara · bastidor, 'foi assim', prova de turma real";249;301
+colagem;22-polaroide-fita--6.svg;polaroide · fita · -6°;"proporção real 88 × 107 mm (foto 79 × 79; base 22) · foto vazia = máscara · bastidor, 'foi assim', prova de turma real";277;328
+colagem;23-polaroide-noite-1-5.svg;polaroide · NOITE 1 · +5°;"proporção real 88 × 107 mm (foto 79 × 79; base 22) · foto vazia = máscara · bastidor, 'foi assim', prova de turma real";273;320
+colagem;24-tira-de-filme-35-mm-3-quadros.svg;tira de filme 35 mm · 3 quadros;película real (36 × 24 mm, 8 furos por quadro, número de borda) · sequência de fotos, bastidor, cronofotografia;440;136
+colagem;25-tira-de-filme-35-mm-2-quadros.svg;tira de filme 35 mm · 2 quadros;película real (36 × 24 mm, 8 furos por quadro, número de borda) · sequência de fotos, bastidor, cronofotografia;360;166
+colagem;26-clipe-gem.svg;clipe · gem;clipe de verdade (Gem: 3 curvas em U) · prende foto/ficha na colagem, ícone de anexo;73;174
+colagem;27-clipe-gem-acento.svg;clipe · gem · acento;clipe de verdade (Gem: 3 curvas em U) · prende foto/ficha na colagem, ícone de anexo;84;170
+colagem;28-índice-01-cheio.svg;índice 01 · cheio;número de inventário (It's Nice That 2026: visual index) · lista de itens, legenda técnica com fio;84;84
+colagem;29-índice-02-contorno.svg;índice 02 · contorno;número de inventário (It's Nice That 2026: visual index) · lista de itens, legenda técnica com fio;84;84
+colagem;30-índice-03-quadrado.svg;índice 03 · quadrado;número de inventário (It's Nice That 2026: visual index) · lista de itens, legenda técnica com fio;86;86
+colagem;31-índice-07-etiqueta.svg;índice 07 · etiqueta;número de inventário (It's Nice That 2026: visual index) · lista de itens, legenda técnica com fio;86;67
+colagem;32-índice-04-cheio-com-fio.svg;índice 04 · cheio · com fio;número de inventário (It's Nice That 2026: visual index) · lista de itens, legenda técnica com fio;244;84
+colagem;33-índice-série-01-04.svg;índice · série 01–04;índice numerado em linha · capítulos de carrossel, etapas;450;84
+colagem;34-índice-série-01-03.svg;índice · série 01–03;índice numerado em linha · capítulos de carrossel, etapas;328;84
+colagem;35-post-it.svg;post-it;bloco adesivo quadrado com faixa de cola e canto levantando · lembrete, bastidor de aula, 'anota aí';250;248
+colagem;36-post-it-noite-1.svg;post-it · NOITE 1;bloco adesivo quadrado com faixa de cola e canto levantando · lembrete, bastidor de aula, 'anota aí';246;261
+colagem;37-post-it-pautado.svg;post-it · pautado;bloco adesivo quadrado com faixa de cola e canto levantando · lembrete, bastidor de aula, 'anota aí';262;258
+colagem;38-post-it-ao-vivo.svg;post-it · AO VIVO;bloco adesivo quadrado com faixa de cola e canto levantando · lembrete, bastidor de aula, 'anota aí';208;221
+colagem;39-etiqueta-aba-noite-1.svg;etiqueta · aba · NOITE 1;"papelaria real (aba de pasta suspensa, pasta, etiqueta com ilhós, porta-etiqueta) · ficha, dossiê, data/local; forma conta o que é";358;89
+colagem;40-etiqueta-pasta-avaliação.svg;etiqueta · pasta · AVALIAÇÃO;"papelaria real (aba de pasta suspensa, pasta, etiqueta com ilhós, porta-etiqueta) · ficha, dossiê, data/local; forma conta o que é";403;258
+colagem;41-etiqueta-pendurada-20h30.svg;etiqueta · pendurada · 20H30;"papelaria real (aba de pasta suspensa, pasta, etiqueta com ilhós, porta-etiqueta) · ficha, dossiê, data/local; forma conta o que é";268;110
+colagem;42-etiqueta-porta-black-friday.svg;etiqueta · porta · BLACK FRIDAY;"papelaria real (aba de pasta suspensa, pasta, etiqueta com ilhós, porta-etiqueta) · ficha, dossiê, data/local; forma conta o que é";396;66
+colagem;43-etiqueta-aba-pós-black.svg;etiqueta · aba · PÓS BLACK;"papelaria real (aba de pasta suspensa, pasta, etiqueta com ilhós, porta-etiqueta) · ficha, dossiê, data/local; forma conta o que é";432;89
+dados;01-barra-de-progresso-continua-2-3.svg;barra de progresso · continua · 2/3;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;440;58
+dados;02-barra-de-progresso-segmentos-1-3.svg;barra de progresso · segmentos · 1/3;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;440;58
+dados;03-barra-de-progresso-segmentos-3-3.svg;barra de progresso · segmentos · 3/3;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;440;58
+dados;04-barra-de-progresso-degraus-2-3.svg;barra de progresso · degraus · 2/3;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;440;152
+dados;05-barra-de-progresso-fina-1-3.svg;barra de progresso · fina · 1/3;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;442;60
+dados;06-barra-de-progresso-segmentos-5-8.svg;barra de progresso · segmentos · 5/8;valor/total vêm da campanha (ex.: 3 noites) — nunca % inventada · topo de story, página, série;440;58
+dados;07-anel-de-progresso-anel-2-3.svg;anel de progresso · anel · 2/3;"anel com valor real (etapas; segundos do Tabata) · carregamento, contagem, selo de etapa";300;300
+dados;08-anel-de-progresso-segmentado-1-3.svg;anel de progresso · segmentado · 1/3;"anel com valor real (etapas; segundos do Tabata) · carregamento, contagem, selo de etapa";300;300
+dados;09-anel-de-progresso-segmentado-3-3.svg;anel de progresso · segmentado · 3/3;"anel com valor real (etapas; segundos do Tabata) · carregamento, contagem, selo de etapa";300;300
+dados;10-anel-de-progresso-tiques-20-30.svg;anel de progresso · tiques · 20/30;"anel com valor real (etapas; segundos do Tabata) · carregamento, contagem, selo de etapa";299;300
+dados;11-contador-caixas-exemplo.svg;contador · caixas · EXEMPLO;"algarismos tabulares; os valores são a contagem real até o evento (calcular na hora; sem ela, aparece EXEMPLO) · story de contagem, faixa de site";468;184
+dados;12-contador-linha-exemplo.svg;contador · linha · EXEMPLO;"algarismos tabulares; os valores são a contagem real até o evento (calcular na hora; sem ela, aparece EXEMPLO) · story de contagem, faixa de site";420;86
+dados;13-contador-placas-exemplo.svg;contador · placas · EXEMPLO;"algarismos tabulares; os valores são a contagem real até o evento (calcular na hora; sem ela, aparece EXEMPLO) · story de contagem, faixa de site";468;181
+dados;14-linha-do-tempo-horizontal.svg;linha do tempo · horizontal;"etapas reais da campanha; datas e hora por parâmetro · agenda, story de série, faixa de site";430;109
+dados;15-linha-do-tempo-horizontal-ativo-noite-2.svg;linha do tempo · horizontal · ativo NOITE 2;"etapas reais da campanha; datas e hora por parâmetro · agenda, story de série, faixa de site";430;109
+dados;16-linha-do-tempo-vertical-ativo-noite-1.svg;linha do tempo · vertical · ativo NOITE 1;"etapas reais da campanha; datas e hora por parâmetro · agenda, story de série, faixa de site";196;269
+dados;17-linha-do-tempo-trilho.svg;linha do tempo · trilho;"etapas reais da campanha; datas e hora por parâmetro · agenda, story de série, faixa de site";460;95
+dados;18-linha-do-tempo-trilho-ativo-noite-3.svg;linha do tempo · trilho · ativo NOITE 3;"etapas reais da campanha; datas e hora por parâmetro · agenda, story de série, faixa de site";460;95
+dados;19-calendário-11-2026-destaque-27.svg;calendário 11/2026 · destaque 27;"calendário verdadeiro (calendar do Python); destaque = data real (27/11/2026 Black Friday; 15/03 Dia do Consumidor) · agenda, contagem";386;356
+dados;20-calendário-03-2027-destaque-15.svg;calendário 03/2027 · destaque 15;"calendário verdadeiro (calendar do Python); destaque = data real (27/11/2026 Black Friday; 15/03 Dia do Consumidor) · agenda, contagem";386;356
+dados;21-heatmap-protocolo-tabata-8-30-s.svg;heatmap · protocolo Tabata 8 × 30 s;"o próprio protocolo como dado (1 célula = 1 s; aceso = 20 s de esforço, apagado = 10 s de pausa; 8 linhas = 8 rodadas) · textura técnica, fundo";418;194
+dados;22-heatmap-frequência-esquema.svg;heatmap · frequência (esquema);"esquema rotulado (seg-qua-sex, 12 semanas); com dado real da turma vira mapa de frequência · fundo, prova";405;303
+dados;23-heatmap-legenda-5-níveis-menos-mais.svg;heatmap · legenda 5 níveis (menos → mais);legenda dos níveis da rampa — acompanha qualquer heatmap de dado real;405;40
+dados;24-pague-1-leve-2-blocos.svg;pague 1 leve 2 · blocos;a oferta Black (pague 1 pós, leve 2) como diagrama de mesma escala (Isotype) · explicar a oferta sem texto longo, anúncio, página de preço;288;244
+dados;25-pague-1-leve-2-pontos.svg;pague 1 leve 2 · pontos;a oferta Black (pague 1 pós, leve 2) como diagrama de mesma escala (Isotype) · explicar a oferta sem texto longo, anúncio, página de preço;288;244
+dados;26-pague-1-leve-2-cartoes.svg;pague 1 leve 2 · cartoes;a oferta Black (pague 1 pós, leve 2) como diagrama de mesma escala (Isotype) · explicar a oferta sem texto longo, anúncio, página de preço;319;186
+dados;27-pague-1-leve-2-barras.svg;pague 1 leve 2 · barras;a oferta Black (pague 1 pós, leve 2) como diagrama de mesma escala (Isotype) · explicar a oferta sem texto longo, anúncio, página de preço;451;89
+dados;28-curva-força-velocidade-hill.svg;curva força × velocidade (Hill);"forma certa da curva (hipérbole, guias 2/4, 'M', envelope); SEM dado real → rotulada ESQUEMA · conteúdo de fisiologia, divisor-onda";414;280
+dados;29-curva-de-lactato-esquema.svg;curva de lactato (esquema);"forma certa da curva (hipérbole, guias 2/4, 'M', envelope); SEM dado real → rotulada ESQUEMA · conteúdo de fisiologia, divisor-onda";414;280
+dados;30-força-vertical-ao-andar-esquema.svg;força vertical ao andar (esquema);"forma certa da curva (hipérbole, guias 2/4, 'M', envelope); SEM dado real → rotulada ESQUEMA · conteúdo de fisiologia, divisor-onda";488;280
+dados;31-emg-bruto-retificado-envelope-esquema.svg;EMG: bruto → retificado → envelope (esquema);"forma certa da curva (hipérbole, guias 2/4, 'M', envelope); SEM dado real → rotulada ESQUEMA · conteúdo de fisiologia, divisor-onda";402;294
+dados;32-tabela-zonas-de-frequência-cardíaca.svg;tabela · zonas de frequência cardíaca;"≤ 6 linhas, fios finos, algarismos alinhados pela tinta; só dado verdadeiro · ficha técnica, prova, site";438;334
+dados;33-tabela-anilhas-iwf-competição.svg;tabela · anilhas iwf · competição;"≤ 6 linhas, fios finos, algarismos alinhados pela tinta; só dado verdadeiro · ficha técnica, prova, site";408;334
+dados;34-tabela-protocolo-tabata.svg;tabela · protocolo tabata;"≤ 6 linhas, fios finos, algarismos alinhados pela tinta; só dado verdadeiro · ficha técnica, prova, site";300;240
+dados;35-status-sinal-4-4.svg;status · sinal · 4/4;ícone com função (bateria = noites que faltam, sinal = força, rec/ao vivo = transmitindo) · ≤ 3 por peça, barra de câmera;66;54
+dados;36-status-bateria-3-3-3-noites.svg;status · bateria · 3/3 · 3 NOITES;ícone com função (bateria = noites que faltam, sinal = força, rec/ao vivo = transmitindo) · ≤ 3 por peça, barra de câmera;300;41
+dados;37-status-bateria-1-3-última-noite.svg;status · bateria · 1/3 · ÚLTIMA NOITE;ícone com função (bateria = noites que faltam, sinal = força, rec/ao vivo = transmitindo) · ≤ 3 por peça, barra de câmera;398;42
+dados;38-status-rec-rec.svg;status · rec · REC;ícone com função (bateria = noites que faltam, sinal = força, rec/ao vivo = transmitindo) · ≤ 3 por peça, barra de câmera;102;27
+dados;39-status-rec-ao-vivo-20h30.svg;status · rec · AO VIVO · 20H30;ícone com função (bateria = noites que faltam, sinal = força, rec/ao vivo = transmitindo) · ≤ 3 por peça, barra de câmera;398;27
+exemplo;01-pílula-cheia.svg;pílula cheia;"status curto (≤ 3 palavras); raio = metade da altura";247;63
+exemplo;02-pílula-contorno.svg;pílula contorno;"status curto (≤ 3 palavras); raio = metade da altura";247;63
+exemplo;03-pílula-cheia.svg;pílula cheia;"status curto (≤ 3 palavras); raio = metade da altura";175;63
+faixas;01-faixa-ao-vivo.svg;faixa · ao vivo;"inclinada no ângulo da ficha (-6°), sangra nas 2 bordas; separador desenhado";480;300
+faixas;02-faixa-tinta-barra.svg;faixa · tinta · barra;"inclinada no ângulo da ficha (-6°), sangra nas 2 bordas; separador desenhado";480;300
+faixas;03-fita-de-isolamento.svg;fita de isolamento;bordas zebradas a 45° + texto: 'área reservada', contagem regressiva;480;300
+faixas;04-faixa-cheio-contorno-alternados.svg;faixa · cheio/contorno alternados;repetição alterna cheio e contorno: ritmo sem cor nova;480;300
+faixas;05-fitas-cruzadas-ângulo.svg;fitas cruzadas (± ângulo);"duas fitas em ±15° (2,5 × o ângulo da ficha): fecha/abre algo; 1 por série";480;300
+faixas;06-marquee-simples.svg;marquee · simples;"1 faixa, texto + seta desenhada; o texto cabe inteiro (a faixa é que sangra); no site anda";520;62
+faixas;07-marquee-dupla.svg;marquee · dupla;2 faixas em sentidos opostos (no site): cheia + contorno, texto inteiro nas 2;520;135
+faixas;08-zebrado-45-1-1.svg;zebrado 45° (1:1);"perigo/atenção, borda de faixa; 1:1 a 45°";420;260
+faixas;09-listras-na-pílula-1-2.svg;listras na pílula (1:2);"barra de carregamento / reservado; 1:2; o fio da pílula desenha a forma";420;120
+faixas;10-listras-no-ângulo-da-ficha--6.svg;listras no ângulo da ficha (-6°);"o contêiner gira no ângulo das faixas do sistema; listras paralelas às bordas (sem lascas)";456;338
+faixas;11-hachura-no-disco-passo-9.svg;hachura no disco (passo 9);hachura de sistema: passo 6–12 px, traço ~3 px, 1 ângulo;300;300
+faixas;12-toldo-listras-meias-luas.svg;toldo (listras + meias-luas);8 listras verticais, 1 meia-lua por listra (raio = ½ listra): festa, feira, abertura;440;240
+faixas;13-persiana-fios-que-engrossam.svg;persiana (fios que engrossam);espessura cresce em curva (expoente 1,35): peso, aceleração, pôr do sol;420;260
+faixas;14-listras-verticais-papel.svg;listras verticais · papel;pauta grossa 1:1 (passo = 1 U);420;260
+faixas;15-bolinhas-pois-alternado.svg;bolinhas · pois alternado;passo 30, raio 7.8: só bolinhas inteiras, rede centrada no contêiner;420;260
+faixas;16-bolinhas-grade-fina.svg;bolinhas · grade fina;passo 24, raio 4: só bolinhas inteiras, rede centrada no contêiner;420;260
+faixas;17-bolinhas-degradê-de-raio.svg;bolinhas · degradê de raio;raio cresce da esquerda para a direita (passo fixo): movimento, chegada;420;260
+faixas;18-bolinhas-no-disco.svg;bolinhas no disco;passo 30, raio 7.8: só bolinhas inteiras, rede centrada no contêiner;300;300
+faixas;19-xadrez-plano.svg;xadrez · plano;célula 46.7 px (1.94 U);420;280
+faixas;20-xadrez-faixa-de-chegada.svg;xadrez · faixa de chegada;3 fileiras: bandeira de chegada (célula 1,1 U);460;81
+faixas;21-xadrez-losangos.svg;xadrez · losangos;"arlequim (losango 1 : 0,62); bordas no centro dos losangos = zigue-zague limpo";407;253
+faixas;22-xadrez-chão-em-perspectiva.svg;xadrez · chão em perspectiva;chão de chegada em perspectiva (1 ponto de fuga) com névoa no horizonte: linha final, largada;440;300
+faixas;23-tarja-vazada-raio-0.svg;tarja vazada · raio 0;"texto vazado: a foto/fundo aparece pela letra; respiro H = 0,55 da maiúscula";286;110
+faixas;24-tarja-vazada-raio-28.svg;tarja vazada · raio 28;"texto vazado: a foto/fundo aparece pela letra; respiro H = 0,55 da maiúscula";286;110
+faixas;25-tarja-vazada-raio-16.svg;tarja vazada · raio 16;"texto vazado: a foto/fundo aparece pela letra; respiro H = 0,55 da maiúscula";251;81
+faixas;26-tarja-vazada-pílula.svg;tarja vazada · pílula;"texto vazado: a foto/fundo aparece pela letra; respiro H = 0,55 da maiúscula";358;110
+faixas;27-tarja-cheia-raio-da-ficha.svg;tarja cheia · raio da ficha;texto na cor de contraste (não vazado): quando o fundo atrás é movimentado;263;110
+faixas;28-tarjas-empilhadas-raio-0.svg;tarjas empilhadas · raio 0;1 tarja por linha (cada uma do tamanho da linha), degrau à direita, 6 px entre elas;271;179
+faixas;29-tarjas-empilhadas-raio-28.svg;tarjas empilhadas · raio 28;1 tarja por linha (cada uma do tamanho da linha), degrau à direita, 6 px entre elas;355;194
+faixas;30-parágrafo-redigido-1-dado-escapa.svg;parágrafo redigido · 1 dado escapa;tarjas de palavra (vão 12 px), 1 informação no acento escapa: curiosidade sem mentir;440;186
+faixas;31-gigante-cortado.svg;'%' gigante cortado;glifo da display, cortado 22% à direita e 25% embaixo (corte decidido, nunca tangente);440;340
+faixas;32-contorno-por-fora.svg;'%' contorno por fora;contorno POR FORA (8 px ≈ 3% da altura): o glifo mantém o tamanho do cheio;440;340
+faixas;33-numeral-1-cheio-anel.svg;numeral '1' · cheio + anel;cheio + contorno afastado (folga 1,6× o traço): letreiro, néon apagado;440;340
+faixas;34-numeral-herói-1.svg;numeral herói · 1;"rótulo encosta no TOPO da tinta do dígito, hora na BASE; fio fino separa";227;300
+faixas;35-aspas-gigantes-da-fonte.svg;aspas gigantes (da fonte);depoimento: aspas DA display, 3–6× o corpo do texto, alinhadas à tinta;300;300
+faixas;36-aspas-contorno-papel.svg;aspas · contorno · papel;contorno POR FORA (5 px ≈ 3% da altura): o glifo mantém o tamanho do cheio;300;300
+faixas;37-da-fonte.svg;'+' da fonte;"glifo da display ≥ 60% da altura; cortado pela borda quando passa de 1";300;300
+faixas;38-gigante.svg;'+' gigante;"braço = 1/3 do lado; 'mais' de verdade (bônus, soma), nunca enfeite solto";300;300
+faixas;39-gigante-contorno-raio-28.svg;'+' gigante · contorno · raio 28;"braço = 1/3 do lado; 'mais' de verdade (bônus, soma), nunca enfeite solto";300;300
+faixas;40-seta-gigante.svg;seta gigante;"bloco: haste 26% da altura, ponta a 90°; no ângulo da ficha (-6°)";440;300
+faixas;41-seta-gigante-sangra.svg;seta gigante · sangra;"bloco: haste 26% da altura, ponta a 90°; no ângulo da ficha (-6°)";440;300
+faixas;42-seta-gigante-contorno.svg;seta gigante · contorno;"bloco: haste 26% da altura, ponta a 90°; no ângulo da ficha (-6°)";440;300
+fios;01-fio-fino.svg;fio · fino;"fio fino = traço da ficha (3 px); encosta na tinta, não na caixa";440;24
+fios;02-fio-grosso.svg;fio · grosso;"fio grosso = 2 × traço (6 px); no máximo 2 espessuras por peça";440;24
+fios;03-fio-filete.svg;fio · filete;grosso + fino (filete de jornal): abre seção, assina rodapé;440;24
+fios;04-fio-ponto.svg;fio · ponto;fio que termina em ponto (acento): 'daqui sai uma legenda';440;24
+fios;05-fio-tracejado.svg;fio · tracejado;tracejado = em andamento / ainda não aconteceu;440;24
+fios;06-fio-barras.svg;fio · barras;fio com barrinhas: medida, intervalo;440;24
+fios;07-divisória-rotulo.svg;divisória · rotulo;"número (acento) + rótulo + fio até a margem; o fio começa a 0,6 U da tinta";460;51
+fios;08-divisória-centro.svg;divisória · centro;rótulo centrado entre fios: pausa entre blocos;460;51
+fios;09-divisória-pilula.svg;divisória · pilula;rótulo em pílula de contorno que vira fio (a pílula 'solta' o fio);460;51
+fios;10-divisória-barra.svg;divisória · barra;barra grossa (acento) + rótulo + fio fino: 2 espessuras, 1 acento;517;51
+fios;11-divisória-sublinhado.svg;divisória · sublinhado;aba sublinhada: grosso sob o rótulo (= item ativo), fino até a margem;460;52
+fios;12-régua-0-100.svg;régua 0–100;escala de %: 101 traços, número a cada 20;460;73
+fios;13-régua-de-horário-18h-24h.svg;régua de horário 18H–24H;"1 traço a cada 10 min; cursor no acento na hora REAL (20H30)";460;129
+fios;14-régua-0-50-papel.svg;régua 0–50 · papel;"sobre papel, tinta escura; números = micrográfico (textura)";460;73
+fios;15-régua-vertical.svg;régua vertical;"margem de peça, lateral de tela; números lidos de cima para baixo";73;330
+fios;16-réguas-em-l-passo-24-u.svg;réguas em L · passo 24 (U);"mede a própria área em px, de U em U; quadrado no canto = origem (acento)";440;300
+fios;17-cruzes-de-grade-cruz.svg;cruzes de grade · cruz;"passo 72 = 3 U; braço 9.6; fio fino a 55%";385;241
+fios;18-cruzes-1-no-acento.svg;cruzes · 1 no acento;"passo 72 = 3 U; braço 9.6; fio fino a 55%; o acento marca O lugar";385;241
+fios;19-cruzes-e-pontos-alternados.svg;cruzes e pontos alternados;"passo 48 = 2 U; braço 9.6; fio fino a 55%";313;217
+fios;20-cruzes-coordenadas-papel.svg;cruzes + coordenadas · papel;"passo 72 = 3 U; braço 9.6; fio fino a 55%; coordenadas A1… na margem";413;269
+fios;21-prova-de-gráfica-corte-registro-cores.svg;prova de gráfica (corte + registro + cores);marcas de corte em L fora do corte (12 px), alvos de registro e a barra de cores DA marca;440;300
+fios;22-grade-de-pontos.svg;grade de pontos;"passo 36 (1.5 U); só se o ponto significar algo (sensor, assento, vaga)";341;197
+fios;23-pontos-principal-a-cada-4.svg;pontos · principal a cada 4;"passo 24 (1 U); só se o ponto significar algo (sensor, assento, vaga)";305;209
+fios;24-pontos-1-no-acento.svg;pontos · 1 no acento;"passo 36 (1.5 U); só se o ponto significar algo (sensor, assento, vaga)";341;197
+fios;25-pontos-papel.svg;pontos · papel;"passo 36 (1.5 U); só se o ponto significar algo (sensor, assento, vaga)";341;197
+fios;26-cantoneiras-retas.svg;cantoneiras retas;"braço 48 (2 U); enquadra UMA coisa; nunca em todo cartão";440;290
+fios;27-cantoneiras-dobra-raio-28.svg;cantoneiras · dobra raio 28;"L com a dobra arredondada no raio da ficha; acento = 'medido'";440;290
+fios;28-visor-ao-vivo.svg;visor ao vivo;● AO VIVO + timecode 20:30:00:00 (hora real) + mira central;484;290
+fios;29-2-cantos-diagonais-grosso.svg;2 cantos diagonais · grosso;"enquadra sem fechar; 2 cantos opostos bastam";440;290
+fios;30-marcas-de-corte-papel.svg;marcas de corte · papel;L FORA do quadro, afastadas 12 px: 'prova de impressão';440;290
+fios;31-cantos-curtos-grossos-raio-16.svg;cantos curtos grossos · raio 16;braço 1,2 U, grosso, dobra no raio sm (o raio cabe no braço): moldura de ícone/avatar;440;290
+fios;32-colchetes-reto.svg;colchetes · reto;"[ ] desenhados no fio grosso; braço = 16% da altura";440;200
+fios;33-colchetes-curvo.svg;colchetes · curvo;( ) em curva única: aparte, comentário;440;200
+fios;34-colchetes-fonte.svg;colchetes · fonte;"colchetes DA fonte display (nunca de outra fonte), 1,5× a palavra; centrados na maiúscula pela tinta";440;200
+fios;35-colchetes-grupo.svg;colchetes · grupo;"agrupador: colchete junta itens e aponta o total (fio no acento); os 2 colchetes da mesma altura";440;149
+fios;36-callout-reto.svg;callout · reto;"ponto → fio horizontal → rótulo; o fio para a 0,75 U da tinta";442;220
+fios;37-callout-cotovelo.svg;callout · cotovelo;alvo (anel) + cotovelo a 45° + horizontal: aponta para um detalhe da foto;404;220
+fios;38-callout-coluna.svg;callout · coluna;várias legendas: rótulos numa COLUNA só, fios paralelos (2–5 legendas);446;220
+fios;39-callout-pilula.svg;callout · pilula;fio em degrau (0/90°, cantos vivos) terminando numa pílula de acento;410;220
+fios;40-lista-traço-no-acento.svg;lista · traço no acento;"marcador = traço curto grosso no acento; recuo = 1,75 U";440;158
+fios;41-lista-01-02-03-fios.svg;lista · 01/02/03 + fios;números mono no acento + fio fino entre itens (tabular);440;158
+fios;42-lista-quadrado-feito-a-fazer.svg;lista · quadrado (feito/a fazer);"quadrado cheio = já aconteceu / atual; vazio = próximo";440;158
+fios;43-seta-reta.svg;seta · reta;"ponta aberta a 45°; haste = fio grosso (6)";440;160
+fios;44-seta-reta-cheia.svg;seta · reta · cheia;"ponta cheia; haste = fio grosso (6)";440;160
+fios;45-seta-dupla.svg;seta · dupla;ida e volta / intervalo;440;160
+fios;46-seta-cotovelo.svg;seta · cotovelo;"cotovelo no raio lg da escala (44); desce e segue (leitura em L)";440;160
+fios;47-seta-curva.svg;seta · curva;curva-S com tangente horizontal nas pontas: 'passa para o próximo';440;160
+fios;48-seta-retorno.svg;seta · retorno;giro de 285°: repetição, 'toda noite', ciclo;440;160
+fios;49-seta-angulo.svg;seta · angulo;no ângulo da ficha (-6°): faixas, carimbo e seta inclinam igual;440;160
+fios;50-seta-fonte.svg;seta · fonte;a seta DA fonte display (desenho casado com as letras);440;160
+fios;51-cota-horizontal.svg;cota · horizontal;"cota com pontas cheias; o valor é o comprimento real (px)";400;110
+fios;52-cota-barras.svg;cota · barras;cota de arquitetura: traços a 45° no lugar das pontas;340;110
+fios;53-cota-vertical.svg;cota · vertical;"cota vertical; valor deitado, lido de baixo para cima";140;280
+fios;54-cota-raio.svg;cota · raio;cota de raio (R) num canto: documenta o raio do sistema no manual;380;230
+fios;55-cota-angulo.svg;cota · angulo;cota de ângulo: o ângulo do sistema (-6°) como medida visível;444;150
+fios;56-linha-do-tempo-horizontal.svg;linha do tempo · horizontal;"marco atual cheio no acento; passado cheio; futuro vazado";460;130
+fios;57-linha-do-tempo-vertical.svg;linha do tempo · vertical;vertical, marcos quadrados (raio 0): agenda, cronograma;360;300
+fios;58-linha-do-tempo-segmentos.svg;linha do tempo · segmentos;"progresso em 3 segmentos (1 por noite); cheio = já começou";460;80
+fios;59-numeração-grande.svg;numeração · grande;numeral display + total mono alinhado na BASE (não no meio);223;162
+fios;60-numeração-no.svg;numeração · no;Nº + 2 dígitos, sublinhado no grosso: edição/turma/noite;122;66
+fios;61-numeração-anel.svg;numeração · anel;número no anel: etapa, passo de um processo;118;118
+fios;62-numeração-fracao.svg;numeração · fracao;fração 1/3 com a barra no acento: 'noite 1 de 3';111;130
+fios;63-numeração-caixa.svg;numeração · caixa;001 em bloco + rótulo: etiqueta de arquivo (raio 0);236;52
+formas;01-cheio-raio-0-vivo.svg;cheio · raio 0 (vivo);"respiro interno ≥ raio (F13); 1 valor da escala por peça";420;270
+formas;02-cheio-raio-28-md-cartão.svg;cheio · raio 28 (md · cartão);"respiro interno ≥ raio (F13); 1 valor da escala por peça";420;270
+formas;03-cheio-raio-44-lg-moldura.svg;cheio · raio 44 (lg · moldura);"respiro interno ≥ raio (F13); 1 valor da escala por peça";420;270
+formas;04-contorno-raio-0-vivo.svg;contorno · raio 0 (vivo);fio = traço da ficha (3 px), centrado por dentro;420;270
+formas;05-contorno-raio-28-md-cartão.svg;contorno · raio 28 (md · cartão);fio = traço da ficha (3 px), centrado por dentro;420;270
+formas;06-contorno-raio-44-lg-moldura.svg;contorno · raio 44 (lg · moldura);fio = traço da ficha (3 px), centrado por dentro;420;270
+formas;07-contorno-duplo-raio-0-vivo.svg;contorno duplo · raio 0 (vivo);"interno = externo − (traço + folga); com raio 0 os dois ficam retos";420;270
+formas;08-contorno-duplo-raio-28-md-cartão.svg;contorno duplo · raio 28 (md · cartão);"interno = externo − (traço + folga); com raio 0 os dois ficam retos";420;270
+formas;09-contorno-duplo-raio-44-lg-moldura.svg;contorno duplo · raio 44 (lg · moldura);"interno = externo − (traço + folga); com raio 0 os dois ficam retos";420;270
+formas;10-1-canto-curvo-lg-44.svg;1 canto curvo (lg 44);3 cantos retos + 1 curvo: direção de leitura para baixo-direita;420;270
+formas;11-folha-2-cantos-pílula.svg;folha (2 cantos pílula);2 cantos opostos em pílula (½ do lado menor): reto + arredondado na mesma forma;420;270
+formas;12-topo-arredondado-base-reta.svg;topo arredondado · base reta;aba/arco: assenta numa linha de base (rodapé, régua, chão);420;270
+formas;13-meia-pílula-reto.svg;meia-pílula + reto;ponta de pílula de um lado só: etiqueta que 'sai' de uma borda;420;150
+formas;14-chanfro-raio-alternados.svg;chanfro + raio alternados;corner-shape: bevel round bevel round (os dois 44);420;270
+formas;15-côncavo-scoop-reto-papel.svg;côncavo (scoop) + reto · papel;"corner-shape: scoop; cara de ingresso/placa";420;270
+formas;16-squircle-inteiro-superelipse-n-4.svg;squircle inteiro (superelipse n=4);"superelipse inteira (corner-shape: squircle; raio = ½ lado): ícone/selo de app. Squircle com raio da escala (16–44) não se distingue do redondo: não usar";300;300
+formas;17-chanfro-44-bevel.svg;chanfro 44 (bevel);45°: placa industrial, etiqueta técnica;420;270
+formas;18-chanfro-em-2-cantos.svg;chanfro em 2 cantos;diagonal: movimento sem inclinar a caixa;420;270
+formas;19-degrau-28-notch.svg;degrau 28 (notch);"corner-shape: notch; cantos 'mordidos' = selo/medalha retangular";420;270
+formas;20-côncavo-nos-4-scoop.svg;côncavo nos 4 (scoop);"placa de rua / cartela; raio côncavo cresce no contorno (s + d)";420;270
+formas;21-pasta-raio-28.svg;pasta · raio 28;"ficha/dossiê/avaliação (nunca promoção); aba = rótulo + respiro ≥ raio; curva-S do gsaweb";440;300
+formas;22-pasta-raio-0.svg;pasta · raio 0;aba reta + curva: arquivo técnico;440;300
+formas;23-pasta-raio-44-aba-à-direita.svg;pasta · raio 44 · aba à direita;"espelhada; contorno = traço da ficha";440;300
+formas;24-pasta-contorno-duplo.svg;pasta · contorno duplo;aba baixa (36) sem rótulo: divisória discreta;440;300
+formas;25-pasta-papel.svg;pasta · papel;"sobre papel; sombra (se houver) = drop-shadow no pai";440;300
+formas;26-cartão-com-entalhe-no-topo.svg;cartão com entalhe no topo;o negativo da aba pendurada: o rótulo 'encaixa' no vão;440;300
+formas;27-entalhe-contorno-raio-44.svg;entalhe · contorno · raio 44;ombros côncavos com as alças do gsaweb;440;300
+formas;28-aba-pendurada.svg;aba pendurada;"data/local pendurado no topo (fora de y<240 no 9:16); ombro côncavo = 1,06 × altura";581;74
+formas;29-aba-pendurada-invertida-sobe-da-base.svg;aba pendurada invertida (sobe da base);"sobe da base: rótulo de rodapé/tela (acima de y 1248 no 9:16); ombro côncavo = 1,06 × altura";378;74
+formas;30-recorte-de-canto-botão-raio-28.svg;recorte de canto + botão · raio 28;"raio invertido: o botão encaixa no canto; encaixe concêntrico ao botão = folga constante de ¼ U em volta";440;300
+formas;31-recorte-embaixo-contorno-raio-44.svg;recorte embaixo · contorno · raio 44;"raio invertido: o botão encaixa no canto; encaixe concêntrico ao botão = folga constante de ¼ U em volta";440;300
+formas;32-recorte-raio-0.svg;recorte · raio 0;"raio invertido: o botão encaixa no canto; encaixe concêntrico ao botão = folga constante de ¼ U em volta";440;300
+formas;33-recorte-à-esquerda-papel.svg;recorte à esquerda · papel;"raio invertido: o botão encaixa no canto; encaixe concêntrico ao botão = folga constante de ¼ U em volta";440;300
+formas;34-ingresso-cheio.svg;ingresso · cheio;"vaga/noite; canhoto 24% com a hora deitada; furos de 7 px a cada 14 px (2× o diâmetro)";460;200
+formas;35-ingresso-contorno-raio-0.svg;ingresso · contorno · raio 0;no contorno o picote vira tracejado (traço inteiro nas pontas, longe da meia-lua);460;200
+formas;36-ingresso-vertical-raio-44.svg;ingresso vertical · raio 44;canhoto embaixo: pilha de ingressos, story;200;350
+formas;37-ingresso-contorno-duplo-papel.svg;ingresso · contorno duplo · papel;"borda dupla de bilhete impresso; meia-lua de dentro concêntrica; picote abaixo dela";460;200
+formas;38-moldura-dupla.svg;moldura dupla;"enquadra 1 coisa (foto, dado, tela); externo 44 → interno 29 (− borda 3 − espaço 12)";420;280
+formas;39-moldura-aninhada.svg;moldura aninhada;"enquadra 1 coisa (foto, dado, tela); moldura 44 · borda 6 · espaço 12 → painel 26";420;280
+formas;40-moldura-tripla.svg;moldura tripla;"enquadra 1 coisa (foto, dado, tela); 3 aros, passo 18: 44 → 26 → 8";420;280
+formas;41-moldura-passe.svg;moldura passe;"enquadra 1 coisa (foto, dado, tela); passe-partout 36: externo 64 → janela 28 → filete 16";420;280
+formas;42-balão-canto-vivo-à-esquerda.svg;balão · canto vivo à esquerda;"só para fala de verdade (depoimento, pergunta); ≤ 3 linhas";420;230
+formas;43-balão-direita-contorno-raio-44.svg;balão · direita · contorno · raio 44;espelhado = a outra pessoa da conversa;420;230
+formas;44-balão-pílula-cauda-central.svg;balão-pílula · cauda central;pílula (raio = ½ altura) + cauda: reação curta, 1 linha;420;170
+formas;45-balão-reto-papel.svg;balão reto · papel;raio 0: voz seca, de documento;420;230
+formas;46-etiqueta-de-bagagem-cheia.svg;etiqueta de bagagem · cheia;"etiqueta de bagagem/arquivo: ilhós com anel, cordão com nó fora da etiqueta; ponta chanfrada";458;278
+formas;47-etiqueta-contorno-raio-0.svg;etiqueta · contorno · raio 0;"etiqueta de bagagem/arquivo: ilhós com anel, cordão com nó fora da etiqueta; ponta chanfrada";458;278
+formas;48-etiqueta-vertical-papel.svg;etiqueta vertical · papel;"etiqueta de bagagem/arquivo: ilhós com anel, cordão com nó fora da etiqueta; ponta chanfrada";268;368
+formas;49-aba-lateral-divisória.svg;aba lateral (divisória);"seção numerada de fichário; aba sai 2 × raio (56): côncava 28 + canto 28";440;300
+formas;50-aba-lateral-contorno-raio-28.svg;aba lateral · contorno · raio 28;aba na 2ª posição: sequência 01/02/03 descendo;440;300
+formas;51-aba-lateral-raio-0-papel.svg;aba lateral · raio 0 · papel;reta: fichário técnico;440;300
+formas;52-janela-barra.svg;janela · barra;"mostra o produto por dentro (aula, plataforma); a barra informa (nome · hora), nunca ✕ ▶";440;300
+formas;53-janela-acento-raio-44.svg;janela · acento · raio 44;"mostra o produto por dentro (aula, plataforma); a barra informa (nome · hora), nunca ✕ ▶";440;300
+formas;54-janela-fio-raio-0.svg;janela · fio · raio 0;"mostra o produto por dentro (aula, plataforma); a barra informa (nome · hora), nunca ✕ ▶";440;300
+formas;55-monitor-cheio.svg;monitor · cheio;"prova visual (aula, app, dado) dentro de um objeto; moldura 44 − borda 12 = tela 32";446;326
+formas;56-monitor-contorno.svg;monitor · contorno;"prova visual (aula, app, dado) dentro de um objeto; moldura 44 − borda 12 = tela 32";446;326
+formas;57-celular-cheio.svg;celular · cheio;"prova visual (aula, app, dado) dentro de um objeto; corpo 28 − borda 9 = tela 19";176;356
+formas;58-celular-contorno.svg;celular · contorno;"prova visual (aula, app, dado) dentro de um objeto; corpo 28 − borda 9 = tela 19";176;356
+grades;01-grade-modular-feed-6-8-linhas.svg;grade modular · feed 6×8 · linhas;"1080×1350; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;02-grade-modular-feed-6-8-campos.svg;grade modular · feed 6×8 · campos;"1080×1350; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;03-grade-modular-feed-6-8-cruzes.svg;grade modular · feed 6×8 · cruzes;"1080×1350; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;04-grade-modular-feed-6-8-coordenadas.svg;grade modular · feed 6×8 · coordenadas;"1080×1350; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;05-grade-modular-quadrado-6-6-destaque.svg;grade modular · quadrado 6×6 · destaque;"1080×1080; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;06-grade-modular-story-6-7-zonas.svg;grade modular · story 6×7 · zonas;"1080×1920; margem zona segura; gutter 24; coluna 124.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1920
+grades;07-grade-modular-paisagem-12-6-linhas.svg;grade modular · paisagem 12×6 · linhas;"1920×1080; margem 96; gutter 24; coluna 122.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1920;1080
+grades;08-grade-modular-feed-6-8-coordenadas.svg;grade modular · feed 6×8 · coordenadas;"1080×1350; margem 72; gutter 24; coluna 136.0 px; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;09-linha-de-base-8-px.svg;linha de base 8 px;"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;10-linha-de-base-numerada-y.svg;linha de base numerada (y);"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;11-linha-de-base-2-colunas.svg;linha de base + 2 colunas;"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;12-linha-de-base-texto-esquemático.svg;linha de base + texto esquemático;"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;13-linha-de-base-faixas-de-altura-x.svg;linha de base + faixas de altura-x;"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;14-linha-de-base-texto-esquemático.svg;linha de base + texto esquemático;"corpos e entrelinhas múltiplos de 8; a entrelinha com acento é medida na tinta; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;15-site-desktop-12-col-colunas-a-12.svg;site · desktop · 12 col · colunas a 12%;"container 1320, gutter 24, coluna 88.0 px; foto em 5–6 col, título em 6–7 (landing)";1440;900
+grades;16-site-desktop-12-col-colunas-numeradas.svg;site · desktop · 12 col · colunas numeradas;"container 1320, gutter 24, coluna 88.0 px; foto em 5–6 col, título em 6–7 (landing)";1440;900
+grades;17-site-desktop-12-col-colunas-em-contorno.svg;site · desktop · 12 col · colunas em contorno;"container 1320, gutter 24, coluna 88.0 px; foto em 5–6 col, título em 6–7 (landing)";1440;900
+grades;18-site-desktop-12-col-só-os-vãos-gutters.svg;site · desktop · 12 col · só os vãos (gutters);"container 1320, gutter 24, coluna 88.0 px; foto em 5–6 col, título em 6–7 (landing)";1440;900
+grades;19-site-tablet-8-col-colunas-a-12.svg;site · tablet · 8 col · colunas a 12%;"container 704, gutter 24, coluna 67.0 px; foto em 5–6 col, título em 6–7 (landing)";768;1024
+grades;20-site-mobile-4-col-colunas-numeradas.svg;site · mobile · 4 col · colunas numeradas;"container 358, gutter 16, coluna 77.5 px; foto em 5–6 col, título em 6–7 (landing)";390;844
+grades;21-site-desktop-12-col-colunas-a-12.svg;site · desktop · 12 col · colunas a 12%;"container 1320, gutter 24, coluna 88.0 px; foto em 5–6 col, título em 6–7 (landing)";1440;900
+grades;22-grade-isométrica.svg;grade isométrica;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;23-grade-isométrica-de-pontos.svg;grade isométrica de pontos;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;24-grade-triangular.svg;grade triangular;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;25-grade-hexagonal.svg;grade hexagonal;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;26-isométrica-1-cubo-no-acento.svg;isométrica + 1 cubo no acento;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;27-isométrica-degraus.svg;isométrica + degraus;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;28-grade-isométrica.svg;grade isométrica;"passo 48px; diagrama/produto em 3D plano; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;29-grade-polar-15.svg;grade polar (15°);"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;30-grade-polar-meia.svg;grade polar · meia;"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;560
+grades;31-grade-polar-graduada-360.svg;grade polar graduada (360°);"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;32-grade-polar-de-pontos.svg;grade polar de pontos;"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;33-grade-polar-anéis-em-progressão.svg;grade polar · anéis em progressão;"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;34-grade-polar-setor-no-acento.svg;grade polar · setor no acento;"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;35-grade-polar-alvo.svg;grade polar · alvo;"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;36-grade-polar-graduada-360.svg;grade polar graduada (360°);"radar/ciclo/alcance; graduação só se MEDIR algo real; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;37-marcas-de-corte.svg;marcas de corte;"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;38-corte-sangria.svg;corte + sangria;"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;39-corte-sangria-segurança.svg;corte + sangria + segurança;"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;40-corte-registro.svg;corte + registro;"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;41-marcas-de-dobra-3-painéis.svg;marcas de dobra (3 painéis);"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1542;1092
+grades;42-imposição-2-4-cartões.svg;imposição 2×4 (cartões);"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;43-corte-registro.svg;corte + registro;"só onde há MEDIDA/impressão (dossiê, prova, ingresso), nunca em todo cartão; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1272;1542
+grades;44-papel-milimetrado-1-5-10-mm.svg;papel milimetrado (1/5/10 mm);"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;45-quadriculado-5-mm.svg;quadriculado 5 mm;"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;46-pontos-a-5-mm-cruzes-a-50.svg;pontos a 5 mm + cruzes a 50;"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;47-papel-semilog-3-décadas.svg;papel semilog (3 décadas);"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;48-milimetrado-de-engenharia-acento.svg;milimetrado de engenharia (acento);"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;49-papel-milimetrado-1-5-10-mm.svg;papel milimetrado (1/5/10 mm);"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;50-milimetrado-de-engenharia-acento.svg;milimetrado de engenharia (acento);"1 mm = 6 px; medida/precisão (só a grade — nunca traçado fake); grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1080
+grades;51-registro-cruzes-nas-interseções.svg;registro · cruzes nas interseções;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;52-registro-miras-nos-cantos.svg;registro · miras nos cantos;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;53-registro-cantoneiras-por-módulo.svg;registro · cantoneiras por módulo;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;54-registro-cruzes-coordenadas.svg;registro · cruzes + coordenadas;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;55-registro-1-mira-no-acento.svg;registro · 1 mira no acento;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+grades;56-registro-cantoneiras-por-módulo.svg;registro · cantoneiras por módulo;"cruzes 8–12 px a 15–25%; marca o grid sem desenhá-lo; grid visível = no máximo 2 recursos por peça; fio fino 15–25%; presa às margens da peça";1080;1350
+linhas;01-topografia-18-níveis.svg;topografia · 18 níveis;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;02-topografia-34-níveis.svg;topografia · 34 níveis;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;03-topografia-10-níveis.svg;topografia · 10 níveis;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;04-topografia-18-níveis-cota-no-acento.svg;topografia · 18 níveis · cota no acento;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;05-topografia-22-níveis-lente.svg;topografia · 22 níveis · lente;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;06-topografia-14-níveis.svg;topografia · 14 níveis;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;360
+linhas;07-topografia-14-níveis-terraços.svg;topografia · 14 níveis · terraços;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;08-topografia-20-níveis.svg;topografia · 20 níveis;"relevo REAL do lugar > ruído; 8–20 níveis, mestra a cada 5; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;09-ondas-paralelas.svg;ondas paralelas;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;10-ondas-em-fase-deslocada.svg;ondas em fase deslocada;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;11-ondas-pulso.svg;ondas · pulso;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;12-onda-amortecida.svg;onda amortecida;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;13-ondas-interferência.svg;ondas · interferência;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;14-relevo-de-linhas.svg;relevo de linhas;"linhas ocultas calculadas (só traço, funciona em qualquer fundo); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;15-faixas-onduladas.svg;faixas onduladas;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;16-ondas-verticais.svg;ondas verticais;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;17-ondas-em-fase-deslocada.svg;ondas em fase deslocada;"tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;18-espiral-de-arquimedes.svg;espiral de Arquimedes;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;19-espiral-que-engrossa.svg;espiral que engrossa;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;20-espiral-dupla.svg;espiral dupla;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;21-espiral-logarítmica-φ.svg;espiral logarítmica (φ);"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;22-espiral-quadrada.svg;espiral quadrada;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;23-espiral-em-perspectiva.svg;espiral em perspectiva;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;24-espiral-tracejada.svg;espiral tracejada;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;25-espiral-de-fermat.svg;espiral de Fermat;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;26-espiral-de-arquimedes.svg;espiral de Arquimedes;"herói de 1 peça ou fundo ≤ 10%; centro = o assunto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;27-fluxo-escoamento-em-volta-do-cilindro.svg;fluxo · escoamento em volta do cilindro;"o obstáculo é o assunto (foto/logo no lugar do círculo); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;28-fluxo-escoamento-em-volta-do-cilindro-com-obstáculo.svg;fluxo · escoamento em volta do cilindro · com obstáculo;"o obstáculo é o assunto (foto/logo no lugar do círculo); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;29-fluxo-linhas-de-campo-2-polos.svg;fluxo · linhas de campo (2 polos);"liga 2 coisas (antes → depois, professor ↔ aluno); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;30-fluxo-linhas-de-campo-2-polos-com-obstáculo.svg;fluxo · linhas de campo (2 polos) · com obstáculo;"liga 2 coisas (antes → depois, professor ↔ aluno); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;31-fluxo-vórtice-ralo.svg;fluxo · vórtice + ralo;"campo com origem > Perlin solto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;32-fluxo-ruído-no-ângulo-da-ficha.svg;fluxo · ruído no ângulo da ficha;"campo com origem > Perlin solto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;33-fluxo-ângulos-quantizados-π-10.svg;fluxo · ângulos quantizados (π/10);"campo com origem > Perlin solto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;34-fluxo-traços-curtos-pelo.svg;fluxo · traços curtos (pelo);"campo com origem > Perlin solto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;35-fluxo-ruído-no-ângulo-da-ficha.svg;fluxo · ruído no ângulo da ficha;"campo com origem > Perlin solto; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;36-guilloché-roseta.svg;guilloché · roseta;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;37-guilloché-roseta-em-2-tintas.svg;guilloché · roseta em 2 tintas;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;38-guilloché-renda-hipotrocoide.svg;guilloché · renda (hipotrocoide);"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;39-guilloché-epitrocoide.svg;guilloché · epitrocoide;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;40-guilloché-anel-trançado.svg;guilloché · anel trançado;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;41-guilloché-anéis-concêntricos.svg;guilloché · anéis concêntricos;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;42-guilloché-faixa-de-borda.svg;guilloché · faixa de borda;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;240
+linhas;43-guilloché-medalhão.svg;guilloché · medalhão;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;44-guilloché-roseta.svg;guilloché · roseta;"certificado, ingresso, 'valor', premium; 1 cor fina, contraste baixo; nunca sob texto pequeno";1080;1080
+linhas;45-moiré-2-grades-α-p-d.svg;moiré · 2 grades (α = p/D);"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;46-moiré-batimento-de-passos.svg;moiré · batimento de passos;"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;47-moiré-círculos-deslocados.svg;moiré · círculos deslocados;"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;48-moiré-raios-deslocados.svg;moiré · raios deslocados;"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;49-moiré-reta-onda.svg;moiré · reta × onda;"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;50-moiré-2-tintas.svg;moiré · 2 tintas;"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;51-moiré-2-grades-α-p-d.svg;moiré · 2 grades (α = p/D);"calculado: p=9px, faixas de 260px; exportar SEM reamostrar; herói/transição, nunca sob texto";1080;1080
+linhas;52-hachura-45.svg;hachura 45°;"passo 10px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;53-hachura-no-ângulo-da-ficha.svg;hachura no ângulo da ficha;"passo 12px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;54-hachura-cruzada.svg;hachura cruzada;"passo 14px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;55-hachura-com-tom-passo-variável.svg;hachura com tom (passo variável);"passo 10px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;56-hachura-que-segue-o-volume-gravura.svg;hachura que segue o volume (gravura);"passo 11px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;57-hachura-solta-à-mão.svg;hachura solta à mão;"passo 14px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;58-hachura-sombra-chapada-em-bloco.svg;hachura · sombra chapada em bloco;"passo 9px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;59-hachura-tracejada.svg;hachura tracejada;"passo 12px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;60-hachura-que-segue-o-volume-gravura.svg;hachura que segue o volume (gravura);"passo 10px (6–12), traço 1.95px; 1–2 ângulos; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;61-op-art-listras-com-bojo.svg;op-art · listras com bojo;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;62-op-art-corrente-frequência-crescente.svg;op-art · corrente (frequência crescente);"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;63-op-art-tabuleiro-com-lente.svg;op-art · tabuleiro com lente;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;64-op-art-anéis-excêntricos.svg;op-art · anéis excêntricos;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;65-op-art-linhas-torcidas.svg;op-art · linhas torcidas;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;66-op-art-quadrados-girando.svg;op-art · quadrados girando;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;67-op-art-cata-vento-torcido.svg;op-art · cata-vento torcido;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;68-op-art-listras-com-bojo.svg;op-art · listras com bojo;"P&B ou 2 cores, UMA deformação, fundo de 1 peça-herói; vibra: nunca atrás de texto";1080;1080
+linhas;69-grade-poço-peso-afunda.svg;grade · poço (peso afunda);"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;70-grade-lente.svg;grade · lente;"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;71-grade-onda.svg;grade · onda;"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;72-grade-torção.svg;grade · torção;"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;73-grade-massa-curvando-o-plano-3d.svg;grade · massa curvando o plano (3D);"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;74-grade-2-poços.svg;grade · 2 poços;"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;75-grade-impacto-onda-radial.svg;grade · impacto (onda radial);"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;76-grade-poço-peso-afunda.svg;grade · poço (peso afunda);"a deformação é a ideia (força, falta, foco); grade presa à ficha; tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;77-pauta-de-5-linhas.svg;pauta de 5 linhas;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;78-pauta-com-compassos.svg;pauta com compassos;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;79-pauta-de-caderno-margem.svg;pauta de caderno + margem;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;80-pauta-de-caligrafia-base-x-asc-desc.svg;pauta de caligrafia (base, x, asc., desc.);"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;81-pauta-de-planilha.svg;pauta de planilha;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;82-linhas-numeradas.svg;linhas numeradas;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;83-pauta-de-caderno-margem.svg;pauta de caderno + margem;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;1080
+linhas;84-pauta-de-5-linhas.svg;pauta de 5 linhas;"a pauta vem do assunto; entrelinha = a do texto; números são textura (não para ler)";1080;420
+linhas;85-velocidade-horizontais.svg;velocidade · horizontais;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";1080;600
+linhas;86-velocidade-no-ângulo-do-movimento.svg;velocidade · no ângulo do movimento;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";1080;600
+linhas;87-velocidade-foco-zoom.svg;velocidade · foco (zoom);"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";1080;1080
+linhas;88-velocidade-arco-balanço.svg;velocidade · arco (balanço);"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";900;700
+linhas;89-velocidade-trio-curto.svg;velocidade · trio curto;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";600;300
+linhas;90-velocidade-queda-salto.svg;velocidade · queda/salto;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";600;900
+linhas;91-velocidade-1-no-acento.svg;velocidade · 1 no acento;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";1080;600
+linhas;92-velocidade-horizontais.svg;velocidade · horizontais;"atrás de algo que SE MOVE (nunca de texto parado); 5–12 linhas, comprimentos 1:4, afinam na cauda";1080;600
+linhas;93-raios-cunhas-alternadas.svg;raios · cunhas alternadas;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;94-raios-linhas-finas.svg;raios · linhas finas;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;95-raios-nascente.svg;raios · nascente;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;540
+linhas;96-raios-do-canto.svg;raios · do canto;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;97-raios-centro-livre.svg;raios · centro livre;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;98-raios-explosão-irregular.svg;raios · explosão irregular;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";900;900
+linhas;99-raios-cunhas-finas.svg;raios · cunhas finas;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;100-raios-tracejados.svg;raios · tracejados;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;101-raios-cunhas-alternadas.svg;raios · cunhas alternadas;"o centro dos raios = o herói (produto, número, rosto); tempero retrô — 1 por série";1080;1080
+linhas;102-concêntricos-passo-igual.svg;concêntricos · passo igual;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;103-concêntricos-progressão-geométrica.svg;concêntricos · progressão geométrica;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;104-concêntricos-anéis-de-crescimento.svg;concêntricos · anéis de crescimento;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;105-concêntricos-arco-da-base.svg;concêntricos · arco da base;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;540
+linhas;106-concêntricos-ondulação.svg;concêntricos · ondulação;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;107-concêntricos-arcos-com-falhas.svg;concêntricos · arcos com falhas;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;108-concêntricos-quadrados-raio-da-ficha.svg;concêntricos · quadrados (raio da ficha);"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;109-concêntricos-fino-grosso.svg;concêntricos · fino/grosso;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;110-concêntricos-passo-igual.svg;concêntricos · passo igual;"centro = o assunto (alvo, ponto de impacto); tempero de fundo: ≤ 10% de contraste sob texto; nunca sob texto pequeno";1080;1080
+linhas;111-perspectiva-chão.svg;perspectiva · chão;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;112-perspectiva-chão-que-some.svg;perspectiva · chão que some;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;113-perspectiva-corredor.svg;perspectiva · corredor;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;114-perspectiva-fuga-deslocada.svg;perspectiva · fuga deslocada;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;115-perspectiva-horizonte-curvo.svg;perspectiva · horizonte curvo;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;116-perspectiva-pontos-no-chão.svg;perspectiva · pontos no chão;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;117-perspectiva-horizonte-no-acento.svg;perspectiva · horizonte no acento;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;118-perspectiva-teto.svg;perspectiva · teto;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;119-perspectiva-chão.svg;perspectiva · chão;"palco para objeto/pessoa recortada; fio fino, sem neon (synthwave = clichê)";1080;1080
+linhas;120-ritmo-pulso-regular.svg;ritmo · pulso regular;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;121-ritmo-pulso-quadrado-sinal.svg;ritmo · pulso quadrado (sinal);RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;122-ritmo-1-batida-no-acento.svg;ritmo · 1 batida no acento;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;123-ritmo-carga-crescente.svg;ritmo · carga crescente;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;124-ritmo-séries-e-descanso.svg;ritmo · séries e descanso;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;125-ritmo-pulsos-suaves.svg;ritmo · pulsos suaves;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;240
+linhas;126-ritmo-polirritmo.svg;ritmo · polirritmo;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;1080;480
+linhas;127-ritmo-sublinhado-com-pulso.svg;ritmo · sublinhado com pulso;RITMO estilizado, nunca traçado médico (sem PQRST/coração/números): divisor, sublinhado, linha do tempo;640;120
+mao;01-sublinhado-simples-fina.svg;sublinhado · simples · fina;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";606;77
+mao;02-sublinhado-simples-media.svg;sublinhado · simples · media;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";618;70
+mao;03-sublinhado-simples-grossa.svg;sublinhado · simples · grossa;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";603;69
+mao;04-sublinhado-duplo-media.svg;sublinhado · duplo · media;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";606;88
+mao;05-sublinhado-onda-fina.svg;sublinhado · onda · fina;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";606;78
+mao;06-sublinhado-volta-media.svg;sublinhado · volta · media;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";609;91
+mao;07-sublinhado-vaievolta-fina.svg;sublinhado · vaievolta · fina;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";642;105
+mao;08-sublinhado-arco-media.svg;sublinhado · arco · media;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";608;89
+mao;09-sublinhado-simples-media.svg;sublinhado · simples · media;"sob a palavra-chave; largura = a da palavra +4–8%; 1–2 por peça; cor de ação; por cima da foto e do vetor";609;67
+mao;10-oval-oval-fina.svg;oval · oval · fina;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";483;217
+mao;11-oval-oval-media.svg;oval · oval · media;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";491;219
+mao;12-círculo-circulo-grossa.svg;círculo · circulo · grossa;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";295;291
+mao;13-oval-duplo-fina.svg;oval · duplo · fina;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";512;227
+mao;14-oval-aberto-media.svg;oval · aberto · media;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";486;220
+mao;15-oval-rabiscado-fina.svg;oval · rabiscado · fina;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";400;248
+mao;16-caixa-à-mão-media.svg;caixa à mão · media;"contorna 1 bloco (preço, data); 1–2 por peça; cor de ação; por cima da foto e do vetor";472;203
+mao;17-oval-oval-media.svg;oval · oval · media;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";687;214
+mao;18-oval-oval-media.svg;oval · oval · media;"envolve 1 palavra/número com sobra de 8–15%; 1–2 por peça; cor de ação; por cima da foto e do vetor";482;221
+mao;19-marca-texto-seco.svg;marca-texto · seco;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";546;76
+mao;20-marca-texto-seco.svg;marca-texto · seco;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";331;78
+mao;21-marca-texto-seco.svg;marca-texto · seco;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";547;76
+mao;22-marca-texto-seco.svg;marca-texto · seco;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";501;44
+mao;23-marca-texto-seco.svg;marca-texto · seco;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";40;321
+mao;24-marca-texto-translucido.svg;marca-texto · translucido;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";548;78
+mao;25-marca-texto-translucido-2-passadas.svg;marca-texto · translucido · 2 passadas;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";542;102
+mao;26-marca-texto-translucido.svg;marca-texto · translucido;"atrás de 1 linha; altura = 1,1× a altura-x (ou ½ = 'meia-faixa'); 1–2 por peça; cor de ação; por cima da foto e do vetor";536;42
+mao;27-riscado-simples-fina.svg;riscado · simples · fina;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";520;63
+mao;28-riscado-simples-media.svg;riscado · simples · media;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";521;65
+mao;29-riscado-duplo-media.svg;riscado · duplo · media;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";521;79
+mao;30-riscado-ondulado-media.svg;riscado · ondulado · media;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";521;77
+mao;31-riscado-rasura-fina.svg;riscado · rasura · fina;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";431;130
+mao;32-riscado-x-media.svg;riscado · x · media;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";283;229
+mao;33-riscado-diagonal-media.svg;riscado · diagonal · media;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";326;206
+mao;34-riscado-simples-grossa.svg;riscado · simples · grossa;"risca o preço antigo/o 'não'; nunca o que precisa ser lido; 1–2 por peça; cor de ação; por cima da foto e do vetor";522;64
+mao;35-seta-curva-aberta.svg;seta · curva · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";442;250
+mao;36-seta-curva-cheia.svg;seta · curva · cheia;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";450;267
+mao;37-seta-s-aberta.svg;seta · s · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";409;289
+mao;38-seta-laco-aberta.svg;seta · laco · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";493;238
+mao;39-seta-reta-aberta.svg;seta · reta · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";479;96
+mao;40-seta-gancho-aberta.svg;seta · gancho · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";332;263
+mao;41-seta-curta-aberta.svg;seta · curta · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";201;81
+mao;42-seta-dupla-aberta.svg;seta · dupla · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";505;123
+mao;43-seta-volta-aberta.svg;seta · volta · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";265;314
+mao;44-seta-curva-aberta.svg;seta · curva · aberta;"liga a chamada ao objeto (da esquerda p/ a direita); 1–2 por peça; cor de ação; por cima da foto e do vetor";448;246
+mao;45-colchete-lateral-media.svg;colchete · lateral · media;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";97;339
+mao;46-colchete-lateral-grossa.svg;colchete · lateral · grossa;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";97;333
+mao;47-colchete-par-fina.svg;colchete · par · fina;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";486;222
+mao;48-colchete-inferior-media.svg;colchete · inferior · media;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";489;133
+mao;49-colchete-cantos-fina.svg;colchete · cantos · fina;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";462;301
+mao;50-colchete-cantos-media.svg;colchete · cantos · media;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";404;278
+mao;51-colchete-inferior-grossa.svg;colchete · inferior · grossa;"agrupa linhas / marca o trecho que importa; 1–2 por peça; cor de ação; por cima da foto e do vetor";334;103
+mao;52-asterisco-3-traços-media.svg;asterisco · 3 traços · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";114;129
+mao;53-asterisco-4-traços-media.svg;asterisco · 4 traços · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";151;138
+mao;54-estrela-de-1-traço-media.svg;estrela de 1 traço · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";166;180
+mao;55-estrela-de-1-traço-grossa.svg;estrela de 1 traço · grossa;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";179;181
+mao;56-brilho-de-4-pontas-media.svg;brilho de 4 pontas · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";154;172
+mao;57-ênfase-3-tracinhos-media.svg;ênfase · 3 tracinhos · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";94;109
+mao;58-ênfase-leque-fina.svg;ênfase · leque · fina;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";211;105
+mao;59-asterisco-3-traços-media.svg;asterisco · 3 traços · media;"chama o olho para 1 canto/1 número; nunca mais de 1; 1–2 por peça; cor de ação; por cima da foto e do vetor";135;152
+mao;60-check-check-media.svg;check · check · media;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";134;128
+mao;61-check-check-grossa.svg;check · check · grossa;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";135;139
+mao;62-check-longo-media.svg;check · longo · media;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";249;152
+mao;63-x-x-media.svg;X · x · media;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";141;132
+mao;64-x-x-grossa.svg;X · x · grossa;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";142;127
+mao;65-check-caixa-media.svg;check · caixa · media;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";142;157
+mao;66-check-caixa-fina.svg;check · caixa · fina;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";146;166
+mao;67-check-check-media.svg;check · check · media;"lista do que entra/não entra; 1 marca por item; 1–2 por peça; cor de ação; por cima da foto e do vetor";135;127
+mao;68-espiral-rabiscada-fina.svg;espiral rabiscada · fina;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";137;118
+mao;69-laçadas-fina.svg;laçadas · fina;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";469;138
+mao;70-zigue-zague-media.svg;zigue-zague · media;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";389;90
+mao;71-bola-de-rabisco-fina.svg;bola de rabisco · fina;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";209;182
+mao;72-mola-fina.svg;mola · fina;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";513;110
+mao;73-risquinhos-media.svg;risquinhos · media;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";187;138
+mao;74-ondinha-media.svg;ondinha · media;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";283;65
+mao;75-laçadas-fina.svg;laçadas · fina;"rabisco de atenção ou divisor de voz; tempero, nunca sob texto; 1–2 por peça; cor de ação; por cima da foto e do vetor";473;139
+mao;76-chaves-vertical-media.svg;chaves · vertical · media;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";79;324
+mao;77-chaves-vertical-media.svg;chaves · vertical · media;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";84;418
+mao;78-chaves-direita-fina.svg;chaves · direita · fina;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";82;390
+mao;79-chaves-horizontal-media.svg;chaves · horizontal · media;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";504;90
+mao;80-chaves-par-media.svg;chaves · par · media;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";307;231
+mao;81-chaves-horizontal-fina.svg;chaves · horizontal · fina;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";350;67
+mao;82-chaves-vertical-media.svg;chaves · vertical · media;"junta itens de uma lista num resumo; ponta aponta para a nota; 1–2 por peça; cor de ação; por cima da foto e do vetor";74;269
+pontos;01-voronoi-células.svg;Voronoi · células;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;02-voronoi-seixos.svg;Voronoi · seixos;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;03-voronoi-densidade-em-degradê.svg;Voronoi · densidade em degradê;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;04-voronoi-mosaico-de-tons.svg;Voronoi · mosaico de tons;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;05-voronoi-células-centros.svg;Voronoi · células + centros;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;06-delaunay-malha.svg;Delaunay · malha;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;07-voronoi-craquelado.svg;Voronoi · craquelado;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;08-voronoi-lente-com-1-célula-no-acento.svg;Voronoi · lente com 1 célula no acento;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;09-voronoi-seixos.svg;Voronoi · seixos;"premium quando os pontos SÃO dados (alunos, cidades, lojas); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;10-pontilhado-degradê.svg;pontilhado · degradê;"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;11-pontilhado-centro.svg;pontilhado · centro;"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;12-pontilhado-esfera-volume.svg;pontilhado · esfera (volume);"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;13-pontilhado-nuvem.svg;pontilhado · nuvem;"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;14-pontilhado-faixa.svg;pontilhado · faixa;"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;15-pontilhado-diagonal-tamanho-variável.svg;pontilhado · diagonal · tamanho variável;"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;16-pontilhado-bordas-vinheta.svg;pontilhado · bordas (vinheta);"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;17-pontilhado-esfera-volume.svg;pontilhado · esfera (volume);"degradê feito de pontos (sem banding); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;18-meio-tom-linear-ponto.svg;meio-tom · linear · ponto;"célula 16px a 45° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;19-meio-tom-radial-ponto.svg;meio-tom · radial · ponto;"célula 16px a 45° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;20-meio-tom-esfera-ponto.svg;meio-tom · esfera · ponto;"célula 14px a 45° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;21-meio-tom-nuvem-ponto.svg;meio-tom · nuvem · ponto;"célula 16px a 45° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;22-meio-tom-linear-quadrado.svg;meio-tom · linear · quadrado;"célula 20px a 0° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;23-meio-tom-diagonal-cruz.svg;meio-tom · diagonal · cruz;"célula 22px a 0° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;24-meio-tom-faixa-ponto-hexagonal.svg;meio-tom · faixa · ponto · hexagonal;"célula 18px a 0° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;25-meio-tom-esfera-ponto.svg;meio-tom · esfera · ponto;"célula 14px a 45° (≥ 12 px num 1080); só no fundo/ampliação, nunca no rosto principal";1080;1080
+pontos;26-dither-bayer-8-8-linear.svg;dither · Bayer 8×8 · linear;"pixel de 8px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;27-dither-bayer-4-4-radial.svg;dither · Bayer 4×4 · radial;"pixel de 10px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;28-dither-ruído-azul-linear.svg;dither · ruído azul · linear;"pixel de 6px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;29-dither-floyd-steinberg-esfera.svg;dither · Floyd–Steinberg · esfera;"pixel de 6px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;30-dither-bayer-8-8-nuvem.svg;dither · Bayer 8×8 · nuvem;"pixel de 12px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;31-dither-bayer-2-2-faixa.svg;dither · Bayer 2×2 · faixa;"pixel de 12px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;32-dither-ruído-azul-diagonal.svg;dither · ruído azul · diagonal;"pixel de 8px assumido (tela ampliada); Bayer é estável em vídeo, FS 'ferve'; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;33-grade-de-pontos-some-à-direita.svg;grade de pontos · some à direita;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;34-grade-de-pontos-some-na-diagonal.svg;grade de pontos · some na diagonal;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;35-grade-de-pontos-dissolve-ruído-azul.svg;grade de pontos · dissolve (ruído azul);"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;36-grade-de-cruzes-some-para-baixo.svg;grade de cruzes · some para baixo;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;37-grade-hexagonal-some.svg;grade hexagonal · some;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;38-grade-de-pontos-onda-de-tamanho.svg;grade de pontos · onda de tamanho;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;39-grade-de-pontos-reserva-para-texto.svg;grade de pontos · reserva para texto;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;40-grade-de-pontos-1-no-acento.svg;grade de pontos · 1 no acento;"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;41-grade-de-pontos-dissolve-ruído-azul.svg;grade de pontos · dissolve (ruído azul);"passo = unidade da ficha (36px); a máscara tem direção (nunca radial genérica); tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;42-mosaico-quadtree.svg;mosaico · quadtree;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;43-mosaico-quadtree-em-tons.svg;mosaico · quadtree em tons;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;44-mosaico-pixel-tamanho-tom.svg;mosaico · pixel (tamanho = tom);"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;45-mosaico-tesselas.svg;mosaico · tesselas;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;46-mosaico-xadrez-que-falha.svg;mosaico · xadrez que falha;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;47-mosaico-quadrados-em-escala.svg;mosaico · quadrados em escala;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;540
+pontos;48-mosaico-blocos-acento.svg;mosaico · blocos + acento;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;49-mosaico-quadtree.svg;mosaico · quadtree;"grade rígida + 1 exceção > enfeite; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;50-meio-tom-de-linhas-linear.svg;meio-tom de linhas · linear;"passo 14px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;51-meio-tom-de-linhas-esfera.svg;meio-tom de linhas · esfera;"passo 14px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;52-meio-tom-de-linhas-esfera-deslocamento.svg;meio-tom de linhas · esfera · deslocamento;"passo 16px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;53-meio-tom-de-linhas-radial-anéis.svg;meio-tom de linhas · radial · anéis;"passo 14px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;54-meio-tom-de-linhas-linear-45.svg;meio-tom de linhas · linear · 45°;"passo 14px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+pontos;55-meio-tom-de-linhas-esfera.svg;meio-tom de linhas · esfera;"passo 12px; gravura/tela de TV; tempero/fundo; célula ≥ 12 px num 1080; nunca sob texto pequeno; 1 cor (+ acento em 1 detalhe)";1080;1080
+profundidade;01-sombra-dura-cartao.svg;sombra dura · cartao;"deslocamento 8 px (3,5% do lado menor) para direita-baixo; borda 2 px; raio 0";368;238
+profundidade;02-sombra-dura-cartao-papel.svg;sombra dura · cartao · papel;"deslocamento 8 px (3,5% do lado menor) para direita-baixo; borda 2 px; raio 44";368;238
+profundidade;03-sombra-dura-pilula.svg;sombra dura · pilula;rótulo 'colado': pílula + sombra dura de 4 px na cor da tinta;176;65
+profundidade;04-sombra-dura-circulo.svg;sombra dura · circulo;disco + sombra dura (3,5% do diâmetro): número de etapa que 'salta';207;207
+profundidade;05-sombra-dura-texto.svg;sombra dura · texto;texto com sombra dura no acento (6 px = 6% da altura da letra), sem desfoque;344;100
+profundidade;06-sombra-longa-numeral.svg;sombra longa · numeral;sombra longa a 45°, tom 1 passo do ladrilho (baixo contraste);320;320
+profundidade;07-sombra-longa-selo-esvai.svg;sombra longa · selo · esvai;"sombra longa a 45°, tom 1 passo do ladrilho (baixo contraste); esvai com a distância";320;320
+profundidade;08-sombra-longa-texto.svg;sombra longa · texto;sombra longa a 45°, tom 1 passo do ladrilho (baixo contraste);460;230
+profundidade;09-extrusão-numeral.svg;extrusão · numeral;profundidade 30 px (12% da altura), lado no tom escuro do acento;87;273
+profundidade;10-extrusão-texto.svg;extrusão · texto;profundidade 16 px (16% da altura), lado no tom escuro do acento;366;112
+profundidade;11-extrusão-pilula.svg;extrusão · pilula;profundidade 14 px (16% da altura), lado no tom escuro do acento;235;72
+profundidade;12-camadas-circulo.svg;camadas · circulo;5 discos em degrau de 10 px, fio fino separa as camadas: papel cortado empilhado;264;264
+profundidade;13-camadas-cartoes.svg;camadas · cartoes;pilha de 5 cartões em contorno, degrau 10 px: 'tem mais embaixo';344;234
+profundidade;14-papel-sobreposto-folhas.svg;papel sobreposto · folhas;"3 folhas giradas (±ângulo da ficha), a de cima reta; tons do papel; 1 receita de sombra";380;380
+profundidade;15-papel-sobreposto-leque.svg;papel sobreposto · leque;"3 cartões em leque girando na base: opções/módulos; raio da ficha";380;350
+profundidade;16-papel-sobreposto-ingressos.svg;papel sobreposto · ingressos;"3 ingressos (1 por noite) empilhados; o da frente no acento cheio";380;300
+profundidade;17-adesivo-texto.svg;adesivo · texto;letra recortada com borda branca de 10 px (as bordas se fundem) + sombra curta;359;161
+profundidade;18-adesivo-estrela.svg;adesivo · estrela;estrela-adesivo: borda branca de 9 px seguindo as pontas (junção redonda);342;342
+profundidade;19-adesivo-canto.svg;adesivo · canto;adesivo com canto levantado (aba no verso da borda branca): 'acabou de ser colado';343;241
+profundidade;20-adesivo-pilula.svg;adesivo · pilula;pílula-adesivo escura com borda branca de 7 px: rótulo 'colado' em cima da foto;285;119
+profundidade;21-alto-relevo-papel.svg;alto-relevo · papel;tom sobre tom no papel: luz em cima-esquerda, sombra embaixo-direita (filtro sRGB);420;260
+profundidade;22-baixo-relevo-papel.svg;baixo-relevo · papel;tom sobre tom no papel: luz em cima-esquerda, sombra embaixo-direita (filtro sRGB);420;260
+profundidade;23-placa-com-baixo-relevo.svg;placa com baixo-relevo;placa no acento, letra estampada (mesma cor), 4 rebites: troféu/placa de conquista;420;220
+profundidade;24-alto-relevo-escuro.svg;alto-relevo · escuro;no escuro a luz é fraca (24%) e a sombra forte (75%): relevo discreto, 'grafite';420;240
+profundidade;25-contorno-deslocado-texto.svg;contorno deslocado · texto;contorno no acento deslocado 8 px (8% da altura): risografia com desregistro de propósito;349;105
+profundidade;26-contorno-deslocado-pilula.svg;contorno deslocado · pilula;pílula cheia + contorno deslocado 8 px: 'sombra' sem preencher;225;69
+profundidade;27-contorno-deslocado-cartao.svg;contorno deslocado · cartao;"cartão + contorno deslocado 12 px no acento; mesmo raio (44)";454;232
+profundidade;28-contorno-deslocado-circulo.svg;contorno deslocado · circulo;disco cheio + aro deslocado: número de etapa com 'eco';210;210
+profundidade;29-botão-neo-brutal-normal.svg;botão neo-brutal · normal;"SITE: borda 2 px + sombra dura 3 px; só em clicável";371;63
+profundidade;30-botão-neo-brutal-pressionado.svg;botão neo-brutal · pressionado;SITE :active — anda 3 px e a sombra vai a 0 (animar só transform);371;63
+profundidade;31-botão-neo-brutal-foco.svg;botão neo-brutal · foco;SITE :focus-visible — anel de 3 px afastado 3 px (o foco não some na borda);383;75
+profundidade;32-botão-neo-brutal-normal-escuro.svg;botão neo-brutal · normal · escuro;"SITE: borda 2 px + sombra dura 3 px; só em clicável";371;63
+selos;01-selo-circular-contorno.svg;selo circular · contorno;"texto no arco em curvas; separadores desenhados; centro na display";346;346
+selos;02-selo-circular-cheio.svg;selo circular · cheio;"texto no arco em curvas; separadores desenhados; centro na display";346;346
+selos;03-selo-circular-tinta.svg;selo circular · tinta;"texto no arco em curvas; separadores desenhados; centro na display";346;346
+selos;04-selo-circular-papel.svg;selo circular · papel;"texto no arco em curvas; separadores desenhados; centro na display";346;346
+selos;05-selo-giratório-contorno-miolo-seta.svg;selo giratório · contorno · miolo seta;"texto em 360° com espaçamento fechado (+0.207 em); no site gira a 1 volta/20 s";306;306
+selos;06-selo-giratório-cheio-número.svg;selo giratório · cheio · número;"texto em 360° com espaçamento fechado (+0.208 em); no site gira a 1 volta/20 s";306;306
+selos;07-serrilhado-24-pontas-0-88.svg;serrilhado 24 pontas (0,88);selo de 24 pontas, razão 0,88: borda serrilhada sem virar 'oferta';352;352
+selos;08-selo-ondulado-12-lóbulos.svg;selo ondulado 12 lóbulos;12 lóbulos senoidais iguais (razão 0,82): flor/lacre, tom mais leve que a explosão;352;352
+selos;09-serrilhado-32-papel.svg;serrilhado 32 · papel;32 pontas finas, quase um selo de lacre;352;352
+selos;10-tampinha-21-dentes-cheio.svg;tampinha (21 dentes) · cheio;tampa coroa: 21 dentes, saia sombreada (tom da própria cor), disco liso no meio;326;326
+selos;11-tampinha-tinta.svg;tampinha · tinta;tampa coroa: 21 dentes, saia sombreada (tom da própria cor), disco liso no meio;326;326
+selos;12-roseta-com-fitas.svg;roseta com fitas;"22 ondas; aro duplo; fitas com corte em V em 2 tons da própria cor";332;352
+selos;13-roseta-sem-fitas-tinta.svg;roseta sem fitas · tinta;"22 ondas; aro duplo; fitas com corte em V em 2 tons da própria cor";332;282
+selos;14-carimbo-retangulo.svg;carimbo · retangulo;"moldura dupla (grossa + fina), 3 níveis de texto, tinta falhada; inclinado no ângulo da ficha";415;259
+selos;15-carimbo-raio-da-ficha-4.svg;carimbo · raio da ficha · +4°;"moldura dupla (grossa + fina), 3 níveis de texto, tinta falhada; inclinado no ângulo da ficha";409;246
+selos;16-carimbo-oval.svg;carimbo · oval;"oval de duplo aro: carimbo de 'recebido'; texto em 3 níveis";436;267
+selos;17-carimbo-circular-papel.svg;carimbo circular · papel;carimbo postal: arco em cima e embaixo, data/hora entre fios no meio;346;346
+selos;18-carimbo-papel-tinta-escura.svg;carimbo · papel · tinta escura;"moldura dupla (grossa + fina), 3 níveis de texto, tinta falhada; inclinado no ângulo da ficha";406;240
+selos;19-tarja-carimbada.svg;tarja carimbada;"tarja carimbada (sigilo DE MARCA): cheia, texto vazado no fundo, fio interno; tinta leve (borda áspera, sem mancha)";444;141
+selos;20-ao-vivo-pilula.svg;ao vivo · pilula;"ponto = 0,84 da maiúscula; 2 ondas congeladas (no vídeo, pulsam a 1 Hz)";274;59
+selos;21-ao-vivo-tally.svg;ao vivo · tally;tally de estúdio: bloco reto (raio 0) na cor de 'no ar';253;61
+selos;22-ao-vivo-dividido.svg;ao vivo · dividido;bloco do ponto (acento) + rótulo + hora: status e horário numa peça só;428;61
+selos;23-ao-vivo-circular.svg;ao vivo · circular;anel de texto contínuo + ponto com 2 ondas: canto de story/hero;246;246
+selos;24-medalha-fitas.svg;medalha · fitas;"disco + 2 fitas com corte em V (tons da própria tinta); conquista, etapa vencida";260;278
+selos;25-medalha-pendurada.svg;medalha · pendurada;medalha pendurada: fita em V com 3 listras (tinta · acento · tinta);260;246
+selos;26-medalha-escudo.svg;medalha · escudo;"escudo geométrico (sem brasão nem órgão): distintivo de etapa; aro interno no acento";230;270
+selos;27-etiqueta-ponta.svg;etiqueta · ponta;"etiqueta com furo (texto do CLIENTE, nunca preço/oferta inventada); inclinada no ângulo; largura = texto";328;212
+selos;28-etiqueta-bandeirola.svg;etiqueta · bandeirola;"bandeirola com corte em V (rabo de andorinha): aviso curto; largura acompanha o texto";268;122
+selos;29-etiqueta-tinta-4.svg;etiqueta · tinta · +4°;"etiqueta com furo (texto do CLIENTE, nunca preço/oferta inventada); inclinada no ângulo; largura = texto";348;204
+texturas;01-grão-fino-fundo-escuro.svg;grão fino · fundo escuro;"screen + gamma 3 17% · freq 0.9 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;02-grão-medio-fundo-escuro.svg;grão medio · fundo escuro;"screen + gamma 3 17% · freq 0.62 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;03-grão-grosso-fundo-escuro.svg;grão grosso · fundo escuro;"screen + gamma 3 17% · freq 0.38 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;04-grão-fino-fundo-claro.svg;grão fino · fundo claro;"multiply 16% · freq 0.9 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;05-grão-medio-fundo-claro.svg;grão medio · fundo claro;"multiply 16% · freq 0.62 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;06-grão-grosso-fundo-claro.svg;grão grosso · fundo claro;"multiply 16% · freq 0.38 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;07-poeira-de-luz-esparsa.svg;poeira de luz (esparsa);"screen + gamma 5 32% · freq 0.9 · ladrilho 360px; UM grão por peça, por último, sobre fundo+foto+elementos e NUNCA sobre o texto";360;360
+texturas;08-papel-liso-fibra-manchas.svg;papel · liso (fibra + manchas);"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;09-papel-áspero-algodão.svg;papel · áspero (algodão);"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;10-papel-kraft.svg;papel · kraft;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;11-papel-jornal.svg;papel · jornal;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;12-papel-com-vinco.svg;papel · com vinco;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;13-papel-cartão-escuro.svg;papel · cartão escuro;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;14-papel-reciclado.svg;papel · reciclado;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;15-papel-telado.svg;papel · telado;"off-white quente, nunca #FFF; texto e tarjas em vetor POR CIMA; grão do papel 2–4%";900;900
+texturas;16-papel-dobrado-em-4-sobre-papel.svg;papel dobrado em 4 · sobre papel;"1–4 vincos fortes > amassado em tudo; sob a arte; luz de cima-esquerda (sombra 5–15%)";900;900
+texturas;17-papel-dobrado-em-8-sobre-papel.svg;papel dobrado em 8 · sobre papel;"1–4 vincos fortes > amassado em tudo; sob a arte; luz de cima-esquerda (sombra 5–15%)";900;900
+texturas;18-vinco-diagonal-sobre-papel.svg;vinco diagonal · sobre papel;"1–4 vincos fortes > amassado em tudo; sob a arte; luz de cima-esquerda (sombra 5–15%)";900;900
+texturas;19-xerox-toner-e-pó.svg;xerox · toner e pó;"em 1 elemento (foto, fundo, papel vazado) — nunca no logo/CTA; o melhor ainda é copiar e escanear de verdade";1080;1080
+texturas;20-xerox-riscas-do-scanner.svg;xerox · riscas do scanner;"em 1 elemento (foto, fundo, papel vazado) — nunca no logo/CTA; o melhor ainda é copiar e escanear de verdade";1080;1080
+texturas;21-xerox-preto-de-cópia-tarja.svg;xerox · preto de cópia (tarja);"em 1 elemento (foto, fundo, papel vazado) — nunca no logo/CTA; o melhor ainda é copiar e escanear de verdade";1080;1080
+texturas;22-xerox-borda-da-cópia.svg;xerox · borda da cópia;"em 1 elemento (foto, fundo, papel vazado) — nunca no logo/CTA; o melhor ainda é copiar e escanear de verdade";1080;1080
+texturas;23-papel-rasgado-tira.svg;papel rasgado · tira;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";1080;300
+texturas;24-papel-rasgado-2-tiras.svg;papel rasgado · 2 tiras;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";1080;300
+texturas;25-papel-rasgado-borda-de-cima.svg;papel rasgado · borda de cima;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";1080;600
+texturas;26-papel-rasgado-janela.svg;papel rasgado · janela;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";900;700
+texturas;27-papel-rasgado-canto.svg;papel rasgado · canto;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";700;700
+texturas;28-papel-rasgado-lateral.svg;papel rasgado · lateral;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";700;800
+texturas;29-rasgo-máscara-preto-mostra.svg;rasgo · máscara (preto = mostra);"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";1080;300
+texturas;30-papel-rasgado-tira.svg;papel rasgado · tira;"o rasgo REVELA algo que importa (antes/depois); fibra branca 2–6 px, sombra 2–4 px";1080;300
+texturas;31-carimbo-tarja-desgaste-0-2.svg;carimbo · tarja · desgaste 0.2;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";520;260
+texturas;32-carimbo-tarja-desgaste-0-6.svg;carimbo · tarja · desgaste 0.6;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";520;260
+texturas;33-carimbo-moldura-dupla-desgaste-0-5.svg;carimbo · moldura dupla · desgaste 0.5;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";520;260
+texturas;34-carimbo-anel-desgaste-0-55.svg;carimbo · anel · desgaste 0.55;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";360;360
+texturas;35-carimbo-barra-desgaste-0-45.svg;carimbo · barra · desgaste 0.45;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";520;260
+texturas;36-carimbo-moldura-dupla-desgaste-0-7.svg;carimbo · moldura dupla · desgaste 0.7;"marca da MARCA (nunca selo oficial/órgão); ±4° do ângulo da ficha; filtro_carimbo() serve p/ texto";520;260
+texturas;37-riso-tinta-chapada.svg;riso · tinta chapada;"2–3 tintas, desregistro 1–3 px numa direção só, papel; multiply; nunca foto em 8 cores";900;900
+texturas;38-riso-2-tintas-sobrepostas.svg;riso · 2 tintas sobrepostas;"2–3 tintas, desregistro 1–3 px numa direção só, papel; multiply; nunca foto em 8 cores";900;900
+texturas;39-riso-degradê-granulado.svg;riso · degradê granulado;"2–3 tintas, desregistro 1–3 px numa direção só, papel; multiply; nunca foto em 8 cores";900;900
+texturas;40-riso-desregistro.svg;riso · desregistro;"2–3 tintas, desregistro 1–3 px numa direção só, papel; multiply; nunca foto em 8 cores";900;900
+texturas;41-riso-tramas-cruzadas.svg;riso · tramas cruzadas;"2–3 tintas, desregistro 1–3 px numa direção só, papel; multiply; nunca foto em 8 cores";900;900
+texturas;42-scanlines-1-px-a-cada-3-tela.svg;scanlines · 1 px a cada 3 · tela;"1 px a cada 3 px, 32%; só dentro do visor/tela, nunca na peça inteira";480;360
+texturas;43-scanlines-1-px-a-cada-4-tela.svg;scanlines · 1 px a cada 4 · tela;"1 px a cada 4 px, 30%; só dentro do visor/tela, nunca na peça inteira";480;360
+texturas;44-scanlines-crt-abertura-tela.svg;scanlines · CRT + abertura · tela;"2 px a cada 6 px, 40%; só dentro do visor/tela, nunca na peça inteira";480;360
+texturas;45-scanlines-barra-que-rola-tela.svg;scanlines · barra que rola · tela;"1 px a cada 4 px, 28%; só dentro do visor/tela, nunca na peça inteira";480;360
+texturas;46-scanlines-claras-tela-escura-tela.svg;scanlines · claras (tela escura) · tela;"1 px a cada 4 px, 10%; só dentro do visor/tela, nunca na peça inteira";480;360
+texturas;47-poeira-leve.svg;poeira · leve;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;48-poeira-com-fios.svg;poeira · com fios;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;49-arranhões-de-película.svg;arranhões de película;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;50-poeira-nos-cantos.svg;poeira · nos cantos;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;51-poeira-fios-arranhões.svg;poeira + fios + arranhões;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;52-poeira-fios-arranhões.svg;poeira + fios + arranhões;"1 defeito por peça (poeira OU dobra OU luz); fora do rosto e do texto; real escaneado > simulado";1080;1080
+texturas;53-fundo-poça-de-luz-grão.svg;fundo · poça de luz + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;54-fundo-ciclorama-chão-grão.svg;fundo · ciclorama (chão) + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;55-fundo-luz-do-canto-grão.svg;fundo · luz do canto + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;56-fundo-2-poças-grão.svg;fundo · 2 poças + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;57-fundo-feixe-de-luz-grão.svg;fundo · feixe de luz + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;58-fundo-brasa-acento-fundo-grão.svg;fundo · brasa (acento → fundo) + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+texturas;59-fundo-papel-com-luz-grão.svg;fundo · papel com luz + grão;"degradê só entre vizinhas, interpolado em OKLCH; luz fora do centro; vinheta ≤ 30%; grão por último";1080;1350
+tipograficos;01-anel-de-texto.svg;anel de texto;texto fecha o anel com espaço igual (sobra distribuída) e correção óptica · selo, moldura de foto, carregamento que gira;322;323
+tipograficos;02-anel-de-texto-duplo.svg;anel de texto · duplo;texto fecha o anel com espaço igual (sobra distribuída) e correção óptica · selo, moldura de foto, carregamento que gira;306;306
+tipograficos;03-anel-de-texto-display.svg;anel de texto · display;texto fecha o anel com espaço igual (sobra distribuída) e correção óptica · selo, moldura de foto, carregamento que gira;284;284
+tipograficos;04-arco-de-texto-cima-ao-vivo.svg;arco de texto · cima · AO VIVO;palavra curta num arco, centrada e com correção óptica (por dentro abre, por fora fecha) · selo, chamada sobre foto, topo de moldura;162;59
+tipograficos;05-arco-de-texto-baixo-20h30.svg;arco de texto · baixo · 20H30;palavra curta num arco, centrada e com correção óptica (por dentro abre, por fora fecha) · selo, chamada sobre foto, topo de moldura;142;55
+tipograficos;06-espiral-de-texto.svg;espiral de texto;espiral de Arquimedes com corpo proporcional ao raio · fundo de capa, carregamento, 'as 3 noites' girando;337;352
+tipograficos;07-onda-de-texto.svg;onda de texto;frase curta repetida inteira numa onda, com correção óptica · faixa animável, divisor de seção;360;73
+tipograficos;08-eco-opacidade-ao-vivo.svg;eco · opacidade · AO VIVO;repetição empilhada sem sobrepor (vão de 14% medido na tinta) · título que 'ecoa' a transmissão, 1 por peça;259;320
+tipograficos;09-eco-contorno-black.svg;eco · contorno · BLACK;repetição empilhada sem sobrepor (vão de 14% medido na tinta) · título que 'ecoa' a transmissão, 1 por peça;228;350
+tipograficos;10-bloco-justificado.svg;bloco justificado;cada linha no corpo que dá a mesma largura NA TINTA · cartaz tipográfico, capa de carrossel;280;360
+tipograficos;11-bloco-justificado-fios-acento-3.svg;bloco justificado · fios · acento 3;cada linha no corpo que dá a mesma largura NA TINTA · cartaz tipográfico, capa de carrossel;280;249
+tipograficos;12-bloco-justificado-acento-1.svg;bloco justificado · acento 1;cada linha no corpo que dá a mesma largura NA TINTA · cartaz tipográfico, capa de carrossel;340;306
+tipograficos;13-bloco-justificado-fios-acento-1.svg;bloco justificado · fios · acento 1;cada linha no corpo que dá a mesma largura NA TINTA · cartaz tipográfico, capa de carrossel;300;322
+tipograficos;14-numeral-1-contorno.svg;numeral 1 · contorno;numeral da fonte display (1 efeito por peça) · número da noite, contagem, data;64;243
+tipograficos;15-numeral-2-duplo.svg;numeral 2 · duplo;numeral da fonte display (1 efeito por peça) · número da noite, contagem, data;137;254
+tipograficos;16-numeral-3-extrusao.svg;numeral 3 · extrusao;numeral da fonte display (1 efeito por peça) · número da noite, contagem, data;142;255
+tipograficos;17-numeral-27-tracejado.svg;numeral 27 · tracejado;numeral da fonte display (1 efeito por peça) · número da noite, contagem, data;238;214
+tipograficos;18-numeral-20h30-contorno.svg;numeral 20H30 · contorno;numeral da fonte display (1 efeito por peça) · número da noite, contagem, data;365;126
+tipograficos;19-lombada-cheio-black-friday.svg;lombada · cheio · BLACK FRIDAY;rótulo vertical lendo de baixo para cima (padrão de lombada brasileiro), medido na tinta · borda de peça, menu lateral, coleção de módulos;50;340
+tipograficos;20-lombada-contorno-pós-graduação.svg;lombada · contorno · PÓS-GRADUAÇÃO;rótulo vertical lendo de baixo para cima (padrão de lombada brasileiro), medido na tinta · borda de peça, menu lateral, coleção de módulos;50;340
+tipograficos;21-lombada-livro-personal-trainer-academy.svg;lombada · livro · PERSONAL TRAINER ACADEMY;rótulo vertical lendo de baixo para cima (padrão de lombada brasileiro), medido na tinta · borda de peça, menu lateral, coleção de módulos;50;340
+tipograficos;22-lombada-solto-ao-vivo-20h30.svg;lombada · solto · AO VIVO · 20H30;rótulo vertical lendo de baixo para cima (padrão de lombada brasileiro), medido na tinta · borda de peça, menu lateral, coleção de módulos;60;340
+tipograficos;23-datador-bandas-27-nov-2026.svg;datador · bandas · 27 NOV 2026;"data em mono como carimbo de data (bandas do datador), medida na tinta · data real da campanha; 1 carimbo por peça";368;151
+tipograficos;24-datador-caixa-noite-1.svg;datador · caixa · NOITE 1;"data em mono como carimbo de data (bandas do datador), medida na tinta · data real da campanha; 1 carimbo por peça";212;102
+tipograficos;25-datador-linha-27-11-2026.svg;datador · linha · 27.11.2026;"data em mono como carimbo de data (bandas do datador), medida na tinta · data real da campanha; 1 carimbo por peça";238;46
+tipograficos;26-datador-bandas-20h30.svg;datador · bandas · 20H30;"data em mono como carimbo de data (bandas do datador), medida na tinta · data real da campanha; 1 carimbo por peça";209;146

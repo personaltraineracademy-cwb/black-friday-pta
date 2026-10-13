@@ -1,0 +1,94 @@
+{
+  "base": {
+    "brand": {
+      "hex": "#CDA85E",
+      "name": "Ouro · as três juntas"
+    },
+    "ink": {
+      "hex": "#0C0B09",
+      "name": "Preto da Black"
+    },
+    "paper": {
+      "hex": "#ECE7DC",
+      "name": "Papel"
+    },
+    "biomecanica": {
+      "hex": "#007BFF",
+      "name": "Azul · Biomecânica"
+    },
+    "bodybuilding": {
+      "hex": "#E8341C",
+      "name": "Vermelho · Bodybuilding"
+    },
+    "feminino": {
+      "hex": "#934EFF",
+      "name": "Roxo · Treinamento Feminino"
+    }
+  },
+  "por_produto": {
+    "biomecanica": {
+      "bg": "#101010",
+      "ink": "#FEFEFC",
+      "accent": "#007BFF",
+      "on_accent": "#101010",
+      "dot": "#007BFF",
+      "frame": "#007BFF",
+      "alt": {
+        "bg": "#007BFF",
+        "ink": "#FEFEFC",
+        "accent": "#101010",
+        "on_accent": "#007BFF",
+        "dot": "#101010",
+        "frame": "#FEFEFC"
+      }
+    },
+    "bodybuilding": {
+      "bg": "#111111",
+      "ink": "#FFFFFF",
+      "accent": "#E8341C",
+      "on_accent": "#111111",
+      "dot": "#E8341C",
+      "frame": "#E8341C",
+      "alt": {
+        "bg": "#ECE7DC",
+        "ink": "#111111",
+        "accent": "#111111",
+        "on_accent": "#E8341C",
+        "dot": "#E8341C",
+        "frame": "#111111"
+      }
+    },
+    "feminino": {
+      "bg": "#0B0B0B",
+      "ink": "#FFFFFF",
+      "accent": "#934EFF",
+      "on_accent": "#0B0B0B",
+      "dot": "#934EFF",
+      "frame": "#934EFF",
+      "alt": {
+        "bg": "#ECE7DC",
+        "ink": "#111111",
+        "accent": "#111111",
+        "on_accent": "#934EFF",
+        "dot": "#934EFF",
+        "frame": "#111111"
+      }
+    },
+    "todos": {
+      "bg": "#0C0B09",
+      "ink": "#FEFEFC",
+      "accent": "#CDA85E",
+      "on_accent": "#0C0B09",
+      "dot": "#CDA85E",
+      "frame": "#CDA85E",
+      "alt": {
+        "bg": "#ECE7DC",
+        "ink": "#111111",
+        "accent": "#111111",
+        "on_accent": "#CDA85E",
+        "dot": "#8C6A1F",
+        "frame": "#111111"
+      }
+    }
+  }
+}

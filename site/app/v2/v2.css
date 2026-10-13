@@ -1,0 +1,1682 @@
+/*
+ * v2 · DOSSIÊ — CSS da versão (escopo: .v2 + classes .v2-*; nada vaza para v1/v3).
+ * Porte de paginas/v2/index.html. Tokens e medidas IGUAIS ao desenho aprovado (espaçamento 12·24·40, margens
+ * 24·40·clamp, seções clamp(96px,16vw,200px), 6 tamanhos de texto). Componentes compartilhados (.pta-btn,
+ * Accordion, StickyCta, Logo) são re-pintados por variável/seletor aqui, sem editar os arquivos deles.
+ * Movimento: linguagem "imprimir/carimbar" (seção MOVIMENTO no fim; motor em DossieRoot.tsx). Roda sempre;
+ * 'suave' = mesma coreografia curta; 'parado' só por ?movimento=parado (política de 11/10/2026).
+ * Este arquivo não está em @layer: vence o Tailwind e o styles/*.css compartilhado.
+ */
+
+/* ============================== tokens ============================== */
+.v2 {
+  --ink: #0c0b09;
+  --paper: #ece7dc;
+  --white: #fefefc;
+  --gold: #cda85e;
+  --blue: #007bff;
+  --red: #e8341c;
+  --purple: #934eff;
+  --ink-2: #3a372f;
+  --paper-2: #cfcabf;
+  --err-p: #9e1b32;
+  --line: rgba(12, 11, 9, 0.22);
+  --line-d: rgba(236, 231, 220, 0.2);
+  --r1: 6px;
+  --r2: 10px;
+  --r3: 16px;
+  --f-d: var(--font-display);
+  --f-t: var(--font-sans);
+  --f-m: var(--font-mono);
+  --pad: var(--m); /* PADRÃO: margem, respiro de seção e vão vêm dos tokens da base (padrao-de-pagina.md §1) */
+  /* 6 tamanhos (px @390 → @1440): 14 · 18→21 · 26→34 · 36→64 · 46→88 · 96→224 */
+  --t7: 0.875rem;
+  --t6: clamp(1.125rem, 1.07rem + 0.24vw, 1.3125rem);
+  --t5: clamp(1.625rem, 1.4rem + 0.9vw, 2.125rem);
+  --t3: clamp(2.25rem, 1.6rem + 2.67vw, 4rem);
+  --t1: clamp(2.75rem, 1.85rem + 4.1vw, 5.5rem);
+  --t2: clamp(6rem, 3.03rem + 12.19vw, 14rem);
+  --qpad: 72px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --rise: 28px;
+  --t-print: 0.6s;
+  --t-tarja: 0.9s;
+  --stag: 90ms;
+
+  background: var(--ink);
+  color: var(--paper);
+  font: 500 var(--t6) / 1.5 var(--f-t);
+  overflow-x: clip;
+}
+@media (min-width: 768px) {
+  .v2 {
+    --qpad: 112px;
+  }
+}
+
+:root[data-movimento='suave'] .v2 {
+  /* o sistema pede menos movimento: a mesma coreografia, mais curta e sem deslocamento grande */
+  --rise: 10px;
+  --t-print: 0.4s;
+  --t-tarja: 0.5s;
+  --stag: 60ms;
+}
+
+/* O Archivo compartilhado começa em 500 (o desenho aprovado usava 400 no texto corrido): -0,9% de trilho só no
+   texto de peso 500 devolve a mesma largura e, com ela, as mesmas quebras de linha. Os de 700 não mudam. */
+.v2-declara,
+.v2-apoio,
+.v2-micro,
+.v2-passo p,
+.v2-ing-corpo p,
+.v2-rodape p,
+.v2 .v2-perguntas .pta-acc__body,
+.v2-m-cons,
+.v2-m-ok p {
+  letter-spacing: -0.009em;
+}
+
+/* grão único (o do <body>) um pouco mais fino que o padrão da base, como no desenho aprovado */
+body:has(.v2)::after {
+  opacity: 0.5;
+}
+
+/* ============================== base ============================== */
+.v2 :focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.v2 .v2-preto :focus-visible,
+.v2 .pta-sticky :focus-visible,
+.v2 .v2-rodape :focus-visible {
+  outline-color: var(--gold);
+}
+.v2-mono {
+  font: 500 var(--t7) / 1.45 var(--f-m);
+  font-variant-numeric: tabular-nums; /* depois do shorthand: ele zera font-variant */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.v2-wrap {
+  width: 100%;
+  max-width: 1344px;
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+@media (min-width: 1600px) {
+  /* telas grandes: o conteúdo cresce junto (1920 ficava com a dobra pequena e muito papel vazio nos lados) */
+  .v2-wrap {
+    max-width: 1560px;
+  }
+}
+.v2-g {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--gut);
+}
+@media (min-width: 768px) {
+  .v2-g {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .v2-g {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+.v2-sec {
+  position: relative;
+  padding-block: var(--sec);
+}
+.v2-papel {
+  background: var(--paper);
+  color: var(--ink);
+  position: relative;
+}
+.v2-preto {
+  background: var(--ink);
+  color: var(--paper);
+}
+.v2-h2 {
+  font: 900 var(--t3) / 1 var(--f-d);
+  text-transform: uppercase;
+  text-wrap: balance;
+  letter-spacing: 0.005em;
+}
+.v2-apoio {
+  font: 500 var(--t6) / 1.5 var(--f-t);
+  max-width: 56ch;
+  margin-top: 28px;
+}
+.v2-micro {
+  display: block;
+  font: 500 var(--t7) / 1.5 var(--f-t);
+  max-width: 46ch;
+}
+
+/* papel com grão (multiply): camada fina sobre as seções de papel; nunca sobre o preto */
+.v2-papel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--grain-url) 0 0 / 128px 128px repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+}
+.v2-papel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================== botão (re-pintura do .pta-btn) ============================== */
+.v2 .pta-btn {
+  --bg: var(--gold);
+  --fg: var(--ink);
+  --sh: var(--ink);
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 clamp(18px, 3vw, 28px);
+  border: 2px solid var(--ink);
+  border-radius: var(--r2);
+  font: 700 var(--t6) / 1.15 var(--f-t);
+  text-align: left;
+  text-wrap: balance;
+  box-shadow: 4px 4px 0 var(--sh);
+}
+.v2 .v2-preto .pta-btn,
+.v2 .pta-sticky .pta-btn {
+  border-color: var(--gold);
+  --sh: var(--paper);
+}
+.v2 .pta-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--sh);
+}
+.v2 .pta-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--sh);
+}
+.v2 .pta-btn__arrow {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.9;
+  transition: transform 0.18s var(--ease);
+}
+.v2 .pta-btn:hover .pta-btn__arrow {
+  transform: translateX(4px);
+}
+.v2 .pta-btn:active .pta-btn__arrow {
+  transform: translateX(0);
+}
+.v2 .pta-btn--bar {
+  min-height: 44px;
+  height: 44px;
+  padding: 0 16px;
+  gap: 10px;
+  font-size: var(--t7);
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 var(--sh);
+}
+.v2 .v2-barra .pta-btn {
+  border-color: var(--gold); /* no desenho aprovado o botão do cabeçalho tem borda ouro (como nas seções pretas) */
+}
+.v2 .pta-btn--bar .pta-btn__arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================== cabeçalho: LOGO (esquerda) + botão pequeno (direita) ============================== */
+.v2-barra {
+  position: relative;
+  z-index: 40;
+  background: var(--paper);
+  color: var(--ink);
+  height: 68px;
+  padding: 0 max(var(--pad), calc((100% - 1344px) / 2 + var(--pad)));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.v2-barra-logo {
+  display: block;
+  flex: none;
+  line-height: 0;
+}
+.v2-barra .pta-logo {
+  --logo-h: 44px;
+  color: var(--ink);
+}
+.v2-logo-w {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .v2-barra {
+    position: sticky;
+    top: 0;
+    height: 72px;
+    border-bottom: 1px solid var(--line);
+    gap: 16px;
+  }
+  .v2-barra .pta-logo {
+    --logo-h: 48px;
+  }
+  .v2-logo-c {
+    display: none !important;
+  }
+  .v2-logo-w {
+    display: block !important;
+  }
+  .v2 .v2-barra .pta-btn--bar {
+    min-height: 48px;
+    height: 48px;
+    padding: 0 20px;
+  }
+}
+
+/* barra de baixo (celular): re-pintura do StickyCta */
+.v2 .pta-sticky {
+  z-index: 40;
+  padding: 12px var(--pad) calc(12px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line-d);
+}
+.v2 .pta-sticky .pta-btn {
+  min-height: 48px;
+  box-shadow: 3px 3px 0 var(--paper);
+}
+
+/* ============================== HERO (1ª dobra) ============================== */
+/* Composição única em todas as larguras: FAIXA preta de borda a borda atrás do tronco do trio, o trio centrado
+   (pela tinta) por cima; abaixo, o H1 e, no desktop, o apoio (sub · data · CTA) ao lado, alinhados pelo topo e pela
+   base. Espaçamento: 24 (header↔trio, H1↔sub) · 40 (trio↔H1, data↔CTA) · 12 (sub↔data, CTA↔micro). */
+.v2-hero {
+  --hpb: 72px;
+  --t1h: 2.5rem;
+  padding-top: 24px;
+  padding-bottom: var(--hpb);
+  overflow-x: clip;
+}
+.v2-trio {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: center;
+  width: min(100%, 420px);
+  position: relative;
+  z-index: 1;
+  container-type: inline-size;
+}
+/* piso de 3cqw sob o trio: é onde ele "afunda" ao rolar (parallax) sem sair da faixa */
+.v2-trio-in {
+  position: relative;
+  padding-bottom: 3cqw;
+}
+/* a faixa: do ombro (30,5% da largura) até o piso; sangra para os dois lados pela própria medida do trio
+   (cqw), sem unidade de viewport (a barra de rolagem de 15 px não entra na conta) */
+.v2-trio-in::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 30.5cqw;
+  bottom: 0;
+  left: -200cqw;
+  right: -200cqw;
+  background: var(--ink);
+}
+.v2-trio img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.v2-hero-h1 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  font: 900 var(--t1h) / 0.96 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.003em;
+  text-wrap: balance;
+}
+.v2-hero-side {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.v2-hero-sub {
+  font: 700 var(--t6) / 1.4 var(--f-t);
+  letter-spacing: -0.005em;
+}
+.v2-hero-data {
+  display: block;
+  margin-top: 12px;
+  color: var(--ink-2);
+}
+.v2-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .v2-hero {
+    --hpb: 112px;
+    --t1h: var(--t1);
+  }
+  .v2-trio {
+    width: min(100%, 560px);
+  }
+  .v2-cta-row {
+    align-items: flex-start;
+  }
+  .v2 .v2-cta-row .pta-btn {
+    min-height: 60px;
+  }
+}
+/* DOBRA (todas as larguras) — "O HOLOFOTE", 8ª versão (11/10): 1º a IMAGEM (os três GRANDES rompendo um disco de
+   ouro, o holofote da noite), 2º o TEXTO, 3º o BOTÃO, tudo no mesmo eixo central (simetria = alinhamento garantido).
+   O disco nasce do eixo da foto e termina ATRÁS do tronco (nunca aparece o arco embaixo, entre os braços).
+   A mesma composição serve celular, tablet e desktop; só o tamanho da foto e dos textos escala. */
+.v2-hero {
+  --t1h: clamp(2.5rem, 0.8rem + 3.2vw, 3.5rem);
+  padding-top: 24px;
+  padding-bottom: 72px;
+}
+.v2-hero .v2-g {
+  justify-items: center;
+  text-align: center;
+}
+/* a foto cresce com a janela, mas título + botão sempre cabem na 1ª tela (a altura manda) */
+.v2-trio {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: center;
+  width: min(100%, 940px, max(520px, calc((100svh - 465px) * 1.8)));
+}
+.v2-trio-in {
+  padding-bottom: 0;
+}
+.v2-trio-in::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -3cqw;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: 48cqw;
+  height: 48cqw;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle at 50% 32%,
+    color-mix(in srgb, var(--gold) 80%, #fff) 0%,
+    var(--gold) 56%,
+    color-mix(in srgb, var(--gold) 82%, #000) 100%
+  );
+  /* anel fino de tinta, afastado: o "holofote" lido como alvo/lente */
+  box-shadow:
+    0 0 0 1.4cqw var(--paper),
+    0 0 0 calc(1.4cqw + 2px) var(--ink);
+}
+.v2-hero-h1 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  max-width: 21em;
+  margin-top: 32px;
+}
+.v2-hero-side {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  align-items: center;
+  width: 100%; /* celular: o botão (largura total) alinha com as bordas da coluna de texto */
+  max-width: 100%;
+  margin-top: 16px;
+}
+.v2-hero-quando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.v2 .v2-cta-row {
+  align-items: stretch; /* celular: botão na largura da coluna (polegar) */
+  margin-top: 24px;
+  width: 100%;
+}
+.v2-hero-side .v2-micro {
+  text-align: center;
+  white-space: normal;
+}
+.v2 .v2-cta-row .pta-btn {
+  min-height: 60px;
+  white-space: nowrap; /* o rótulo do botão principal nunca quebra em 2 linhas */
+}
+.v2-hero-h1,
+.v2-hero-sub {
+  text-box: trim-both cap alphabetic;
+}
+@media (min-width: 600px) {
+  .v2-hero-side {
+    width: auto;
+  }
+  .v2 .v2-cta-row {
+    align-items: center;
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .v2-hero {
+    padding-top: 24px;
+  }
+}
+@keyframes v2-holofote {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+/* o holofote acende (disco abre do centro) e os três sobem dele; leve, uma vez (todas as larguras) */
+.v2 .v2-hero .v2-trio-in::before {
+  animation: v2-holofote 0.9s var(--ease) 0.05s backwards;
+}
+
+/* ============================== FRASE + SELOS (preto) ============================== */
+.v2-quando {
+  padding-top: calc(var(--sec) + 40px);
+  padding-bottom: var(--sec);
+}
+.v2-eyebrow {
+  display: block;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.v2-declara {
+  font: 500 var(--t5) / 1.4 var(--f-t);
+  max-width: 26em;
+  text-wrap: pretty;
+}
+.v2-selos {
+  margin-top: clamp(48px, 6vw, 72px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+.v2-selos li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.v2-selos li span {
+  font: 700 var(--t7) / 1.4 var(--f-t);
+}
+.v2-selos li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  flex: none;
+}
+
+/* ============================== COMO FUNCIONA (papel) ============================== */
+.v2-passos {
+  margin-top: clamp(56px, 7vw, 96px);
+  border-top: 1px solid var(--ink);
+}
+.v2-passo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 24px;
+  padding: 36px 0 40px;
+  align-items: start;
+}
+/* fio de 1 px de baixo dos itens (lista de passos, opções, bônus): pseudo-elemento para poder se traçar ao entrar */
+.v2-fio {
+  position: relative;
+}
+.v2-fio::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: 0 50%;
+}
+.v2-passo .v2-n {
+  font: 900 var(--t2) / 0.8 var(--f-d);
+  min-width: 0.55em;
+  margin-left: -0.035em; /* a tinta do numeral (bearing de 8 px) alinha com o fio e com o texto */
+}
+.v2-passo h3 {
+  text-wrap: wrap;
+  font: 900 var(--t5) / 1.05 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding-top: 0.15em;
+}
+.v2-passo p {
+  margin-top: 12px;
+  max-width: 44ch;
+}
+@media (min-width: 1024px) {
+  .v2-como .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v2-como .v2-h2 {
+    grid-column: 1 / span 5;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+  .v2-como .v2-passos {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+}
+
+/* tarja inline: já aberta no estado final (a animação cobre e abre) */
+.v2-tarja {
+  display: inline;
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 0 1.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ============================== NOITES = INGRESSOS (preto) ============================== */
+.v2-ingressos {
+  display: grid;
+  gap: 96px;
+  margin-top: clamp(56px, 7vw, 96px);
+  grid-template-columns: minmax(0, 1fr);
+}
+.v2-ingresso {
+  position: relative;
+}
+.v2-ing {
+  --stub: 176px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r2);
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 calc(100% - var(--stub)), transparent 97%, #000 100%) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% calc(100% - var(--stub)), transparent 97%, #000 100%) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 12px at 0 calc(100% - var(--stub)), transparent 97%, #000 100%) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% calc(100% - var(--stub)), transparent 97%, #000 100%) right / 51% 100% no-repeat;
+}
+.v2-ing-foto {
+  position: relative;
+  background: var(--noite);
+  aspect-ratio: 1 / 0.9;
+  overflow: hidden;
+  border-radius: var(--r2) var(--r2) 0 0;
+}
+.v2-ing-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+.v2-ing-corpo {
+  flex: 1;
+  padding: 32px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.v2-ing-corpo h3 {
+  text-wrap: wrap;
+  font: 900 var(--t5) / 1.05 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.v2-ing-pos {
+  color: var(--ink-2);
+}
+.v2-ing-canhoto {
+  height: var(--stub);
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border-top: 2px dashed var(--ink);
+}
+.v2-ing-data {
+  font: 900 var(--t5) / 1 var(--f-d);
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.v2 .v2-ing-canhoto .pta-btn {
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 3px 3px 0 var(--ink);
+  --sh: var(--ink);
+}
+@media (min-width: 768px) {
+  .v2-ing-foto {
+    aspect-ratio: 1 / 0.6;
+  }
+  .v2-ing-foto img {
+    object-position: 50% 0;
+  }
+  .v2-ingressos {
+    max-width: 560px;
+    margin-inline: auto; /* tablet: coluna única centrada = margens esquerda e direita iguais */
+  }
+}
+@media (min-width: 1024px) {
+  .v2-noites .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v2-noites .v2-h2 {
+    grid-column: 1 / span 5;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+  .v2-ingressos {
+    grid-column: 6 / -1;
+    margin-top: 0;
+    margin-inline: 0;
+    max-width: none;
+  }
+}
+@media (min-width: 1200px) {
+  .v2-noites .v2-h2 {
+    grid-column: 1 / -1;
+    position: static;
+  }
+  .v2-ing-foto {
+    aspect-ratio: 1 / 1.02;
+  }
+  .v2-ing-foto img {
+    object-position: 50% 12%;
+  }
+  .v2-ingressos {
+    grid-column: 1 / -1;
+    margin-top: clamp(56px, 7vw, 96px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    max-width: none;
+  }
+  .v2-ingresso:nth-child(2) {
+    margin-top: 64px;
+  }
+}
+
+/* ============================== CONDIÇÃO (papel) ============================== */
+.v2-cond-in {
+  display: grid;
+  gap: 0;
+}
+.v2-opcoes {
+  margin-top: 48px;
+  border-top: 1px solid var(--ink);
+}
+.v2-opcoes li {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 22px 0 24px;
+}
+.v2-opcoes .v2-l {
+  flex: none;
+  width: 2ch;
+  color: var(--ink-2);
+}
+.v2-opcoes b {
+  font: 700 var(--t5) / 1.15 var(--f-t);
+  letter-spacing: -0.005em;
+}
+@media (min-width: 1024px) {
+  .v2-cond-in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v2-cond-in .v2-h2 {
+    grid-column: 1 / span 5;
+  }
+  .v2-cond-in .v2-cond-d {
+    grid-column: 7 / -1;
+    padding-top: 0.4em;
+  }
+  .v2-cond-d .v2-apoio {
+    margin-top: 0;
+  }
+}
+
+/* ============================== VALOR (preto): a tarja se abre ============================== */
+.v2-valor-campo {
+  position: relative;
+  margin-top: clamp(48px, 6vw, 72px);
+  display: block;
+  /* clip (não hidden): hidden cria "scroller" e a linha do tempo view() da tarja ficaria presa nele */
+  overflow: clip;
+}
+.v2-valor-campo b {
+  display: block;
+  font: 900 var(--t2) / 0.9 var(--f-d);
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+  padding: 0.04em 0;
+}
+/* estado final = aberta (recolhida na borda direita) */
+.v2-valor-campo .tj {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  clip-path: inset(0 0 0 100%);
+}
+.v2-valor .v2-apoio {
+  margin-top: 48px;
+}
+
+/* ============================== BÔNUS (papel) ============================== */
+.v2-lista {
+  margin-top: clamp(48px, 6vw, 80px);
+  border-top: 1px solid var(--ink);
+}
+.v2-lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: baseline;
+  padding: 28px 0 30px;
+}
+.v2-lista .v2-ix {
+  color: var(--ink-2);
+}
+.v2-lista b {
+  font: 700 var(--t5) / 1.15 var(--f-t);
+  letter-spacing: -0.005em;
+  max-width: 30ch;
+}
+@media (min-width: 1024px) {
+  .v2-bonus-in {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v2-bonus-in .v2-h2 {
+    grid-column: 1 / span 5;
+  }
+  .v2-bonus-in .v2-lista {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+}
+
+/* ============================== POR QUE A PTA (preto + grade visível) ============================== */
+.v2-grade {
+  position: relative;
+  isolation: isolate;
+}
+.v2-grade::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(var(--line-d) 1px, transparent 1px), linear-gradient(90deg, var(--line-d) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: var(--pad) 0;
+  opacity: 0.7;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+}
+.v2-stats {
+  display: grid;
+  gap: 72px;
+  margin-top: clamp(56px, 7vw, 96px);
+}
+.v2-stat .v2-n {
+  display: block;
+  font: 900 var(--t2) / 0.82 var(--f-d);
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  letter-spacing: -0.005em;
+  margin-left: -0.035em;
+}
+.v2-stat .v2-c {
+  display: block;
+  margin-top: 20px;
+  font: 700 var(--t5) / 1.15 var(--f-t);
+}
+.v2-stat .v2-t {
+  display: block;
+  font: 700 var(--t5) / 1.2 var(--f-t);
+  max-width: 22ch;
+}
+@media (min-width: 768px) {
+  .v2-stats {
+    row-gap: 96px;
+  }
+}
+@media (min-width: 1024px) {
+  .v2-stats {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .v2-s1 {
+    grid-column: 1 / span 7;
+  }
+  .v2-s2 {
+    grid-column: 9 / -1;
+  }
+  .v2-s3 {
+    grid-column: 1 / span 7;
+  }
+  .v2-s4 {
+    grid-column: 9 / -1;
+  }
+}
+
+/* ============================== PERGUNTAS (papel): re-pintura do Accordion ============================== */
+.v2 .v2-perguntas {
+  --acc-line: var(--ink);
+  --acc-line-soft: var(--ink);
+  --acc-text: var(--ink);
+  margin-top: clamp(48px, 6vw, 80px);
+  display: grid;
+  row-gap: 12px;
+}
+.v2 .v2-perguntas .pta-acc__item > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  gap: 20px;
+  align-items: center;
+  min-height: 88px;
+  padding: 20px 0;
+  font: 700 var(--t5) / 1.2 var(--f-t);
+  letter-spacing: -0.005em;
+  text-transform: none;
+}
+.v2 .v2-perguntas .pta-acc__item > summary:hover {
+  background: rgba(205, 168, 94, 0.28);
+}
+.v2 .v2-perguntas .pta-acc__icon {
+  width: 48px;
+  height: 48px;
+}
+.v2 .v2-perguntas .pta-acc__icon::before,
+.v2 .v2-perguntas .pta-acc__icon::after {
+  left: 50%;
+  right: auto;
+  top: 50%;
+  width: 22px;
+  height: 2.5px;
+  transform: translate(-50%, -50%);
+}
+.v2 .v2-perguntas .pta-acc__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.v2 .v2-perguntas .pta-acc__item[open] .pta-acc__icon::after {
+  transform: translate(-50%, -50%) rotate(0);
+}
+.v2 .v2-perguntas .pta-acc__body {
+  max-width: 52ch;
+  padding: 0 0 32px;
+  font: 500 var(--t6) / 1.5 var(--f-t);
+}
+@media (min-width: 1024px) {
+  .v2-faq-in {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+  }
+  .v2-faq-in .v2-h2 {
+    grid-column: 1 / span 4;
+  }
+  .v2-faq-in .v2-perguntas {
+    grid-column: 5 / -1;
+    margin-top: 0;
+  }
+}
+
+/* ============================== CTA FINAL + RODAPÉ (preto) ============================== */
+.v2-h1x {
+  font: 900 var(--t1) / 0.96 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.003em;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+.v2-acao {
+  margin-top: clamp(48px, 6vw, 72px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+}
+.v2-final .v2-micro {
+  color: var(--paper-2);
+}
+@media (min-width: 1024px) {
+  .v2-final .v2-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: end;
+  }
+  .v2-final .v2-h1x {
+    grid-column: 1 / span 7;
+    max-width: none;
+  }
+  .v2-final .v2-acao {
+    grid-column: 8 / -1;
+    margin-top: 0;
+    justify-self: end;
+    width: fit-content;
+    max-width: 100%;
+  }
+  .v2-final .v2-h1x,
+  .v2-final .v2-micro {
+    text-box: trim-both cap alphabetic;
+  }
+  .v2 .v2-final .pta-btn {
+    min-height: 64px;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .v2 .v2-final .pta-btn {
+    padding-inline: 16px;
+    gap: 0.5em;
+  }
+}
+@media (min-width: 768px) {
+  .v2-acao {
+    align-items: flex-start;
+  }
+}
+.v2-final {
+  padding-bottom: var(--qpad);
+}
+.v2-rodape {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--qpad) 0 calc(var(--qpad) + 64px + env(safe-area-inset-bottom, 0px));
+}
+.v2-rod-in {
+  border-top: 1px solid var(--line-d);
+  padding-top: 48px;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+.v2-rod-logo {
+  --logo-h: 64px;
+  height: 64px;
+  width: auto;
+}
+.v2-rodape p {
+  max-width: 56ch;
+  color: var(--paper-2);
+}
+@media (min-width: 768px) {
+  .v2-rodape {
+    padding-bottom: var(--qpad);
+  }
+  .v2-rod-in {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+
+/* ============================== POP-UP (papel + tinta) ============================== */
+.v2-dialog {
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r3);
+  width: min(480px, calc(100% - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  margin: auto;
+  box-shadow: 8px 8px 0 var(--ink);
+  font: 500 var(--t6) / 1.5 var(--f-t);
+}
+.v2-dialog::backdrop {
+  background: rgba(12, 11, 9, 0.78);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.v2-dialog {
+  opacity: 0;
+  transform: translateY(calc(var(--rise) * 0.7));
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    overlay 0.25s allow-discrete,
+    display 0.25s allow-discrete;
+}
+.v2-dialog[open] {
+  opacity: 1;
+  transform: none;
+}
+@starting-style {
+  .v2-dialog[open] {
+    opacity: 0;
+    transform: translateY(calc(var(--rise) * 0.7));
+  }
+}
+@media (max-width: 520px) {
+  .v2-dialog {
+    margin: auto 0 0;
+    width: 100%;
+    border-radius: var(--r3) var(--r3) 0 0;
+    border-bottom: 0;
+    box-shadow: none;
+    max-height: 92dvh;
+  }
+}
+.v2-m-in {
+  position: relative;
+  padding: 20px 24px 24px;
+  overflow: hidden;
+}
+.v2-m-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.v2-m-hd h2 {
+  font: 900 var(--t5) / 1.05 var(--f-d);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding-top: 10px;
+  outline: 0;
+}
+.v2-m-x {
+  flex: none;
+  margin-left: auto;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  border-radius: var(--r2);
+  cursor: pointer;
+  position: relative;
+}
+.v2-m-x::before,
+.v2-m-x::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 2.5px;
+  background: var(--ink);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.v2-m-x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* ingresso miniatura */
+.v2-m-ing {
+  margin-top: 16px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--r2);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  padding: 14px 16px;
+  align-items: center;
+}
+.v2-m-ing .v2-mono {
+  color: var(--gold);
+}
+.v2-m-ing-c {
+  grid-column: 1 / -1;
+  font: 700 var(--t7) / 1.35 var(--f-t);
+}
+.v2-m-tit {
+  grid-column: 1 / -1;
+  border-top: 2px dashed var(--paper-2);
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  min-width: 0;
+}
+.v2-m-tit b {
+  font: 500 var(--t7) / 1.3 var(--f-m);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--paper);
+}
+@media (max-height: 640px) {
+  .v2-m-form .v2-m-ing {
+    display: none;
+  }
+}
+.v2-m-form form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+.v2-cp {
+  display: grid;
+  gap: 6px;
+}
+.v2-cp label {
+  font: 700 var(--t7) / 1.3 var(--f-t);
+  letter-spacing: 0.01em;
+}
+.v2-cp input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: var(--r1);
+  font: 500 1.125rem / 1 var(--f-t);
+}
+.v2-cp input::placeholder {
+  color: #6b675d;
+}
+.v2-cp input[aria-invalid='true'] {
+  border-color: var(--err-p);
+}
+.v2-erro {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font: 700 1rem / 1.4 var(--f-t);
+  color: var(--err-p);
+  border-left: 2px solid var(--err-p);
+  padding-left: 10px;
+}
+.v2-erro svg {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+}
+.v2-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.v2-m-st {
+  min-height: 0;
+  font: 700 var(--t7) / 1.3 var(--f-t);
+}
+.v2 .v2-m-go {
+  width: 100%;
+  margin-top: 2px;
+  justify-content: center;
+  text-align: center;
+}
+.v2 .v2-m-go[disabled] {
+  cursor: progress;
+  opacity: 0.85;
+}
+.v2-m-cons {
+  display: block;
+  font: 500 var(--t7) / 1.5 var(--f-t);
+  color: var(--ink-2);
+}
+.v2-m-anyway {
+  font: 700 var(--t7) / 1.3 var(--f-t);
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.v2-spin {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: v2-spin 0.7s linear infinite;
+}
+@keyframes v2-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.v2-m-ok h2 {
+  font: 900 var(--t3) / 1 var(--f-d);
+  text-transform: uppercase;
+  margin-top: 6px;
+  outline: 0;
+}
+.v2-m-ok .v2-m-ing {
+  margin-top: 24px;
+}
+.v2-m-ok p {
+  margin-top: 16px;
+}
+.v2 .v2-m-ok .pta-btn {
+  margin-top: 28px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* cortina de tarja (sucesso): fecha da esquerda, troca o conteúdo, abre para a direita */
+.v2-cortina {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: var(--ink);
+  pointer-events: none;
+}
+.v2-cortina[data-fase='in'] {
+  animation: v2-cortina-in 0.28s var(--ease) both;
+}
+.v2-cortina[data-fase='out'] {
+  animation: v2-cortina-out 0.52s var(--ease) both;
+}
+@keyframes v2-cortina-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes v2-cortina-out {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+/* ============================== MOVIMENTO ============================== */
+/* LINGUAGEM ÚNICA DO DOSSIÊ: IMPRIMIR / CARIMBAR. Tudo aparece como sai de uma impressora ou de um carimbo:
+     · clip-path de cima para baixo   → texto, ingresso, numeral, foto
+     · fio que se traça da esq. p/ dir. → listas e passos
+     · tarja que cobre e abre          → "os valores", "AO VIVO", a faixa da dobra
+     · carimbo                         → o quadradinho dos selos
+   Uma curva (--ease), três tempos (--t-print .6 s · tarja .9 s · toque .35 s). Só transform / opacity / clip-path.
+   Roda SEMPRE (política de 11/10/2026). 'suave' (o sistema pede menos movimento) = a MESMA coreografia, mais curta
+   (--rise 10 px, --t-print .4 s), sem parallax nem inclinação. 'parado' (?movimento=parado) = nada anima.
+   O estado natural do CSS é o FINAL; os estados "antes" só existem quando o JS liga (.v2[data-io]) e a peça ainda
+   não entrou na tela. animation-fill-mode: forwards/backwards, nunca both. */
+@keyframes v2-emerge {
+  from {
+    opacity: 0.35;
+    transform: translateY(var(--rise));
+  }
+}
+@keyframes v2-draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes v2-sink {
+  to {
+    transform: translateY(3cqw);
+  }
+}
+@keyframes v2-bar {
+  from {
+    background-size: 100% 1.08em;
+  }
+  to {
+    background-size: 0 1.08em;
+  }
+}
+@keyframes v2-valor {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+@keyframes v2-print {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(-20% -10% -20% -10%);
+  }
+}
+@keyframes v2-prog {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* linhas dos títulos (split-lines.ts): a janela deixa o til/acento passar por cima (.22em) e a vírgula por baixo
+   sem mudar a altura do título (clip-path com inset negativo em vez de padding: nada se mexe no layout) */
+.v2-ln-mask {
+  display: block;
+  clip-path: inset(-0.22em -0.06em -0.08em -0.06em);
+}
+.v2-ln {
+  display: block;
+  white-space: nowrap;
+}
+
+/* barra de progresso de leitura: fio ouro no topo da janela (o cabeçalho passa por baixo dela) */
+.v2-prog {
+  position: fixed;
+  z-index: 45;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  pointer-events: none;
+}
+@supports (animation-timeline: scroll()) {
+  .v2-prog {
+    transform: scaleX(0);
+    animation: v2-prog linear forwards;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@media all {
+  /* A. dobra: a faixa é carimbada da esquerda para a direita e o trio sai dela (tempo, 1 vez) */
+  .v2-trio-in::before {
+    animation: v2-draw 0.9s var(--ease) backwards;
+  }
+  .v2-trio {
+    animation: v2-emerge 0.8s var(--ease) 0.2s backwards;
+  }
+  /* ...e afunda de leve de volta ao piso da faixa ao rolar (parallax mínimo; só no modo total) */
+  @supports (animation-timeline: scroll()) {
+    :root[data-movimento='total'] .v2-trio img {
+      animation: v2-sink linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0px 70vh;
+    }
+  }
+
+  /* B. títulos sobem linha a linha quando entram (uma vez) */
+  .v2-split .v2-ln {
+    transition: transform calc(var(--t-print) + 0.1s) var(--ease) calc(var(--l, 0) * var(--stag));
+  }
+  .v2-split:not(.is-on) .v2-ln {
+    transform: translateY(130%);
+  }
+
+  /* C. IMPRIMIR: texto, itens de lista, selos e passos saem "impressos" de cima para baixo (ligado por DossieRoot) */
+  .v2[data-io] .v2-pr {
+    clip-path: inset(-0.5em -0.5em -0.5em -0.5em);
+    transition: clip-path var(--t-print) var(--ease) calc(var(--i, 0) * var(--stag));
+  }
+  /* a janela nunca fecha em 100%: um clip vazio faz o IntersectionObserver achar que o elemento não está na tela */
+  .v2[data-io] .v2-pr:not(.is-on) {
+    clip-path: inset(0 0 calc(100% - 0.02px) 0);
+  }
+  .v2[data-io] .v2-passo > div {
+    clip-path: inset(-0.5em -0.5em -0.5em -0.5em);
+    transition: clip-path var(--t-print) var(--ease) calc(var(--i, 0) * var(--stag) + 0.12s);
+  }
+  .v2[data-io] .v2-passo:not(.is-on) > div {
+    clip-path: inset(0 0 100% 0);
+  }
+  /* fio que se traça (depois do texto) */
+  .v2[data-io] .v2-fio::after {
+    transition: transform 0.9s var(--ease) calc(var(--i, 0) * var(--stag) + 0.2s);
+  }
+  .v2[data-io] .v2-fio:not(.is-on)::after {
+    transform: scaleX(0);
+  }
+  /* carimbo dos selos: o quadradinho ouro cai de maior e levemente girado */
+  .v2[data-io] .v2-selos li::before {
+    transition: transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1) calc(var(--i, 0) * var(--stag) + 0.1s);
+  }
+  .v2[data-io] .v2-selos li:not(.is-on)::before {
+    transform: scale(2.2) rotate(-14deg);
+  }
+
+  /* D. ingressos imprimem em sequência (0,6 s, 140 ms entre eles; o picote é máscara real); a foto se revela depois */
+  .v2[data-io] .v2-ing {
+    transition:
+      clip-path var(--t-print) var(--ease) calc(var(--i, 0) * 140ms),
+      transform 0.35s var(--ease);
+    clip-path: inset(-8px);
+  }
+  .v2[data-io] .v2-ingresso:not(.is-on) .v2-ing {
+    clip-path: inset(0 0 100% 0);
+  }
+  .v2[data-io] .v2-ing-foto img {
+    clip-path: inset(0);
+    transition:
+      clip-path 0.8s var(--ease) calc(var(--i, 0) * 140ms + 0.4s),
+      transform 0.8s var(--ease) calc(var(--i, 0) * 140ms + 0.4s);
+  }
+  .v2[data-io] .v2-ingresso:not(.is-on) .v2-ing-foto img {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(6%);
+  }
+
+  /* E. ligados à rolagem onde `animation-timeline: view()` existe (zero JS). `forwards`: antes da faixa a peça fica
+     no estado FINAL, visível; o gesto só acontece quando a peça entra na tela. */
+  @supports (animation-timeline: view()) {
+    .v2-tarja {
+      background-size: 0 1.08em;
+      animation: v2-bar linear forwards;
+      animation-timeline: view();
+      animation-range: cover 8% cover 36%;
+    }
+    .v2-valor-campo .tj {
+      clip-path: inset(0 0 0 100%);
+      animation: v2-valor linear forwards;
+      animation-timeline: view();
+      animation-range: cover 12% cover 42%;
+    }
+    .v2-passo,
+    .v2-stat {
+      view-timeline: --v2-item block;
+    }
+    .v2-passo .v2-n,
+    .v2-stat .v2-n {
+      animation: v2-print linear forwards;
+      animation-timeline: --v2-item;
+      animation-range: cover 0% cover 24%;
+    }
+  }
+
+  /* F. reserva por IntersectionObserver (Firefox, iOS < 26): os mesmos gestos, com tempo */
+  .v2[data-io='all'] .v2-tarja {
+    background-size: 100% 1.08em;
+    transition: background-size 0.7s var(--ease);
+  }
+  .v2[data-io='all'] .v2-tarja.is-on {
+    background-size: 0 1.08em;
+  }
+  .v2[data-io='all'] .v2-valor-campo .tj {
+    clip-path: inset(0);
+    transition: clip-path var(--t-tarja, 0.9s) var(--ease) 0.15s;
+  }
+  .v2[data-io='all'] .v2-valor-campo.is-on .tj {
+    clip-path: inset(0 0 0 100%);
+  }
+  .v2[data-io='all'] .v2-passo .v2-n,
+  .v2[data-io='all'] .v2-stat .v2-n {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path var(--t-print) var(--ease);
+  }
+  .v2[data-io='all'] .v2-passo.is-on .v2-n,
+  .v2[data-io='all'] .v2-stat.is-on .v2-n {
+    clip-path: inset(-20% -10% -20% -10%);
+  }
+}
+
+/* G. ingresso na mão do mouse (ponteiro fino, modo total): sobe 6 px, inclina ≤ 3° seguindo o ponteiro e ganha
+   um brilho que acompanha. will-change só durante o gesto. */
+@media (hover: hover) and (pointer: fine) {
+  :root[data-movimento='total'] .v2-ingresso {
+    perspective: 900px;
+  }
+  :root[data-movimento='total'] .v2-ing {
+    transform: translateY(var(--ty, 0px)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  }
+  :root[data-movimento='total'] .v2-ingresso:hover {
+    --ty: -6px;
+  }
+  :root[data-movimento='total'] .v2-ingresso:hover .v2-ing {
+    will-change: transform;
+  }
+  :root[data-movimento='total'] .v2-ing::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(260px 260px at var(--mx, 50%) var(--my, 20%), rgba(255, 255, 255, 0.5), transparent 70%);
+    mix-blend-mode: soft-light;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+  :root[data-movimento='total'] .v2-ingresso:hover .v2-ing::after {
+    opacity: 1;
+  }
+}
+
+/* 'parado' (só por ?movimento=parado): nada anima e tudo já está no estado final */
+:root[data-movimento='parado'] .v2 *,
+:root[data-movimento='parado'] .v2 *::before,
+:root[data-movimento='parado'] .v2 *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* celular: o rótulo do botão grande sempre em 1 linha. Coluna de 312 px (360) a 327 px (390 com barra de 15 px):
+   padding lateral 16, corpo 17 px; abaixo de 380 px, 16 px. */
+@media (max-width: 440px) {
+  .v2 .pta-btn:not(.pta-btn--bar),
+  .v2 .pta-btn--lg {
+    padding-inline: 16px;
+    gap: 10px;
+    font-size: 17px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 380px) {
+  .v2 .pta-btn:not(.pta-btn--bar),
+  .v2 .pta-btn--lg {
+    padding-inline: 14px;
+    gap: 0.45em;
+    font-size: 16px;
+  }
+}
+
+/* ============================== TEMA CLARO (desenhado, não inversão) ==============================
+   Escuro = o Dossiê como aprovado (papel × preto). Claro = a mesma página no papel: o "preto" vira papel profundo
+   (#DED7C6) e o "papel" vira papel claro (#F3EFE6); texto em tinta #0C0B09 (secundário #3A372F, 8:1); fios com 34% de
+   tinta; ouro de TEXTO #7C5F1C (4,1:1 sobre o papel profundo, só em tamanho grande); ouro de fundo/área continua
+   #CDA85E. Botões: o do tema claro da base (preto, texto ouro, sombra ouro-fechado). Rodapé e pop-up seguem a tinta.
+   Os tokens locais são redefinidos DENTRO de cada tom, então toda regra acima cai na cor certa sem mexer nela. */
+html[data-tema='claro'] .v2 {
+  --paper: #f3efe6;
+  --gold-t: #735818;
+}
+html[data-tema='claro'] .v2 .v2-preto {
+  --ink: #ded7c6;
+  --paper: #0c0b09;
+  --ink-2: #cfcabf;
+  --paper-2: #3a372f;
+  --line: rgba(236, 231, 220, 0.3);
+  --line-d: rgba(12, 11, 9, 0.3);
+}
+html[data-tema='claro'] .v2 .v2-papel {
+  --line: rgba(12, 11, 9, 0.34);
+}
+html[data-tema='claro'] .v2 .v2-eyebrow,
+html[data-tema='claro'] .v2 .v2-valor-campo b,
+html[data-tema='claro'] .v2 .v2-stat .v2-n {
+  color: var(--gold-t);
+}
+html[data-tema='claro'] .v2 .v2-selos li::before {
+  background: var(--gold-t);
+}
+html[data-tema='claro'] .v2 .v2-preto :focus-visible {
+  outline-color: #0c0b09;
+}
+/* ingresso: no claro o ingresso é escuro (picote vazado mostra o papel profundo) */
+html[data-tema='claro'] .v2 .v2-ing {
+  background: #0c0b09;
+  color: #ece7dc;
+}
+html[data-tema='claro'] .v2 .v2-ing-canhoto {
+  border-top-color: #ece7dc;
+}
+html[data-tema='claro'] .v2 .v2-ing-pos {
+  color: #cfcabf;
+}
+html[data-tema='claro'] .v2 .v2-ing-canhoto .pta-btn {
+  border-color: #cda85e;
+  --sh: #7c5f1c;
+}
+/* barra de baixo (celular) e pop-up */
+html[data-tema='claro'] .v2 .pta-sticky {
+  border-top: 1px solid rgba(12, 11, 9, 0.3);
+}
+/* grão e tipografia por tema: papel sujo demais perde o premium; maiúsculas condensadas pedem respiro */
+html[data-tema='claro'] body:has(.v2)::after {
+  opacity: 0.22;
+}
+html[data-tema='claro'] .v2 .v2-papel::after {
+  opacity: 0.08;
+}
+html[data-tema='claro'] .v2 .v2-h2,
+html[data-tema='claro'] .v2 .v2-h1x,
+html[data-tema='claro'] .v2 .v2-hero-h1,
+html[data-tema='claro'] .v2 .v2-passo h3,
+html[data-tema='claro'] .v2 .v2-ing-corpo h3 {
+  letter-spacing: 0.012em;
+}
+html[data-tema='claro'] .v2 .v2-mono {
+  letter-spacing: 0.1em;
+}

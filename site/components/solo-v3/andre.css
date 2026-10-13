@@ -1,0 +1,392 @@
+/* ===== André · Biomecânica · azul · "O ÂNGULO" (eixo central) =====
+ * Tudo no mesmo eixo vertical, centrado, do celular ao desktop. Elemento-herói: o goniômetro (kit) que ABRE o ângulo.
+ * Só tokens (12 · 24 · 40 · --m · --sec · --gut). Tema claro: tokens trocam sozinhos; exceções em html[data-tema='claro'].
+ */
+
+/* trilha única do celular: minmax(0, 1fr) */
+.so-a-como__in,
+.so-a-noite .wrap,
+.so-a-prof__in,
+.so-a-pos__in {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* ---------- DOBRA ---------- */
+.so-a-hero {
+  --resto: 560px; /* altura de tudo que não é o palco (H1, tarja, dia, botão, vãos): o palco ocupa o que sobra da tela */
+  --stage-w: min(100%, 440px, calc((100svh - var(--header-h) - var(--resto)) / 0.92));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .so-a-hero {
+    --resto: 460px;
+  }
+}
+.so-a-hero h1 {
+  --h1: clamp(2.25rem, 1.4rem + 3.4vw, 4rem);
+  max-width: 15em;
+}
+.so-a-stage {
+  position: relative;
+  width: var(--stage-w);
+  aspect-ratio: 1 / 0.92;
+  margin-bottom: var(--g2);
+}
+@media (min-width: 768px) {
+  .so-a-stage {
+    margin-bottom: var(--g3);
+  }
+}
+.so-a-dial {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: 100%; /* mostrador (raio 76 % da largura do SVG) + braço móvel cabem na altura do palco */
+  aspect-ratio: 367 / 338;
+  transform: translate(-61.85%, -58.6%); /* o centro do mostrador (pino) no centro do palco */
+}
+.so-a-dial img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+/* o braço móvel abre do 0° até o ângulo (uma vez); o estado natural é o final */
+@keyframes so-a-abre {
+  from {
+    transform: rotate(-120deg);
+  }
+}
+.so-a-dial .so-a-arm {
+  transform-origin: 61.85% 58.6%;
+  animation: so-a-abre 0.9s var(--ease-saida) forwards;
+}
+:root[data-movimento='suave'] .so-a-dial .so-a-arm {
+  animation-duration: 0.5s;
+}
+.so-a-foto {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 56%;
+  height: auto;
+  transform: translateX(-50%);
+  /* o corte reto de baixo some no fundo da página (vale nos 2 temas: a máscara usa o alfa) */
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+}
+/* a tarja quebra em linhas no celular (a frase é longa): fundo ouro acompanha cada linha */
+.v3 .so-a-hero .destaque span {
+  display: inline;
+  white-space: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-wrap: balance;
+}
+.v3 .so-a-hero .quando {
+  text-align: center;
+}
+
+/* ---------- ENUNCIADO ---------- */
+.so-a-enun .wrap {
+  display: grid;
+  justify-items: center;
+}
+.so-a-enun p {
+  max-width: 30ch;
+  text-align: center;
+}
+
+/* ---------- COMO FUNCIONA: o eixo vertical com um nó por passo ---------- */
+.so-a-como__in {
+  display: grid;
+  gap: var(--g3);
+}
+.so-a-como .titulo {
+  margin-bottom: 0;
+}
+.so-a-passos {
+  position: relative;
+  margin-left: 8px;
+  border-left: 2px solid currentColor; /* a seção é .pta-paper: papel no escuro, escura no claro; currentColor segue */
+}
+.so-a-passo {
+  position: relative;
+  display: grid;
+  gap: var(--g1);
+  padding: var(--g3) 0 var(--g3) var(--g3);
+}
+.so-a-passo::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: var(--g3);
+  width: 16px;
+  height: 16px;
+  background: var(--cor);
+}
+.so-a-num {
+  width: auto;
+  height: 64px;
+  max-width: none;
+}
+.so-a-passo h3 {
+  margin-bottom: var(--g1);
+}
+.so-a-passo p {
+  max-width: 30ch;
+}
+@media (min-width: 1024px) {
+  .so-a-como__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .so-a-como .titulo {
+    grid-column: 1 / 6;
+  }
+  .so-a-passos {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ---------- O QUE VER AO VIVO: régua do kit + itens ---------- */
+.so-a-noite .wrap {
+  display: grid;
+  gap: var(--g3);
+}
+.so-a-noite .titulo {
+  margin-bottom: 0;
+}
+.so-a-regua {
+  width: min(100%, 460px);
+  height: auto;
+}
+.so-a-itens {
+  border-top: 1px solid var(--color-tinta);
+}
+.so-a-itens li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--g3);
+  align-items: baseline;
+  padding-block: var(--g2);
+  border-bottom: 1px solid var(--line);
+}
+.so-a-itens .mono {
+  color: var(--color-mute);
+  font-variant-numeric: tabular-nums;
+}
+.so-a-itens .t {
+  max-width: 34ch;
+  font-weight: 700;
+  line-height: 1.3;
+}
+@media (min-width: 1024px) {
+  .so-a-noite .wrap {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .so-a-noite .titulo {
+    grid-column: 1 / 6;
+  }
+  .so-a-regua {
+    grid-column: 7 / 13;
+  }
+  .so-a-itens {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ---------- PROFESSOR: painel azul (foto + prumo do kit) e o texto na superfície da página ---------- */
+.so-a-prof {
+  padding-block: var(--sec);
+  overflow-x: clip;
+}
+.so-a-prof__in {
+  display: grid;
+  gap: var(--g3);
+}
+.so-a-prof__cor {
+  position: relative;
+  height: clamp(320px, 92vw, 480px);
+  margin-inline: calc(-1 * var(--m));
+  overflow: clip;
+  background: var(--cor);
+}
+.so-a-prumo {
+  position: absolute;
+  left: var(--m);
+  bottom: var(--g2);
+  height: 66%;
+  width: auto;
+  max-width: none;
+}
+.so-a-prof__foto {
+  position: absolute;
+  right: calc(-1 * var(--g2)); /* a foto encosta na borda da tela; o prumo fica livre à esquerda */
+  bottom: 0;
+  height: 90%;
+  width: auto;
+  max-width: none;
+}
+.so-a-rotulo {
+  margin-bottom: var(--g1);
+  color: var(--color-mute);
+}
+.so-a-prof h2 {
+  margin-bottom: var(--g2);
+}
+.so-a-bio {
+  max-width: 36ch;
+}
+@media (min-width: 1024px) {
+  .so-a-prof__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: center;
+    min-height: clamp(520px, 42vw, 640px);
+  }
+  .so-a-prof__cor {
+    grid-column: 1 / 8;
+    height: 100%;
+    min-height: inherit;
+    margin-left: calc(-1 * var(--m));
+    margin-right: 0;
+  }
+  .so-a-prof__cor::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 -2000px; /* a cor sangra até a borda da tela (a seção corta o excesso) */
+    width: 2000px;
+    background: var(--cor);
+  }
+  .so-a-prof__txt {
+    grid-column: 9 / 13;
+  }
+  .so-a-prumo {
+    left: calc(var(--m) + var(--gut));
+  }
+  .so-a-prof__foto {
+    right: var(--g3);
+    height: 84%;
+  }
+  .so-a-prumo {
+    height: 66%;
+  }
+}
+
+/* ---------- A PÓS: logo oficial, planos do kit e a lista ---------- */
+.so-a-pos__in {
+  display: grid;
+  gap: var(--g3);
+}
+.so-a-pos .titulo {
+  margin-bottom: var(--g2);
+}
+.so-a-logo-pos {
+  width: min(100%, 520px);
+  height: auto;
+}
+html[data-tema='claro'] .so-a-logo-pos {
+  filter: brightness(0); /* o arquivo oficial é branco; no papel vai para o preto (monocromático) */
+}
+.so-a-planos {
+  width: min(100%, 380px);
+  height: auto;
+}
+.so-a-lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--g2);
+  padding-block: var(--g2);
+  border-bottom: 1px solid var(--line);
+}
+.so-a-lista li::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  margin-top: 0.5em;
+  background: var(--cor);
+}
+.so-a-lista {
+  border-top: 1px solid var(--color-tinta);
+}
+@media (min-width: 1024px) {
+  .so-a-pos__in {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gut);
+    align-items: start;
+  }
+  .so-a-pos__cab {
+    grid-column: 1 / 7;
+  }
+  .so-a-planos {
+    grid-column: 1 / 7;
+    grid-row: 2;
+  }
+  .so-a-lista {
+    grid-column: 8 / 13;
+    grid-row: 1 / 3;
+  }
+}
+
+/* ---------- BÔNUS ---------- */
+.so-a-bonus__lista {
+  border-top: 2px solid currentColor;
+}
+.so-a-bonus__lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--g3);
+  align-items: baseline;
+  padding-block: var(--g2);
+  border-bottom: 1px solid var(--line-d);
+}
+.so-a-bonus__lista .n {
+  color: currentColor;
+  font-variant-numeric: tabular-nums;
+}
+.so-a-bonus__lista .t {
+  max-width: 30ch;
+  font: 900 clamp(1.375rem, 1.1rem + 1.2vw, 2rem) / 1.08 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* ---------- PROVA ---------- */
+.so-a-prova {
+  padding-block: var(--sec);
+  text-align: center;
+  border-block: 1px solid var(--line);
+}
+.so-a-prova p {
+  max-width: 20ch;
+  margin-inline: auto;
+  font: 900 var(--text-h2) / 1 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* ---------- FINAL: o ângulo fecha como abriu ---------- */
+.so-a-final__in {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.so-a-final .so-a-dial {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: min(72%, 300px);
+  margin-bottom: var(--g3);
+  transform: translateX(-11.85%); /* o centro do mostrador no eixo da página */
+}
+.so-a-final h2 {
+  max-width: 18ch;
+}

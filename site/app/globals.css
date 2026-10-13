@@ -1,0 +1,116 @@
+/*
+ * Black PTA ao Vivo — tokens + base.
+ *
+ * Tailwind v4: os tokens abaixo (@theme static: todos viram variável CSS, mesmo os sem utilidade) geram as utilidades (bg-ouro, text-h2, p-g2, rounded-cartao…).
+ * As cores NÃO usadas pela marca foram removidas de propósito: não existe bg-blue-500 aqui.
+ * Fontes: cada <html> recebe --font-display / --font-text / --font-mono por next/font (ver app/fonts.ts).
+ */
+@import 'tailwindcss' source(none);
+@source '../app';
+@source '../components';
+@source '../lib';
+
+/* ============================== TOKENS ============================== */
+@theme static {
+  /* cores da marca (contraste medido: texto pequeno só em ouro, tinta ou papel/preto) */
+  --color-*: initial;
+  --color-ink: #0c0b09; /* preto de fundo */
+  --color-ink-2: #15130f; /* superfície 2 (cartões, modal) */
+  --color-tinta: #fefefc; /* branco quente: texto no escuro */
+  --color-papel: #ece7dc; /* fundo claro / texto secundário no escuro */
+  --color-ouro: #cda85e; /* as 3 noites juntas; ação primária */
+  --color-azul: #007bff; /* Biomecânica · André — só áreas grandes ou texto >= 72 px */
+  --color-vermelho: #e8341c; /* Bodybuilding · Walter  — idem */
+  --color-roxo: #934eff; /* Treinamento Feminino · Carlos — idem */
+  --color-mute: #cfc9bd; /* texto de apoio sobre ink (>= 7:1) */
+  --color-erro: #ffb4ab; /* erro no escuro */
+  --color-erro-papel: #9e1b32; /* erro no papel */
+
+  /* famílias: Big Shoulders 900 (títulos/números) · Archivo 500/700/800 (texto) · Azeret Mono 500/600 (rótulos) */
+  --font-display: var(--font-display-next), 'Arial Narrow', Impact, sans-serif;
+  --font-sans: var(--font-text-next), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-mono-next), ui-monospace, Consolas, monospace;
+
+  /* pontos de quebra (mobile-first). Larguras de TESTE: 390 · 768 · 1024 · 1440 */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 600px; /* celular grande / tablet pequeno */
+  --breakpoint-md: 768px; /* tablet */
+  --breakpoint-lg: 1024px; /* desktop pequeno: layout de 12 colunas */
+  --breakpoint-xl: 1440px; /* desktop */
+
+  /* raios da forma A: 0 = sinal da campanha (tarja, botão, visor) · curva = conteúdo */
+  --radius-*: initial;
+  --radius-sinal: 0px;
+  --radius-rotulo: 6px; /* etiqueta, campo de formulário */
+  --radius-cartao: 10px; /* cartão, painel */
+  --radius-moldura: 16px; /* modal, folha de baixo, bloco grande */
+  --radius-pilula: 9999px; /* uso raro no site */
+
+  /* tipografia: 5 degraus + numerais gigantes (desenho, não texto lido) */
+  --text-*: initial;
+  --text-label: 0.875rem; /* 14 */
+  --text-label--line-height: 1.4;
+  --text-body: clamp(1.125rem, 1.07rem + 0.24vw, 1.25rem); /* 18 -> 20 */
+  --text-body--line-height: 1.5;
+  --text-lead: clamp(1.75rem, 1.3rem + 1.4vw, 2.75rem); /* 28 -> 44 */
+  --text-lead--line-height: 1.02;
+  --text-h2: clamp(2.5rem, 1.7rem + 3.2vw, 4.75rem); /* 40 -> 76 */
+  --text-h2--line-height: 1;
+  --text-numeral: clamp(6.5rem, 4rem + 11vw, 12rem); /* 104 -> 192 */
+  --text-numeral--line-height: 0.78;
+
+  /* curva única da marca (a mesma da tarja que varre) */
+  --ease-marca: cubic-bezier(0.4, 0.14, 0.3, 1);
+  --ease-saida: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Espaçamento semântico responsivo (as utilidades usam var(...) direto) */
+@theme inline {
+  --spacing-margem: var(--m); /* margem lateral: 24 · 40 · clamp(48px,6vw,112px) */
+  --spacing-g1: var(--g1); /* 12  mesmo grupo (sub<->data, CTA<->micro) */
+  --spacing-g2: var(--g2); /* 24  grupos relacionados (header<->foto, H1<->sub) */
+  --spacing-g3: var(--g3); /* 40  grupos separados (foto<->H1, data<->CTA) */
+  --spacing-secao: var(--sec); /* respiro de cada lado da seção (vão entre seções = 2x) */
+  --spacing-gut: var(--gut); /* gap entre colunas/cartões */
+  --text-h1: var(--h1);
+  --text-h1--line-height: 0.96;
+}
+
+:root {
+  --m: 24px;
+  --g1: 12px;
+  --g2: 24px;
+  --g3: 40px;
+  --sec: 72px;
+  --gut: 16px;
+  --h1: var(--text-h2); /* mobile = h2 (40 px); sobe no desktop */
+  --header-h: 64px;
+  --sticky-h: 64px;
+  --err: var(--color-erro);
+  color-scheme: dark;
+  interpolate-size: allow-keywords;
+}
+@media (min-width: 600px) {
+  :root {
+    --m: 40px;
+    --gut: 24px;
+    --sec: 112px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --m: clamp(48px, 6vw, 112px);
+    --sec: clamp(112px, 9vw, 144px);
+    --h1: min(5.25rem, 5.9vw);
+  }
+}
+
+/* ============================== BASE ============================== */
+@import '../styles/base.css' layer(base);
+@import '../styles/components.css' layer(components);
+@import '../styles/tema.css';

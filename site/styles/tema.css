@@ -1,0 +1,127 @@
+/*
+ * TEMA CLARO / ESCURO (teste pedido em 11/10/2026): um botão no topo alterna; `data-tema` no <html>.
+ * Padrão = escuro (a identidade nativa). Claro = o "papel" da marca (#ECE7DC) com a tinta (#0C0B09), como a
+ * versão alternativa (alt) dos produtos no manual: botão preto com texto ouro, ouro mais fechado para texto.
+ *
+ * Como funciona: o site inteiro usa os tokens --color-ink / --color-tinta / --color-papel. No claro os tokens
+ * trocam de papel (fundo vira papel, texto vira tinta) e as seções `.pta-paper` (que eram claras) viram escuras,
+ * com o conjunto original de tokens. Nada de cor fixa no componente: se precisar de exceção, use
+ * `html[data-tema='claro'] .seu-componente { … }` aqui ou no CSS da versão.
+ * Fotos, SVG com cor assada (elementos do kit) e o grão não seguem os tokens: ver cada página.
+ */
+html[data-tema='claro'] {
+  color-scheme: light;
+  --color-ink: #ece7dc;
+  --color-ink-2: #e1dacb;
+  --color-tinta: #0c0b09;
+  --color-papel: #0c0b09;
+  --color-mute: #4a463c; /* 7,3:1 sobre o papel */
+  --color-ouro: #735818; /* ouro fechado: 4,8:1 (#735818: ≥ 4,67:1 sobre o papel profundo) sobre o papel (texto, fio, ponto) */
+  --color-erro: #9e1b32;
+  --color-erro-papel: #ffb4ab;
+  --err: #9e1b32;
+  --grao-op: 0.3;
+}
+/* seção que era papel vira escura, com os tokens do escuro */
+html[data-tema='claro'] .pta-paper {
+  --color-ink: #0c0b09;
+  --color-ink-2: #15130f;
+  --color-tinta: #fefefc;
+  --color-papel: #ece7dc;
+  --color-mute: #cfc9bd;
+  --color-ouro: #cda85e;
+  --color-erro: #ffb4ab;
+  --color-erro-papel: #9e1b32;
+  --err: #ffb4ab;
+  background: #0c0b09;
+  color: #ece7dc;
+}
+html[data-tema='claro'] .pta-paper :focus-visible {
+  outline-color: #fefefc;
+}
+/* botão principal: no claro é preto com texto ouro (como o alt dos produtos); dentro de seção escura, o ouro normal */
+html[data-tema='claro']
+  .pta-btn:not([class*='--papel']):not([class*='--tinta']):not([class*='--ink']):not([class*='--ghost']) {
+  --bg: #0c0b09;
+  --fg: #cda85e;
+  --sh: #7c5f1c;
+}
+html[data-tema='claro']
+  .pta-paper
+  .pta-btn:not([class*='--papel']):not([class*='--tinta']):not([class*='--ink']):not([class*='--ghost']) {
+  --bg: #cda85e;
+  --fg: #0c0b09;
+  --sh: #ece7dc;
+}
+html[data-tema='claro'] ::selection {
+  background: #0c0b09;
+  color: #ece7dc;
+}
+
+/* ======================= botão do tema (só para teste) ======================= */
+.pta-tema {
+  position: fixed;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90; /* acima do grão (60) e do cabeçalho */
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 9999px;
+  background: rgba(12, 11, 9, 0.88);
+  border: 1px solid rgba(236, 231, 220, 0.35);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.pta-tema button {
+  min-height: 30px;
+  min-width: 56px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #ece7dc;
+  cursor: pointer;
+}
+.pta-tema button[aria-pressed='true'] {
+  background: #ece7dc;
+  color: #0c0b09;
+}
+.pta-tema button:focus-visible {
+  outline: 2px solid #cda85e;
+  outline-offset: 1px;
+}
+html[data-tema='claro'] .pta-tema {
+  background: rgba(236, 231, 220, 0.9);
+  border-color: rgba(12, 11, 9, 0.4);
+}
+html[data-tema='claro'] .pta-tema button {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .pta-tema button[aria-pressed='true'] {
+  background: #0c0b09;
+  color: #ece7dc;
+}
+
+/* celular: o cabeçalho não tem espaço livre (logo à esquerda, botão à direita) — o botão do tema fica logo abaixo
+   dele, no canto direito, menor. Só no celular (< 768 px). */
+@media (max-width: 767px) {
+  .pta-tema {
+    top: calc(var(--header-h, 64px) + 6px);
+    left: auto;
+    right: 8px;
+    transform: none;
+    font-size: 11px;
+  }
+  .pta-tema button {
+    min-height: 28px;
+    min-width: 48px;
+    padding: 0 10px;
+  }
+}
+/* /TEMA-MOBILE */

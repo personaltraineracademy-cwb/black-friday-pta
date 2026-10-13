@@ -1,0 +1,1536 @@
+/*
+ * v1 · SALA DE CONTROLE — CSS da versão (escopado em `.v1`; nada vaza para v2/v3).
+ *
+ * Porte fiel de paginas/v1/index.html: escala 4·8·12·16·24·32·40·48·96·112, 1 grade de 12 colunas,
+ * vãos da dobra 12/24/40, margem 24/40/clamp. Forma A: reto = sinal (visor, tally, monitor); curva = conteúdo
+ * (botão 10, campo 6, pop-up 16). Usa os tokens da base (var(--color-*), var(--font-*)) e as classes `.pta-*`
+ * dos componentes compartilhados, sobrescrevendo só VARIÁVEIS (--sh, --btn-radius…).
+ * Este arquivo é "sem camada": ganha das camadas da base (preflight, utilidades) sem precisar de !important.
+ *
+ * Movimento (só transform/opacity/clip-path, curva da marca; roda SEMPRE: data-movimento total|suave|parado):
+ *   hero: cantoneiras travam foco · quando: timecode/REC reais · roteiro: numerais + fio · noites: monitores sintonizam
+ *   condição: 1 depois 2 · bônus: visto · fecho: cantoneiras fecham · página: barra de leitura de 2 px.
+ * Elementos animados por rolagem levam a classe `pta-reveal` (a base e o verificador sabem desligá-la).
+ */
+
+/* ============================== escopo, escala, tipos ============================== */
+.v1 {
+  --m: 24px;
+  --sec: 72px;
+  --pc: 24px;
+  --fs-mono: 14px;
+  --fs-body: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --fs-lead: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  --fs-h2: clamp(2.25rem, 1.3rem + 3.6vw, 3.75rem);
+  --fs-h1: clamp(2.5rem, 0.9rem + 7.4vw, 5.75rem);
+  --fs-giant: clamp(11rem, 7rem + 19vw, 24rem);
+  --txt: var(--color-papel);
+  --txt2: rgb(236 231 220 / 0.8);
+  --linha: rgb(236 231 220 / 0.16);
+  --linha2: rgb(236 231 220 / 0.3);
+  --grade: rgb(236 231 220 / 0.055);
+  --ouro: var(--color-ouro);
+  --ouro-esc: #6e5a2b;
+  --r-rot: 6px;
+  --r-card: 10px;
+  --ease: var(--ease-saida);
+  position: relative;
+  font-size: var(--fs-body);
+  color: var(--txt);
+}
+@media (min-width: 768px) {
+  .v1 {
+    --m: 40px;
+    --sec: 112px;
+    --pc: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .v1 {
+    --m: clamp(48px, 6vw, 112px);
+  }
+}
+
+.v1-wrap {
+  width: min(100% - 2 * var(--m), 1240px);
+  margin-inline: auto;
+}
+.v1-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-mono);
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.v1-disp {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.v1-nw {
+  white-space: nowrap;
+}
+.v1-p {
+  max-width: 62ch;
+}
+.v1-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.v1 :focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 3px;
+}
+.v1 h3 {
+  font-family: var(--font-sans);
+  text-transform: none;
+  text-wrap: wrap;
+}
+
+/* ============================== botões (variáveis sobre a base .pta-btn) ============================== */
+.v1 .pta-btn {
+  --sh: var(--ouro-esc);
+  --btn-radius: var(--r-card);
+  padding: 14px 30px; /* + borda 2 = 16/32 do desenho aprovado */
+}
+.v1 .pta-btn--bar {
+  padding: 8px 14px;
+  font-size: 16px;
+}
+.v1 .pta-btn:focus-visible {
+  outline: 3px solid var(--ouro);
+  outline-offset: 4px;
+}
+/* rótulo de botão SEMPRE em 1 linha, em qualquer largura */
+.v1 .pta-btn {
+  white-space: nowrap;
+}
+@media (max-width: 479px) {
+  /* 390 com barra de rolagem (coluna de 327 px): o rótulo grande (≈ 265 px) precisa de ≥ 40 px de respiro interno */
+  .v1 .pta-btn--lg {
+    padding-inline: 20px;
+  }
+}
+.v1-btn-hero {
+  margin-top: 40px;
+  min-height: 56px;
+}
+.v1 .v1-btn-out {
+  --bg: transparent;
+  --fg: var(--txt);
+  position: relative;
+  min-height: 56px;
+  padding-inline: 16px; /* 1024: coluna de 216 px; o rótulo (153 px) tem que caber em 1 linha */
+  border-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--linha2);
+}
+.v1 .v1-btn-out:hover,
+.v1 .v1-btn-out:active {
+  transform: none;
+  color: var(--ouro);
+  box-shadow: inset 0 0 0 2px var(--ouro);
+}
+/* seta do botão do cartão: fora do fluxo (não rouba largura do rótulo); entra no hover/foco */
+.v1 .v1-btn-out .pta-btn__arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  margin-top: -0.5em;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition:
+    opacity 0.2s var(--ease-marca),
+    transform 0.28s var(--ease-saida);
+}
+.v1 .v1-btn-out:hover .pta-btn__arrow,
+.v1 .v1-btn-out:focus-visible .pta-btn__arrow {
+  opacity: 1;
+  transform: none;
+}
+.v1 .v1-btn-final {
+  --bg: var(--color-ink);
+  --fg: var(--ouro);
+  --sh: rgb(12 11 9 / 0.35);
+  margin-top: 48px;
+  box-shadow: 5px 5px 0 var(--sh);
+}
+.v1 .v1-btn-final:hover {
+  box-shadow: 7px 7px 0 var(--sh);
+}
+.v1 .v1-btn-final:focus-visible {
+  outline-color: var(--color-ink);
+}
+@media (min-width: 768px) {
+  .v1 .v1-btn-final {
+    width: auto;
+    min-width: 440px;
+  }
+}
+
+/* o grão fixo da base é denso (tile 128 px); a v1 aprovada usava um véu leve (20%): usa a variável da base */
+body:has(.v1) {
+  --grao-op: 0.22;
+}
+
+/* ============================== barra de leitura (CSS puro, 2 px) ============================== */
+.v1-prog {
+  display: none;
+}
+
+/* ============================== cabeçalho ============================== */
+.v1-topo {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  background: var(--color-ink);
+}
+.v1-topo__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+.v1-topo__logo {
+  display: flex;
+  flex: none; /* a 320 px o flex espremia o logo para 38 px (alvo de toque < 44) */
+  align-items: center;
+  min-width: 44px;
+  min-height: 48px;
+  line-height: 0;
+}
+.v1 .v1-topo__logo .pta-logo {
+  --logo-h: 40px;
+}
+@media (min-width: 768px) {
+  .v1-topo {
+    position: sticky;
+    inset: 0 auto auto auto;
+    top: 0;
+    box-shadow: 0 1px 0 var(--linha);
+  }
+  .v1 .v1-topo__logo .pta-logo {
+    --logo-h: 48px;
+  }
+}
+
+/* ============================== visor: as 4 cantoneiras ============================== */
+.v1-visor {
+  position: relative;
+}
+.v1-visor::after,
+.v1-corners {
+  --c: var(--ouro);
+  --l: 26px;
+  --t: 3px;
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background:
+    linear-gradient(var(--c), var(--c)) 0 0 / var(--l) var(--t),
+    linear-gradient(var(--c), var(--c)) 0 0 / var(--t) var(--l),
+    linear-gradient(var(--c), var(--c)) 100% 0 / var(--l) var(--t),
+    linear-gradient(var(--c), var(--c)) 100% 0 / var(--t) var(--l),
+    linear-gradient(var(--c), var(--c)) 0 100% / var(--l) var(--t),
+    linear-gradient(var(--c), var(--c)) 0 100% / var(--t) var(--l),
+    linear-gradient(var(--c), var(--c)) 100% 100% / var(--l) var(--t),
+    linear-gradient(var(--c), var(--c)) 100% 100% / var(--t) var(--l);
+  background-repeat: no-repeat;
+}
+.v1-trio::after {
+  --l: 16px;
+}
+
+/* ============================== dobra ============================== */
+.v1-hero {
+  position: relative;
+  padding-block: 96px 128px;
+}
+.v1-hero__grid {
+  display: flex;
+  flex-direction: column;
+}
+.v1-hero__txt {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  container-type: inline-size; /* o H1 se mede pela coluna: "FÍSICA DO JÁ COMEÇOU!" (8,95 em) cabe em 1 linha */
+}
+.v1-hero h1 {
+  font-size: min(var(--fs-h1), 11cqi);
+  line-height: 1;
+  color: var(--color-tinta);
+  text-wrap: balance;
+}
+.v1-destaque {
+  margin-top: 24px;
+  text-wrap: balance; /* nunca "2." sozinho na 2ª linha (375 px) */
+  font-weight: 700;
+  color: var(--ouro);
+  font-size: var(--fs-lead);
+  line-height: 1.2;
+}
+.v1-data {
+  display: block;
+  margin-top: 12px;
+  color: var(--txt2);
+}
+.v1-micro {
+  margin-top: 12px;
+  color: var(--txt2);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.v1-trio {
+  order: -1;
+  width: 100%;
+  margin: 0 0 40px;
+}
+.v1-trio img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .v1-hero {
+    padding-block: 112px; /* o mesmo respiro do desktop: topo = base (o verificador pedia ≥ 112 nos dois) */
+  }
+  .v1-trio {
+    width: min(100%, 480px);
+  }
+  .v1-btn-hero {
+    width: min(100%, 420px);
+    align-self: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .v1-hero {
+    padding-block: 112px;
+    min-height: calc(100svh - 72px);
+    display: flex;
+    align-items: center;
+  }
+  .v1-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: stretch;
+  }
+  .v1-hero__txt {
+    grid-column: 1 / 7;
+  }
+  .v1-hero h1 {
+    font-size: min(5vw, 10vh, 4.75rem, 11cqi);
+    text-wrap: wrap;
+    text-box: trim-both cap alphabetic;
+  }
+  .v1-destaque {
+    margin-top: 40px;
+  }
+  .v1-micro {
+    text-box: trim-both cap text;
+  }
+  .v1-trio {
+    order: 0;
+    grid-column: 7 / 13;
+    width: auto;
+    margin: 0;
+    min-height: 0;
+  }
+  .v1-trio img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+  .v1-btn-hero {
+    min-height: 64px;
+  }
+}
+/* 1024–1199: a coluna de texto tem 431–508 px; o botão a ocupa inteira (borda direita = a do H1, sem "quase") */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .v1-btn-hero {
+    width: 100%;
+  }
+}
+
+/* ============================== seções ============================== */
+.v1-sec {
+  position: relative;
+  padding-block: var(--sec);
+}
+.v1-sec--2 {
+  background: var(--color-ink-2);
+}
+.v1-sec--grade::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grade) 1px, transparent 1px), linear-gradient(90deg, var(--grade) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(90% 80% at 50% 40%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(90% 80% at 50% 40%, #000 30%, transparent 100%);
+}
+.v1-sec > .v1-wrap {
+  position: relative;
+}
+.v1-rot {
+  color: var(--ouro);
+  margin-bottom: 24px;
+}
+.v1-h2 {
+  font-size: var(--fs-h2);
+  line-height: 1;
+  color: var(--color-tinta);
+  text-wrap: balance;
+}
+.v1 [data-linhas] {
+  display: flow-root; /* a margem negativa da janela (.v1-mask) não pode vazar para fora do título */
+}
+/* a janela da revelação por linha: folga em cima para o til/acento (regra 15 da pesquisa 19) */
+.v1-mask,
+.v1-lin-mask {
+  /* o SplitText nomeia a janela como `<linesClass>-mask` (v1-lin-mask): é ela que recorta a linha */
+  padding-block: 0.2em 0;
+  margin-block: -0.2em 0; /* só em cima: com folga embaixo as margens colapsam entre linhas e o título cresce */
+}
+.v1-apoio {
+  margin-top: 24px;
+  color: var(--txt);
+}
+.v1-h-cond {
+  max-width: 20ch;
+}
+
+/* ============================== quando começa ============================== */
+.v1-quando {
+  display: grid;
+  gap: 48px;
+}
+.v1-tc__estado {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ouro);
+  margin-bottom: 32px;
+}
+.v1-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  flex: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--ouro);
+}
+.v1-tc[data-state='live'] .v1-dot {
+  background: var(--c-noite, var(--ouro));
+  box-shadow: none;
+}
+.v1-tc__dig {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--fs-h2);
+}
+.v1-tc__par {
+  display: flex;
+  align-items: flex-start;
+}
+.v1-tc__cel {
+  width: 2ch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.v1-tc__cel b {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--color-tinta);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; /* os dígitos são nós separados (para "virar"): nunca quebram em 2 linhas */
+}
+.v1-tc__dig:not([data-pronto]) .v1-tc__cel b {
+  color: var(--linha2);
+}
+.v1-tc__cel > span {
+  margin-top: 12px;
+  color: var(--txt2);
+  white-space: nowrap;
+  width: 0;
+  overflow: visible;
+}
+.v1-tc__sep {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--ouro);
+  padding-inline: 0.12em;
+}
+.v1-tc__cong {
+  margin-top: 40px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--r-rot);
+  background: transparent;
+  cursor: pointer;
+  color: var(--txt);
+  box-shadow: inset 0 0 0 2px var(--linha2);
+  transition:
+    color 0.18s,
+    box-shadow 0.18s,
+    background-color 0.18s;
+}
+.v1-tc__cong:disabled {
+  visibility: hidden; /* o espaço do botão já está reservado antes de hidratar (sem salto de layout) */
+}
+.v1-tc__cong:hover {
+  box-shadow: inset 0 0 0 2px var(--ouro);
+  color: var(--ouro);
+}
+.v1-tc__cong[aria-pressed='true'] {
+  background: var(--color-papel);
+  color: var(--color-ink);
+  box-shadow: none;
+}
+.v1-selos {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column; /* 3 selos, 1 por linha: nada de "MEC" sozinho na linha de baixo */
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--txt2);
+}
+@media (max-width: 400px) {
+  .v1-selos {
+    letter-spacing: 0.02em; /* "CERTIFICADO RECONHECIDO PELO MEC" (32 sinais) cabe em 312 px */
+  }
+}
+@media (min-width: 1024px) {
+  .v1-quando {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: center;
+  }
+  .v1-quando__tc {
+    grid-column: 1 / 7;
+  }
+  .v1-quando__txt {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ============================== como funciona ============================== */
+.v1-passos {
+  margin-top: clamp(40px, 5vw, 56px);
+  display: grid;
+  gap: 48px;
+}
+.v1-passo {
+  position: relative;
+  padding-top: 33px; /* 1 px do fio + 32 de respiro (o fio é um elemento, para poder se desenhar) */
+}
+.v1-passo__fio {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--linha2);
+  transform-origin: 0 50%;
+}
+.v1-passo__meta {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--txt2);
+}
+.v1-passo__mask {
+  display: block;
+  overflow: clip;
+  margin-bottom: 16px;
+}
+.v1-passo__n {
+  display: block;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  color: var(--ouro);
+}
+.v1-passo h3 {
+  font-size: var(--fs-lead);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-tinta);
+  margin-bottom: 16px;
+}
+.v1-passo p {
+  color: var(--txt);
+}
+@media (min-width: 1024px) {
+  .v1-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+}
+
+/* ============================== noites: 3 monitores ============================== */
+.v1-parede {
+  margin-top: clamp(40px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* `1fr` = minmax(auto, 1fr): o conteúdo alargava a trilha (360: 10,7 × 24 px) */
+  gap: 24px;
+}
+.v1-mon {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--color-ink-2);
+  border-top: 4px solid var(--c);
+}
+.v1-mon__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px var(--pc);
+  background: var(--color-ink);
+  color: var(--txt);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.v1-tally {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  flex: none;
+  background: var(--c, var(--ouro));
+}
+.v1-mon__tela {
+  position: relative;
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  background: radial-gradient(90% 70% at 50% 25%, color-mix(in srgb, var(--c) 26%, #1b1914), #0f0e0b 80%);
+}
+.v1-mon__foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 6%;
+  filter: grayscale(1) contrast(1.04);
+  clip-path: inset(0);
+}
+.v1-mon__ss {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    #c9c6bd 0 14.28%,
+    #a9a69e 0 28.56%,
+    #8a877f 0 42.84%,
+    #6b6963 0 57.12%,
+    #4d4b46 0 71.4%,
+    #33322e 0 85.68%,
+    #1d1c19 0
+  );
+}
+.v1-mon__ss::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grain-url) 0 0 / 96px 96px;
+  opacity: 0.9;
+}
+.v1-mon__info {
+  padding: var(--pc);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.v1-mon h3 {
+  font-size: var(--fs-lead);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--color-tinta);
+  margin-bottom: 16px;
+}
+.v1-mon__bio {
+  color: var(--txt2);
+  margin-bottom: 24px;
+}
+.v1-mon__pos {
+  margin-top: auto;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: var(--color-tinta);
+}
+.v1-mon__pos .v1-mono {
+  display: block;
+  color: var(--txt2);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+/* celular (390): a barra "NOITE 1 · SEG 9/11 · 20H30" tem 244 px; sem entreletra cabe em 342 */
+@media (max-width: 400px) {
+  .v1-mon__bar {
+    letter-spacing: 0;
+  }
+}
+/* barra estreita (cartão < 336 px: 1024–1279 e celulares de 360): 2 linhas — "NOITE 1" e, embaixo, "SEG 9/11 · 20H30",
+   alinhadas ao texto (depois do tally); nada passa da borda do cartão */
+.v1-mon {
+  container-type: inline-size;
+}
+@container (max-width: 335px) {
+  .v1-mon__bar {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+  .v1-mon__sep {
+    display: none;
+  }
+  .v1-mon__dt {
+    flex-basis: 100%;
+    padding-left: 24px; /* tally 12 + vão 12 */
+  }
+}
+/* tablet (768–1023): cartão HORIZONTAL na largura da coluna (antes: 560 px à esquerda, 168 px de vazio à direita) —
+   barra em cima, retrato à esquerda, texto à direita; margem esquerda = direita, 3 cartões em ~1,4 tela */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .v1-parede {
+    gap: 32px;
+  }
+  .v1-mon {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: auto 1fr;
+  }
+  .v1-mon__bar {
+    grid-column: 1 / -1;
+  }
+  .v1-mon__tela {
+    aspect-ratio: auto;
+  }
+  .v1-mon__info {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .v1-parede {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .v1-mon__tela {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ============================== pague 1, leve 2 (papel) ============================== */
+.v1-sec--papel {
+  background: var(--color-papel);
+  color: var(--color-ink);
+}
+.v1-sec--papel .v1-rot {
+  color: var(--color-ink);
+}
+.v1-sec--papel .v1-h2 {
+  color: var(--color-ink);
+}
+.v1-sec--papel .v1-apoio {
+  color: #1d1b16;
+}
+.v1-um-dois {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  margin-top: clamp(40px, 5vw, 56px);
+}
+.v1-num__mask {
+  display: block;
+  overflow: clip;
+  padding-top: 0.04em;
+}
+.v1-num__n {
+  display: block;
+  font-size: var(--fs-giant);
+  line-height: 0.8;
+  color: var(--color-ink);
+  margin-left: -0.03em;
+}
+.v1-num__l {
+  display: block;
+  margin-top: 16px;
+  color: var(--color-ink);
+  border-top: 2px solid var(--color-ink);
+  padding-top: 12px;
+}
+.v1-opcoes {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+}
+.v1-opcoes li {
+  padding-block: 16px;
+  border-top: 1px solid rgb(12 11 9 / 0.4);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+.v1-opcoes li:last-child {
+  border-bottom: 1px solid rgb(12 11 9 / 0.4);
+}
+.v1-nota {
+  margin-top: 48px;
+  max-width: 46ch;
+  padding-top: 16px;
+  border-top: 3px solid var(--color-ink);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+@media (min-width: 1024px) {
+  .v1-um-dois {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: end;
+  }
+  .v1-num:nth-child(1) {
+    grid-column: 1 / 4;
+  }
+  .v1-num:nth-child(2) {
+    grid-column: 4 / 7;
+  }
+  .v1-opcoes {
+    grid-column: 7 / 13;
+    margin: 0;
+  }
+}
+
+/* ============================== bônus ============================== */
+.v1-bonus {
+  display: grid;
+  gap: 48px;
+}
+.v1-check li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 16px;
+  align-items: start;
+  padding-block: 24px;
+  border-top: 1px solid var(--linha2);
+}
+.v1-check li:last-child {
+  border-bottom: 1px solid var(--linha2);
+}
+.v1-chk-w {
+  display: block;
+  transform-origin: 30% 60%;
+}
+.v1-chk {
+  display: block;
+  width: 16px;
+  height: 9px;
+  margin-top: 0.6em;
+  border: solid var(--ouro);
+  border-width: 0 0 3px 3px;
+  transform: rotate(-45deg);
+}
+.v1-check .v1-t {
+  text-wrap: balance; /* "online" / "(na" nunca sozinhos na 2ª linha */
+  font-size: var(--fs-lead);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-tinta);
+}
+@media (min-width: 1024px) {
+  .v1-bonus {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+  .v1-bonus__h {
+    grid-column: 1 / 7;
+  }
+  .v1-check {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ============================== por que a PTA ============================== */
+.v1-ficha {
+  margin-top: clamp(40px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.v1-ficha li {
+  padding-block: 32px;
+  border-top: 1px solid var(--linha2);
+}
+.v1-ficha li:last-child {
+  border-bottom: 1px solid var(--linha2);
+}
+.v1-ficha b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  color: var(--color-tinta);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.v1-ficha .v1-u {
+  display: block;
+  text-wrap: balance;
+  font-size: var(--fs-lead);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-tinta);
+}
+@media (min-width: 768px) {
+  .v1-ficha {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+  .v1-ficha li:nth-last-child(2) {
+    border-bottom: 1px solid var(--linha2);
+  }
+}
+
+/* ============================== FAQ ============================== */
+.v1-faq {
+  display: grid;
+  gap: 48px;
+}
+.v1-faq__item {
+  border-top: 1px solid var(--linha2);
+}
+.v1-faq__item + .v1-faq__item {
+  margin-top: 12px;
+}
+.v1-faq__item:last-child {
+  border-bottom: 1px solid var(--linha2);
+}
+.v1-faq__item > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 96px;
+  padding-block: 24px;
+  font-size: var(--fs-body);
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--color-tinta);
+  transition: color 0.18s;
+}
+.v1-faq__item > summary::-webkit-details-marker {
+  display: none;
+}
+.v1-faq__item > summary:hover,
+.v1-faq__item[open] > summary {
+  color: var(--ouro);
+}
+.v1-mais {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  position: relative;
+}
+.v1-mais::before,
+.v1-mais::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 10.5px;
+  width: 18px;
+  height: 3px;
+  background: var(--ouro);
+  transition: transform 0.22s var(--ease-marca);
+}
+.v1-mais::after {
+  transform: rotate(90deg);
+}
+.v1-faq__item[open] .v1-mais::after {
+  transform: rotate(0);
+}
+.v1-faq__r {
+  padding: 0 48px 24px 0;
+  max-width: 56ch;
+  color: var(--txt);
+}
+.v1-faq__item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 0.3s var(--ease-marca),
+    content-visibility 0.3s allow-discrete;
+}
+.v1-faq__item[open]::details-content {
+  block-size: auto;
+}
+:root[data-movimento='parado'] .v1-faq__item::details-content,
+:root[data-movimento='parado'] .v1-mais::before,
+:root[data-movimento='parado'] .v1-mais::after {
+  transition: none;
+}
+@media (min-width: 1024px) {
+  .v1-faq {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+  .v1-faq__l {
+    grid-column: 1 / 7;
+  }
+  .v1-faq__lista {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ============================== fecho: tela cheia, ouro chapado ============================== */
+.v1-final {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: clip;
+  background: var(--ouro);
+  color: var(--color-ink);
+  padding-block: var(--sec);
+}
+.v1-final__c {
+  --c: var(--color-ink);
+  inset: clamp(24px, 2.4vw, 36px);
+}
+.v1-final .v1-wrap {
+  position: relative;
+  z-index: 2;
+}
+.v1-final h2 {
+  font-size: var(--fs-h1);
+  line-height: 1;
+  color: var(--color-ink);
+  max-width: 14ch;
+  text-wrap: balance;
+}
+.v1-final :focus-visible {
+  outline-color: var(--color-ink);
+}
+
+/* ============================== rodapé ============================== */
+.v1-rodape {
+  background: var(--color-ink-2);
+  padding-block: 96px;
+}
+@media (min-width: 768px) {
+  .v1-rodape {
+    padding-block: 112px;
+  }
+}
+@media (max-width: 767px) {
+  .v1-rodape {
+    padding-bottom: calc(96px + 72px);
+  }
+}
+.v1 .v1-rodape__logo {
+  width: min(260px, 70%);
+  height: auto;
+  margin-bottom: 32px;
+}
+.v1-rodape p {
+  max-width: 62ch;
+  color: var(--txt2);
+}
+
+/* ============================== MOVIMENTO ============================== */
+@keyframes v1-rec {
+  50% {
+    opacity: 0.15;
+  }
+}
+@keyframes v1-travar {
+  0% {
+    opacity: 0;
+    transform: scale(var(--v1-esc, 1.08));
+  }
+  45% {
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes v1-sobe {
+  from {
+    transform: translateY(var(--v1-sobe, 105%));
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes v1-fio {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes v1-visto {
+  from {
+    opacity: 0;
+    transform: scale(var(--v1-visto, 0.3));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes v1-fechar {
+  from {
+    opacity: 0;
+    transform: scale(var(--v1-esc2, 1.07));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes v1-tunar {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  45% {
+    opacity: 1;
+    transform: scaleY(0.012);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25, 0.012);
+  }
+}
+@keyframes v1-prog {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* o ponto REC e o tally da noite no ar: 5 piscadas e ficam fixos (WCAG 2.2.2) */
+.v1-tc[data-state='live'] .v1-dot,
+.v1-mon[data-ao-vivo] .v1-tally {
+  animation: v1-rec 1s steps(1, end) 5;
+}
+.v1-mon[data-ao-vivo] .v1-tally {
+  box-shadow: 0 0 0 3px var(--color-ink-2);
+  outline: 2px solid var(--c);
+  outline-offset: 3px;
+}
+
+@media all {
+  /* HERO: as cantoneiras do visor travam o foco ao carregar (foto e H1 não se mexem: são o LCP) */
+  .v1-trio::after {
+    animation: v1-travar calc(0.65s * var(--v1-k, 1)) var(--ease-marca) calc(0.15s * var(--v1-k, 1)) both;
+  }
+
+  /* MONITORES: sem sinal -> sintonizando (barras colapsam numa linha; o retrato ABRE dessa linha, como um tubo
+     ligando) -> ok. O retrato fica recortado numa linha de 1% enquanto sem sinal (clip-path, sem opacidade). */
+  .v1-mon__foto {
+    transition: clip-path calc(0.55s * var(--v1-k, 1)) var(--ease-marca) calc(0.22s * var(--v1-k, 1));
+  }
+  .v1-mon[data-fase='sem-sinal'] .v1-mon__foto {
+    clip-path: inset(49.5% 0 49.5% 0);
+    transition: none;
+  }
+  .v1-mon[data-fase='sem-sinal'] .v1-mon__ss {
+    visibility: visible;
+    opacity: 1;
+  }
+  .v1-mon[data-fase='sintonizando'] .v1-mon__ss {
+    visibility: visible;
+    animation: v1-tunar calc(0.6s * var(--v1-k, 1)) var(--ease-marca) forwards;
+  }
+
+  /* BARRA DE LEITURA: 2 px, ligada à rolagem (só onde scroll() existe) */
+  @supports (animation-timeline: scroll()) {
+    .v1-prog {
+      display: block;
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 2px;
+      z-index: 80;
+      background: var(--ouro);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation: v1-prog linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+
+  /* ROLAGEM: numerais, fios, 1 -> 2, vistos, fecho. `.pta-reveal` = a base e o verificador sabem desligar. */
+  /* `forwards`: antes da faixa a peça fica no estado FINAL (visível em captura de página inteira e impressão) */
+  @supports (animation-timeline: view()) {
+    .v1 .v1-passo__n.pta-reveal {
+      animation: v1-sobe 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: cover 2% cover 22%;
+    }
+    .v1 .v1-passo:nth-child(2) .v1-passo__n.pta-reveal {
+      animation-range: cover 6% cover 26%;
+    }
+    .v1 .v1-passo:nth-child(3) .v1-passo__n.pta-reveal {
+      animation-range: cover 10% cover 30%;
+    }
+    .v1 .v1-passo__fio.pta-reveal {
+      animation: v1-fio 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: cover 0% cover 20%;
+    }
+    .v1 .v1-num__n.pta-reveal {
+      animation: v1-sobe 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: cover 0% cover 26%;
+    }
+    .v1 .v1-num[data-i='1'] .v1-num__n.pta-reveal {
+      animation-range: cover 10% cover 36%;
+    }
+    .v1 .v1-chk-w.pta-reveal {
+      animation: v1-visto 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: entry 20% entry 100%;
+    }
+    .v1 .v1-final__c.pta-reveal {
+      animation: v1-fechar 1ms linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 35%;
+    }
+  }
+}
+/* reserva (Firefox sem view()): o RevealObserver da base marca data-io; estes casos ficam parados no lugar */
+.v1 .v1-passo__fio.pta-reveal[data-io='pending'],
+.v1 .v1-final__c.pta-reveal[data-io='pending'] {
+  transform: none;
+}
+.v1 .v1-passo__n.pta-reveal[data-io='pending'],
+.v1 .v1-num__n.pta-reveal[data-io='pending'] {
+  transform: translateY(105%);
+  opacity: 1;
+}
+.v1 .v1-passo__n.pta-reveal[data-io='done'],
+.v1 .v1-num__n.pta-reveal[data-io='done'] {
+  transform: none;
+}
+
+/* ===== MOVIMENTO PARADO (só por ?movimento=parado) e SUAVE (o sistema pede menos movimento) =====
+   Suave = a MESMA coreografia (travar foco · sintonizar · timecode · janela), mais curta: distâncias ≤ 12 px,
+   tempos ×0,6, sem inclinação/zoom, sem escala grande; o REC pisca 3× em vez de 5×. */
+:root[data-movimento='suave'] .v1 {
+  --v1-k: 0.6;
+  --v1-esc: 1.03;
+  --v1-esc2: 1.03;
+  --v1-sobe: 28%;
+  --v1-visto: 0.65;
+  --v1-tick: -14%;
+}
+:root[data-movimento='suave'] .v1-tc[data-state='live'] .v1-dot,
+:root[data-movimento='suave'] .v1-mon[data-ao-vivo] .v1-tally {
+  animation-iteration-count: 3;
+}
+:root[data-movimento='suave'] .v1-mon:hover .v1-mon__foto {
+  scale: 1;
+}
+:root[data-movimento='parado'] .v1-prog,
+:root[data-movimento='parado'] .v1-mon__ss {
+  display: none;
+}
+:root[data-movimento='parado'] .v1 .pta-reveal {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+:root[data-movimento='parado'] .v1 *,
+:root[data-movimento='parado'] .v1 *::before,
+:root[data-movimento='parado'] .v1 *::after {
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 1ms !important;
+}
+
+/* ============================== MOVIMENTO · rodada 8 (polimento) ============================== */
+/* números tabulares: o relógio e os fatos não "dançam" de largura */
+.v1-cont {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes v1-tick {
+  from {
+    opacity: 0;
+    transform: translateY(var(--v1-tick, -34%));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes v1-espera {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media all {
+  /* TIMECODE VIVO: cada dígito que muda vira (a seg. a cada segundo; dia/hora/min quando mudam) */
+  .v1-tc__dig[data-pronto] .v1-tc__d {
+    display: inline-block;
+    animation: v1-tick calc(0.32s * var(--v1-k, 1)) var(--ease-saida) forwards;
+  }
+  /* aguardando o ar: o anel do REC respira 2× e assenta (3,2 s < 5 s: WCAG 2.2.2) */
+  .v1-tc:not([data-state='live']):not([data-state='ended']):not([data-state='static']) .v1-dot {
+    animation: v1-espera 1.6s ease-in-out 2;
+  }
+
+  /* MONITOR sob o ponteiro fino: sobe 4 px, inclina ≤ 2,5°, a câmera aproxima, o tally acende.
+     `translate`/`rotate` (propriedades próprias) não disputam com a entrada em `transform` (pta-reveal). */
+  .v1-parede {
+    perspective: 1200px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .v1-mon {
+      transition:
+        translate 0.35s var(--ease-saida),
+        rotate 0.35s var(--ease-saida),
+        box-shadow 0.35s var(--ease-saida);
+    }
+    .v1-mon:hover {
+      translate: 0 -4px;
+      box-shadow:
+        0 22px 36px -24px rgb(0 0 0 / 0.9),
+        0 0 0 1px color-mix(in srgb, var(--c) 45%, transparent);
+    }
+    .v1-mon[data-gesto] {
+      will-change: translate, rotate;
+      rotate: var(--tilt, 0 0 0 0deg);
+      transition:
+        translate 0.35s var(--ease-saida),
+        rotate 0.12s linear,
+        box-shadow 0.35s var(--ease-saida);
+    }
+    .v1-mon__foto {
+      transition:
+        clip-path calc(0.55s * var(--v1-k, 1)) var(--ease-marca) calc(0.22s * var(--v1-k, 1)),
+        scale 0.7s var(--ease-saida);
+    }
+    .v1-mon:hover .v1-mon__foto {
+      scale: 1.035;
+    }
+    .v1-mon:hover .v1-tally {
+      box-shadow: 0 0 0 3px var(--color-ink-2), 0 0 14px var(--c);
+    }
+    /* o gesto do visor, outra vez: ao apontar, as 4 cantoneiras (na cor da noite) travam sobre o retrato */
+    .v1-mon__tela::after {
+      --l: 22px;
+      --t: 3px;
+      content: '';
+      position: absolute;
+      inset: 12px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      scale: var(--v1-esc2, 1.07);
+      background:
+        linear-gradient(var(--c), var(--c)) 0 0 / var(--l) var(--t),
+        linear-gradient(var(--c), var(--c)) 0 0 / var(--t) var(--l),
+        linear-gradient(var(--c), var(--c)) 100% 0 / var(--l) var(--t),
+        linear-gradient(var(--c), var(--c)) 100% 0 / var(--t) var(--l),
+        linear-gradient(var(--c), var(--c)) 0 100% / var(--l) var(--t),
+        linear-gradient(var(--c), var(--c)) 0 100% / var(--t) var(--l),
+        linear-gradient(var(--c), var(--c)) 100% 100% / var(--l) var(--t),
+        linear-gradient(var(--c), var(--c)) 100% 100% / var(--t) var(--l);
+      background-repeat: no-repeat;
+      transition:
+        opacity 0.2s var(--ease-marca),
+        scale calc(0.35s * var(--v1-k, 1)) var(--ease-marca);
+    }
+    .v1-mon:hover .v1-mon__tela::after,
+    .v1-mon:focus-within .v1-mon__tela::after {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  /* MOMENTO ASSINATURA · a grade da mesa de corte acende sob o cursor (Como funciona) */
+  @media (hover: hover) and (pointer: fine) {
+    .v1-sec--grade::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0; /* atrás do conteúdo (o .v1-wrap sobe para z-index 1) */
+      opacity: 0;
+      background-image:
+        linear-gradient(rgb(205 168 94 / 0.55) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(205 168 94 / 0.55) 1px, transparent 1px);
+      background-size: 48px 48px;
+      background-position: -1px -1px;
+      -webkit-mask-image: radial-gradient(circle 180px at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%);
+      mask-image: radial-gradient(circle 180px at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%);
+      transition: opacity 0.4s var(--ease-marca);
+    }
+    .v1-sec--grade[data-luz]::after {
+      opacity: 1;
+    }
+    .v1-sec--grade > .v1-wrap {
+      z-index: 1;
+    }
+  }
+}
+
+/* celular pequeno (360 px): o botão grande ficava com o rótulo em 2 linhas; menos respiro lateral interno e
+   corpo 6 % menor deixam em 1 linha, sem sair da coluna de 312 px */
+@media (max-width: 380px) {
+  .v1 .pta-btn--lg {
+    padding-inline: 14px;
+    gap: 0.45em;
+    font-size: calc(var(--text-body) * 0.94);
+    white-space: nowrap;
+  }
+}
+
+/* ============================== TEMA CLARO (papel) ==============================
+   Os tokens (--color-ink / tinta / papel / ouro / mute) trocam em styles/tema.css; aqui só o que a v1 escreveu com cor
+   fixa. Seção `.pta-paper` vira ESCURA no claro (tokens do escuro dentro dela). */
+html[data-tema='claro'] .v1 {
+  --txt2: rgb(12 11 9 / 0.78);
+  --linha: rgb(12 11 9 / 0.16);
+  --linha2: rgb(12 11 9 / 0.38);
+  --grade: rgb(12 11 9 / 0.07);
+  --ouro-esc: #4a3b10;
+}
+/* condição Black no claro: OURO chapado (#CDA85E) com texto e fios em tinta (o bloco dourado da página) */
+html[data-tema='claro'] .v1-sec--papel {
+  background: #cda85e;
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v1-sec--papel .v1-rot,
+html[data-tema='claro'] .v1-sec--papel .v1-h2,
+html[data-tema='claro'] .v1-sec--papel .v1-apoio,
+html[data-tema='claro'] .v1-sec--papel .v1-num__n,
+html[data-tema='claro'] .v1-sec--papel .v1-num__l,
+html[data-tema='claro'] .v1-sec--papel .v1-opcoes li,
+html[data-tema='claro'] .v1-sec--papel .v1-nota {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v1-sec--papel .v1-num__l,
+html[data-tema='claro'] .v1-sec--papel .v1-nota {
+  border-top-color: #0c0b09;
+}
+html[data-tema='claro'] .v1-sec--papel .v1-opcoes li,
+html[data-tema='claro'] .v1-sec--papel .v1-opcoes li:last-child {
+  border-color: rgb(12 11 9 / 0.4);
+}
+/* a luz da mesa de corte (grade que acende sob o cursor): ouro fechado no papel */
+html[data-tema='claro'] .v1-sec--grade::after {
+  background-image:
+    linear-gradient(rgb(124 95 28 / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(124 95 28 / 0.5) 1px, transparent 1px);
+}
+html[data-tema='claro'] .pta-sticky {
+  border-top-color: var(--linha2);
+}
+/* o foco no papel é preto (ouro fechado fica fraco ao lado de texto preto) */
+html[data-tema='claro'] .v1 :focus-visible {
+  outline-color: var(--color-tinta);
+}
+html[data-tema='claro'] .v1-sec--papel :focus-visible {
+  outline-color: #0c0b09;
+}
+
+/* fecho da mãe no claro: o ouro de FUNDO continua #CDA85E (o token --color-ouro do claro é ouro de texto); texto em tinta */
+html[data-tema='claro'] .v1:not(.solo) .v1-final {
+  background: #cda85e;
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v1:not(.solo) .v1-final h2 {
+  color: #0c0b09;
+}
+html[data-tema='claro'] .v1:not(.solo) .v1-final__c {
+  --c: #0c0b09;
+}
+html[data-tema='claro'] .v1:not(.solo) .v1-btn-final {
+  --bg: #0c0b09;
+  --fg: #cda85e;
+  --sh: rgb(12 11 9 / 0.35);
+}
+html[data-tema='claro'] .v1:not(.solo) .v1-final :focus-visible {
+  outline-color: #0c0b09;
+}
+/* tipografia no claro: mono pede mais corpo e contraste; títulos em tinta pura, corpo um tom abaixo */
+html[data-tema='claro'] .v1 .v1-mono {
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+html[data-tema='claro'] .v1 {
+  --txt: #24211b;
+}
+
+/* pop-up no claro: a base escreveu as bordas com o papel (claro sobre escuro); no papel viram tinta */
+html[data-tema='claro'] .pta-dialog {
+  --line: rgb(12 11 9 / 0.28);
+}
+html[data-tema='claro'] .pta-input {
+  border-color: rgb(12 11 9 / 0.6);
+}
+html[data-tema='claro'] .pta-input::placeholder {
+  color: rgb(12 11 9 / 0.55);
+}
+html[data-tema='claro'] .pta-check__box {
+  border-color: rgb(12 11 9 / 0.7);
+}
+html[data-tema='claro'] .pta-dialog::backdrop,
+html[data-tema='claro'] .pta-dialog[open]::backdrop {
+  background: rgb(12 11 9 / 0.55);
+}
+
+/* imagem com variante por tema (SVG com cor assada): uma por tema, a outra nem entra no layout */
+.t-claro {
+  display: none !important;
+}
+html[data-tema='claro'] .t-claro {
+  display: block !important;
+}
+html[data-tema='claro'] .t-escuro {
+  display: none !important;
+}
+
+/* botão do tema (ferramenta de teste): no celular da mãe o centro do cabeçalho é do botão da barra */
+@media (max-width: 767px) {
+  body:has(.v1:not(.solo)) .pta-tema {
+    top: 78px;
+    left: auto;
+    right: 12px;
+    transform: none;
+  }
+}

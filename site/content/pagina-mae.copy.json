@@ -1,0 +1,66 @@
+{
+  "_fonte": "referencias da cliente: C:/Users/User/Documents/Black Friday da Personal Trainer Academy ao Vivo.pdf (páginas 1–3, 'Copy da página-mãe'). Só texto final; notas de orientação ficam em pagina-mae.pendencias.md.",
+  "barra": {"texto": "Black PTA ao Vivo · 9, 10 e 11/11 · 20h30", "botao": "Quero entrar no grupo"},
+  "hero": {
+    "eyebrow": "Black Friday da Personal Trainer Academy · Ao vivo",
+    "h1": "A MAIOR BLACK FRIDAY DA EDUCAÇÃO FÍSICA DO JÁ COMEÇOU!",
+    "destaque": "Pague 1 pós-graduação e leve 2.",
+    "sub": "Dias 9, 10 e 11 de novembro, às 20h30, assista a uma aula ao vivo com o professor da sua pós e conheça a condição Black: a segunda pós-graduação à sua escolha e bônus. Os valores serão divulgados ao vivo.",
+    "cta": "Quero entrar no grupo da Black",
+    "micro": "O link das lives e oferta chega no grupo do WhatsApp.",
+    "selos": ["Aulas ao vivo", "Certificado reconhecido pelo MEC", "+10.000 alunos formados"]
+  },
+  "como_funciona": {
+    "titulo": "Como funciona a Black PTA ao Vivo",
+    "passos": [
+      {"t": "Entre no grupo.", "d": "Cadastre-se e receba o link e os avisos no WhatsApp."},
+      {"t": "Assista à aula ao vivo.", "d": "Escolha sua noite, ou assista às três, das 20h30 às 22h30."},
+      {"t": "Conheça a condição Black.", "d": "No fim da noite, o professor apresenta a condição, os bônus, os valores e as formas de pagamento."}
+    ]
+  },
+  "noites": {
+    "titulo": "3 noites, 3 professores",
+    "botao_card": "Quero esta noite",
+    "cards": [
+      {"noite": "Seg 9/11", "prof": "André Albuquerque", "bio": "Sócio-fundador da PTA e mestre em Educação Física, especialista em biomecânica aplicada ao treino de força", "pos": "Biomecânica", "foto": "andre"},
+      {"noite": "Ter 10/11", "prof": "Walter Krause", "bio": "PhD em Educação Física e coordenador da pós em Bodybuilding e Estética Corporal", "pos": "Bodybuilding e Estética Corporal", "foto": "walter"},
+      {"noite": "Qua 11/11", "prof": "Carlos Garon", "bio": "Pós em Fisiologia do Exercício (PUC-PR) e especialista em Bodybuilding e Treinamento de Resistência", "pos": "Treinamento Feminino", "foto": "carlos"}
+    ]
+  },
+  "pague1leve2": {
+    "titulo": "Na Black PTA, você paga 1 pós-graduação e leva 2.",
+    "texto": "Escolha a pós do seu professor, com aulas ao vivo e gravadas, e leve uma segunda à sua escolha:",
+    "opcoes": ["Treinamento Funcional", "Musculação e Periodização Avançada", "Fisiologia do Exercício"],
+    "nota": "Valores e condições serão divulgados ao vivo e na página de matrícula logo em seguida."
+  },
+  "bonus": {
+    "titulo": "E os bônus da Black",
+    "itens": ["Workshop 10k com consultoria online", "Mapa da consultoria online", "4 ebooks de Biomecânica", "Bônus exclusivo do professor (na noite dele)"]
+  },
+  "por_que": {
+    "titulo": "Por que a PTA",
+    "itens": ["+10.000 alunos formados", "6 especializações", "Professores-referência com foco em aplicação prática", "Certificado reconhecido pelo MEC"]
+  },
+  "faq": [
+    {"q": "A live é gratuita?", "a": "Sim."},
+    {"q": "Preciso assistir às três noites?", "a": "Não. Escolha a sua, ou assista às outras se quiser."},
+    {"q": "Quando saberei o valor?", "a": "Ao vivo, na sua noite, na página de matrícula logo depois e no grupo de WhatsApp."},
+    {"q": "A segunda pós é completa?", "a": "Sim. Ela é atualizada em 2026."},
+    {"q": "Posso levar duas pós de professores diferentes?", "a": "A segunda pós é escolhida entre as três acima."},
+    {"q": "Haverá replay?", "a": "Somente para quem adquirir a pós."},
+    {"q": "Quem pode fazer?", "a": "Graduados e alunos a partir do 6º período."},
+    {"q": "As pós têm reconhecimento do MEC?", "a": "Sim."}
+  ],
+  "cta_final": {"titulo": "Entre no grupo e receba o link das 3 noites.", "botao": "Quero entrar no grupo da Black"},
+  "rodape": "Valores, condições e formas de pagamento serão apresentados ao vivo e na página de matrícula.",
+  "modal": {
+    "titulo": "Entre no grupo da Black",
+    "campos": [{"id": "nome", "rotulo": "Nome", "tipo": "text"}, {"id": "whats", "rotulo": "WhatsApp", "tipo": "tel", "mascara": "(00) 00000-0000"}, {"id": "email", "rotulo": "E-mail (opcional)", "tipo": "email", "opcional": true}],
+    "botao": "Quero entrar no grupo da Black",
+    "consentimento": "Usaremos seus dados só para enviar o link e os avisos das lives.",
+    "sucesso_titulo": "Você está dentro.",
+    "sucesso_texto": "Agora entre no grupo do WhatsApp para receber o link das 3 noites.",
+    "sucesso_botao": "Entrar no grupo do WhatsApp"
+  },
+  "_demo": "Destino do botão de sucesso = placeholder (#grupo-whatsapp). Datas e ordem das noites provisórias (copy da cliente)."
+}
